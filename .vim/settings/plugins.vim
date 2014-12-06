@@ -13,6 +13,6 @@ let g:NERDTreeMinimalUI=1
 let g:Easymotion_smartcase=1 " with this, 'v' will match both 'v' and 'V', but 'V' will match 'V' only
 
 " Unite
-call unite#custom#profile('default', 'context', {
-  'prompt': '»»» ',
-})
+"call unite#custom#profile('default', 'context', {
+"  'prompt': '»»» ',
+"})

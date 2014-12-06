@@ -13,14 +13,12 @@ set history=1000
 
 " Visual Cues
 set showmatch
-set cursorline
 set showcmd
 set incsearch
 set hlsearch
 set wildmenu
 set display=uhex
-set colorcolumn=+2
-set listchars=tab:» ,trail:·,extends:>,precedes:<,eol:¬
+set listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
 set visualbell
 
 " UI
@@ -34,18 +32,19 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set linespace=0
-set mouse=a
 set ttymouse=xterm2
 set foldcolumn=1
 
 " Text Format
 set wrap
 set autoindent
-set textwidth=120
 set completeopt=menu
 set backspace=indent,eol,start
 set numberwidth=6
 set list
+" Show warning at line #80 and danger (background change) #120
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Auto Commands
 " I do not really move in Insert mode. Taking advantage of that fact.
@@ -54,4 +53,4 @@ autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
 " Others
 let mapleader='\'
-let maplocalleader=‘`’
+let maplocalleader='`'
