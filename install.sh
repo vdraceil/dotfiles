@@ -4,7 +4,7 @@
 sourceDir=$( cd "$( dirname "$0" )" && pwd )
 
 # define the files for which we need symlinks in the $HOME dir
-sourceFiles=".vim .vimrc"
+sourceFiles=".bashrc .vim .vimrc"
 
 # this function creates symlinks in $HOME dir
 # if a to-be-symlinked dir already exists, try to symlink its children recursively
@@ -14,7 +14,7 @@ function create_symlink_if_missing() {
     indentLevel=$3
 
     echo -ne "$( printf %${indentLevel}s | tr " " "\t" )"
-    echo -n "Trying to create symlink $dest -> $src ... "
+    echo -n "Create symlink: $dest -> $src ... "
 
     if [ -d $src -a -d $dest ]; then
         echo "PARTIAL FIAILURE! Directory already exists"

@@ -1,17 +1,17 @@
 ## Dotfiles
 
-These are the vim runtime files that I use on a daily basis
+These are the bash and vim runtime files that I use on a daily basis
 
 ## Usage
 
- - First install [Vundle](https://github.com/gmarik/vundle):
+ - First, install [Vundle](https://github.com/gmarik/vundle):
 
 ```sh
 $ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
- - Install [Powerline Fonts](https://github.com/Lokaltog/powerline-fonts) for the Airline plugin to look alright
- - Also make sure to change the terminal settings accordingly (set Encoding as 'UTF-8' and Non-ASCII Font as 'Literation Mono Powerline')
+ - Next, install [Powerline Fonts](https://github.com/Lokaltog/powerline-fonts) for the Airline plugin to look alright
+ - Also make sure to change the terminal settings accordingly (set Encoding as 'UTF-8' and Non-ASCII Font as 'Literation Mono Powerline'). For Mac OS X, installing iTerm2 proved fruitful and the Airline rendering was perfect.
 
 ```sh
 $ git clone https://github.com/Lokaltog/powerline-fonts
@@ -36,3 +36,5 @@ $ vim +PluginInstall +qall
 ```sh
 $ vim
 ```
+
+ - Check the bash prompt color change based on success/failure of the previous command
