@@ -10,7 +10,7 @@ function set_fancy_prompt() {
     yellow="\[\e[0;93m\]"
 
     [ $exit_status -eq 0 ] && status_color=$green || status_color=$red
-    PS1="${status_color}[\h]${off}${yellow}\w${off}\n>>>"
+    PS1="${status_color}[\h]${off}${yellow}\w${off}\n${status_color}>>>${off}"
     PS2="${cyan}>${off}"
 }
 PROMPT_COMMAND=set_fancy_prompt

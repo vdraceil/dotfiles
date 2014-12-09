@@ -20,6 +20,9 @@ set wildmenu
 set display=uhex
 set listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
 set visualbell
+" Show warning at line #80 and danger (background change) #120
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " UI
 set laststatus=2
@@ -42,9 +45,6 @@ set completeopt=menu
 set backspace=indent,eol,start
 set numberwidth=6
 set list
-" Show warning at line #80 and danger (background change) #120
-let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Auto Commands
 " I do not really move in Insert mode. Taking advantage of that fact.

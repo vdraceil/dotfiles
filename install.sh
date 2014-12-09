@@ -17,7 +17,7 @@ function create_symlink_if_missing() {
     echo -n "Create symlink: $dest -> $src ... "
 
     if [ -d $src -a -d $dest ]; then
-        echo "PARTIAL FIAILURE! Directory already exists"
+        echo "PARTIAL FAILURE! Directory already exists"
         indentLevel=$[$indentLevel + 1]
 
         for file in "$src"/*; do
