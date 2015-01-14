@@ -1,4 +1,8 @@
 # prompt
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
 # shows host name in red if the previous command was a failure. If not, green.
 function set_fancy_prompt() {
     exit_status=$?
@@ -10,15 +14,16 @@ function set_fancy_prompt() {
     yellow="\[\e[0;93m\]"
 
     [ $exit_status -eq 0 ] && status_color=$green || status_color=$red
-    PS1="${status_color}[\h]${off}${yellow}\w${off}\n${status_color}>>>${off}"
+    PS1="${status_color}[\h]${off}${cyan}$(parse_git_branch)${off}${yellow}\w${off}\n${status_color}>>>${off}"
     PS2="${cyan}>${off}"
 }
 PROMPT_COMMAND=set_fancy_prompt
 
 # aliases
 alias la='ls -a'
+alias la1='ls -a1'
 alias ll='ls -alh'
-alias lld='ls -F | grep /$'
+alias ld='ls -aF | grep /$'
 alias lld='ls -alF | grep /$'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -26,7 +31,16 @@ alias ....='cd ../../..'
 alias vi='vim'
 alias hg='history | grep '
 alias pg='ps aux | grep '
+alias bc='bc -l'
+alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
+# tmux
+alias tmux='tmux -2'
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
+alias tk='tmux kill-session -t'
+alias tls='tmux ls'
+alias tks='tmux kill-server'
 
 # history
 export HISTSIZE=1000
@@ -35,3 +49,8 @@ export HISTCONTROL=ignoredups
 
 # others
 export EDITOR=vim
+
+# source local overrides
+if [ -f '~/.local.bashrc' ]; then
+    source ~/.custom.bashrc
+fi
