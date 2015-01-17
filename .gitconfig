@@ -1,0 +1,61 @@
+[user]
+    name = Vinoth Kumar Kannan
+    email = vdraceil@gmail.com
+[core]
+    editor = vim
+    autocrlf = input
+    whitespace = fix,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+[web]
+    browser = firefox
+[push]
+    default = simple
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    a = add
+    aa = add --all
+    b = branch -v
+    ba = branch -av
+    c = commit -m
+    ca = commit -a -m
+    cam = commit --amend --no-edit
+    cama = commit -a --amend --no-edit
+    co = checkout
+    cob = checkout -b
+    d = diff
+    dc = diff --cached
+    ds = diff --staged
+    l = log --oneline
+    lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    p = pull
+    pr = pull --rebase
+    pu = push
+    rs = reset --soft
+    rh = reset --hard
+    s = status
+    ss = status -s
+    sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
+    st = stash
+    sta = stash apply
+    std = stash drop
+    stl = stash list
+    sts = stash show

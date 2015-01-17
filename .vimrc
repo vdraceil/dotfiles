@@ -45,10 +45,11 @@ let g:airline#extensions#ctrlp#show_adjacent_modes=1
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+let g:NERDTreeShowHidden=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore=['\.pyc$']
 
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nb :Bookmark <cr>
 
@@ -173,6 +174,40 @@ let g:tmuxline_preset={
 
 " ------------------------------------------------------------------------------
 
+" Tagbar
+Plugin 'majutsushi/tagbar'
+
+let g:tagbar_width=30
+let g:tagbar_autofocus=1
+let g:tagbar_compact=1
+let g:tagbar_indent=1
+
+nnoremap <silent> <F10> :TagbarToggle<cr>
+
+" ------------------------------------------------------------------------------
+
+" Neocomplcache
+Plugin 'Shougo/neocomplcache.vim'
+
+let g:neocomplcache_max_list=15
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_ignore_case=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_auto_select=1
+let g:neocomplcache_enable_fuzzy_completion=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:neocomplcache_fuzzy_completion_start_length=1
+let g:neocomplcache_auto_completion_start_length=1
+let g:neocomplcache_manual_completion_start_length=1
+let g:neocomplcache_min_keyword_length=1
+let g:neocomplcache_min_syntax_length=1
+" Complete with words from any opened file
+let g:neocomplcache_same_filetype_lists={}
+let g:neocomplcache_same_filetype_lists._='_'
+
+" ------------------------------------------------------------------------------
+
 " Others
 " Vim Surround
 Plugin 'tpope/vim-surround'
@@ -184,6 +219,7 @@ Plugin 'scrooloose/nerdcommenter'
 " Color Schemes
 Plugin 'sjl/badwolf'
 Plugin 'sickill/vim-monokai'
+Plugin 'goatslacker/mango.vim'
 
 " ------------------------------------------------------------------------------
 
@@ -208,7 +244,6 @@ set dict=/usr/share/dict/words
 set autoread
 set synmaxcol=0
 set term=screen-256color
-set ffs=unix
 set history=1000
 set undofile
 set undodir=~/.vim/undo//
@@ -227,13 +262,15 @@ set showcmd
 set incsearch
 set hlsearch
 set wildmenu
-set display=uhex
 set listchars=tab:»·,trail:·,extends:>,precedes:<,eol:¬
 set visualbell
 set number
+set display=uhex
+set fileformats=unix,dos
 " Show warning at line #80 and danger (background change) #120
-let &colorcolumn="80,".join(range(120,999), ",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"let &colorcolumn="80,".join(range(120,999), ",")
+let &colorcolumn="80,120"
+highlight colorcolumn ctermbg=235 guibg=#2c2d27
 
 " UI
 set laststatus=2

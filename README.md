@@ -12,11 +12,12 @@ $ git clone https://github.com/Lokaltog/powerline-fonts
 $ ./powerline-fonts/install.sh
 ```
 
- - Install tmux and tmuxinator
+ - Install tmux, tmuxinator and ctags-exuberant
 
 ```sh
 $ brew install tmux
 $ gem install tmuxinator
+$ brew install ctags-exuberant
 ```
 
  - Next, get the dotfiles and execute install.sh to create all symlinks in your $HOME dir
@@ -41,6 +42,7 @@ $ vim
 $ tmux
 ```
 
-## Customizations
+## Customization
 
- - Additional customization to the dot files can be done by introducing a custom file ~/.custom<to-be-overridden-dotfile>
+ - Additional customization to the dot files can be done by introducing a local overrides file ~/.local/<to-be-overridden-dotfile>
+ - Use tmuxinator yaml configs (under dir ~/.tmuxinator/) to create your work environments (may be, one for each project)

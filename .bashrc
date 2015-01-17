@@ -41,6 +41,9 @@ alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 alias tls='tmux ls'
 alias tks='tmux kill-server'
+alias tmnr='tmuxinator'
+# git
+alias g='git'
 
 # history
 export HISTSIZE=1000
@@ -50,7 +53,7 @@ export HISTCONTROL=ignoredups
 # others
 export EDITOR=vim
 
-# source local overrides
-if [ -f '~/.local.bashrc' ]; then
-    source ~/.custom.bashrc
+# source overrides, if any
+if [ -f '~/.local/.bashrc' ]; then
+    source ~/.local/.bashrc
 fi
