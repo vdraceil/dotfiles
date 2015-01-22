@@ -206,6 +206,13 @@ let g:neocomplcache_min_syntax_length=1
 let g:neocomplcache_same_filetype_lists={}
 let g:neocomplcache_same_filetype_lists._='_'
 
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 " ------------------------------------------------------------------------------
 
 " Others
@@ -218,8 +225,8 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Color Schemes
 Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
-Plugin 'goatslacker/mango.vim'
 
 " ------------------------------------------------------------------------------
 
@@ -236,7 +243,8 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme badwolf
+"colorscheme badwolf
+colorscheme molokai
 
 " Basic
 set encoding=utf-8
@@ -286,8 +294,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 " Tab length exceptions on some file types
-autocmd FileType html setlocal shiftwidth=2 tapstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tapstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " When scrolling keep cursor 3 lines away from screen border
 set scrolloff=3
 " Open splits below and right by default

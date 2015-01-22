@@ -25,10 +25,12 @@ alias la1='ls -a1'
 alias ll='ls -alh'
 alias ld='ls -aF | grep /$'
 alias lld='ls -alF | grep /$'
+alias lf='ls -aF | grep [^/]$'
+alias llf='ls -alF | grep [^/]$'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias vi='vim'
+alias v='vim'
 alias hg='history | grep '
 alias pg='ps aux | grep '
 alias bc='bc -l'
@@ -36,11 +38,11 @@ alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
 # tmux
 alias tmux='tmux -2'
-alias tn='tmux new -s'
-alias ta='tmux attach -t'
-alias tk='tmux kill-session -t'
+alias tns='tmux new -s'
+alias tas='tmux attach -t'
+alias tks='tmux kill-session -t'
 alias tls='tmux ls'
-alias tks='tmux kill-server'
+alias tk='tmux kill-server'
 alias tmnr='tmuxinator'
 # git
 alias g='git'
@@ -54,6 +56,6 @@ export HISTCONTROL=ignoredups
 export EDITOR=vim
 
 # source overrides, if any
-if [ -f '~/.local/.bashrc' ]; then
+if [ -f ~/.local/.bashrc ];then
     source ~/.local/.bashrc
 fi
