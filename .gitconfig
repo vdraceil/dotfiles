@@ -44,13 +44,17 @@
     d = diff
     dc = diff --cached
     ds = diff --staged
-    l = log --oneline
-    lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --oneline -5
+    lp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    m = merge
     p = pull
     pr = pull --rebase
     pu = push
+    r = rebase
     rs = reset --soft
+    rs1 = reset --soft HEAD~1
     rh = reset --hard
+    rh1 = reset --hard HEAD~1
     s = status
     ss = status -s
     sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
