@@ -45,12 +45,14 @@ let g:airline#extensions#ctrlp#show_adjacent_modes=1
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
-let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeIgnore=['\.pyc$']
+let g:NERDTreeDirArrows=0
+let g:NERDTreeShowHidden=1
+let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeIgnore=['\.pyc$', '\.git$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nb :Bookmark <cr>
 
 " Open NERDTree when vim is opened with no argument
@@ -71,8 +73,6 @@ map / <Plug>(easymotion-sn)| " bi-directional find characters
 omap / <Plug>(easymotion-tn)| " till before characters to the right
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
-nmap s <Plug>(easymotion-s)
-nmap s <Plug>(easymotion-s2)| " 2 char, bi-directional; press <cr> for 1 char match
 nmap f <Plug>(easymotion-fl)| " 1 char, in line, forward
 nmap F <Plug>(easymotion-Fl)| " 1 char, in line, backward
 nmap <leader>f <Plug>(easymotion-f)| " 1 char, forward
@@ -84,8 +84,8 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 Plugin 'tpope/vim-fugitive'
 
 nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gaa :Git add --all<cr>
+nnoremap <leader>gl :Glog --oneline -5<cr>
 
 " ------------------------------------------------------------------------------
 
@@ -125,8 +125,6 @@ nnoremap <leader>lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
 " Syntastic
 Plugin 'scrooloose/syntastic'
 
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq=0
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_enable_signs=1
 let g:syntastic_error_symbol="✗"
@@ -136,6 +134,14 @@ let g:syntastic_style_warning_symbol="⚠"
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore="E501,E126,E127,E128,W291"'
 let g:syntastic_javascript_checkers=['jshint']
+" Dont perform syntastic checks automatically
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_mode_map={
+  \'mode': 'passive',
+  \'active_filetypes': [],
+  \'passive_filetypes': []
+  \ }
 
 nnoremap <leader>sc :SyntasticCheck<cr>
 nnoremap <leader>e :lopen<cr>
@@ -146,18 +152,24 @@ nnoremap <leader>E :lclose<cr>
 " Python Mode
 Plugin 'klen/python-mode'
 
+let g:pymode_doc=0
 let g:pymode_run=0
-let g:pymode_lint=0
 let g:pymode_folding=0
 let g:pymode_virtualenv=0
 let g:pymode_breakpoint=0
+let g:pymode_trim_whitespaces=0
 " Dont use linter, we use synstastic for that
+let g:pymode_lint=0
 let g:pymode_lint_on_write=0
 let g:pymode_lint_signs=0
 " Rope settings
 let g:pymode_rope=1
+let g:pymode_rope_lookup_project=0
 let g:pymode_rope_autoimport_modules=['os', 're', 'shutil', 'datetime']
 let g:pymode_rope_goto_definition_cmd='vnew'
+" Uncomment the below lines if rope is too slow
+"let g:pymode_rope=0
+"let g:pymode_rope_complete_on_dot=0
 
 " ------------------------------------------------------------------------------
 
@@ -177,10 +189,11 @@ let g:tmuxline_preset={
 " Tagbar
 Plugin 'majutsushi/tagbar'
 
-let g:tagbar_width=30
+let g:tagbar_width=40
 let g:tagbar_autofocus=1
 let g:tagbar_compact=1
 let g:tagbar_indent=1
+let g:tagbar_show_linenumbers=2
 
 nnoremap <silent> <F10> :TagbarToggle<cr>
 
@@ -276,7 +289,7 @@ set number
 set display=uhex
 set fileformats=unix,dos
 " Show warning at line #80 and danger (background change) #120
-"let &colorcolumn="80,".join(range(120,999), ",")
+"let &colorcolumn='80,'.join(range(120,999), ',')
 let &colorcolumn="80,120"
 highlight colorcolumn ctermbg=235 guibg=#2c2d27
 
@@ -366,12 +379,12 @@ nnoremap tm :tabmove<cr>
 
 " Splits
 " Navigation
-nnoremap <leader>hh <c-w>h
-nnoremap <leader>jj <c-w>j
-nnoremap <leader>kk <c-w>k
-nnoremap <leader>ll <c-w>l
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
 " Move current split to a new tab
-nnoremap <leader>tt <c-w>T
+nnoremap <leader>t <c-w>T
 " Rotate
 nnoremap <leader>> <c-w>r
 nnoremap <leader>< <c-w>R
