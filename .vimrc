@@ -47,7 +47,6 @@ Plugin 'scrooloose/nerdtree'
 
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=0
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeIgnore=['\.pyc$', '\.git$']
@@ -163,7 +162,7 @@ let g:pymode_lint=0
 let g:pymode_lint_on_write=0
 let g:pymode_lint_signs=0
 " Rope settings
-let g:pymode_rope=1
+let g:pymode_rope=0
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_autoimport_modules=['os', 're', 'shutil', 'datetime']
 let g:pymode_rope_goto_definition_cmd='vnew'
@@ -388,6 +387,20 @@ nnoremap <leader>t <c-w>T
 " Rotate
 nnoremap <leader>> <c-w>r
 nnoremap <leader>< <c-w>R
+" Resize - Vertical
+nnoremap + <c-w>>
+nnoremap - <c-w><
+
+" Buffers
+" Navigation
+nnoremap bv :bprev<cr>
+nnoremap bvv :bfirst<cr>
+nnoremap bn :bnext<cr>
+nnoremap bnn :blast<cr>
+" List
+nnoremap bl :buffers<cr>
+" Delete
+nnoremap bd :bdelete<cr>
 
 " Insert Mode - Specifics
 " Exit Insert Mode
