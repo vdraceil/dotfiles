@@ -49,7 +49,7 @@ let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
-let g:NERDTreeIgnore=['\.pyc$', '\.git$']
+let g:NERDTreeIgnore=['\.pyc$', '\.git$', '^node_modules$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark <cr>
@@ -79,15 +79,6 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 
 " ------------------------------------------------------------------------------
 
-" Fugitive
-Plugin 'tpope/vim-fugitive'
-
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gaa :Git add --all<cr>
-nnoremap <leader>gl :Glog --oneline -5<cr>
-
-" ------------------------------------------------------------------------------
-
 " CtrlP
 Plugin 'kien/ctrlp.vim'
 
@@ -102,8 +93,8 @@ let g:ctrlp_custom_ignore={
   \ 'file': '\.pyc$',
   \ }
 let g:ctrlp_prompt_mappings={
-  \ 'AcceptSelection("e")': [],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-t>'],
+  \ 'AcceptSelection("e")': ['<cr>'],
+  \ 'AcceptSelection("t")': ['<c-t>'],
   \ }
 
 function! CtrlPWithSearchText(search_text, ctrlp_command_end)
@@ -131,7 +122,7 @@ let g:syntastic_style_error_symbol="✗"
 let g:syntastic_warning_symbol="⚠"
 let g:syntastic_style_warning_symbol="⚠"
 let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore="E501,E126,E127,E128,W291"'
+let g:syntastic_python_flake8_args='--ignore="E226,E501,E126,E127,E128,W291"'
 let g:syntastic_javascript_checkers=['jshint']
 " Dont perform syntastic checks automatically
 let g:syntastic_check_on_open=0
@@ -232,6 +223,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 Plugin 'tpope/vim-surround'
 " NERD Commenter
 Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims=1
 
 " ------------------------------------------------------------------------------
 
