@@ -1,0 +1,77 @@
+! Colors
+*background: #2E3436
+*foreground: #EEEEEC
+*borderColor: #2E3436
+*underlineColor: #FFAC00
+! black dark/light
+*color0: #2E3436
+*color8: #6E706B
+! red dark/light
+*color1: #F7504E
+*color9: #EE7757
+! green dark/light
+*color2: #8F910B
+*color10: #8FC951
+! yellow dark/light
+*color3: #FFAC00
+*color11: #F0C674
+! blue dark/light
+*color4: #27A8F7
+*color12: #98D4FF
+! magenta dark/light
+*color5: #FF00FF
+*color13: #FFB2FF
+! cyan dark/light
+*color6: #00FFFF
+*color14: #89FFFF
+! white dark/light
+*color7: #D3D7CF
+*color15: #EEEEEC
+
+! Font
+Xft.autohint: false
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! URxvt
+uRxvt.internalBorder: 4
+URxvt.externalBorder: 0
+URxvt.fading: 50
+URxvt.font: xft:Liberation Mono for Powerline:pixelsize=16, 
+            xft:Unifont, \
+            xft:Wuncon Siji
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+URxvt.scrollBar_right: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 9999
+URxvt.geometry: 150x40
+URxvt.cursorUnderline: true
+URxvt.cursorBlink: true
+URxvt.cursorColor: #8AE234
+URxvt.perl-ext-common: default,url-select,keyboard-select,clipboard
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+! Rofi
+rofi.color-window: #2E3436,#6E706B,#6E706B
+rofi.color-normal: #2E3436,#EEEEEC,#2E3436,#2E3436,#00FF35
+rofi.color-urgent: #2E3436,#EEEEEC,#2E3436,#2E3436,#FF2F2F
+rofi.color-active: #2E3436,#EEEEEC,#2E3436,#2E3436,#27A8F7
+rofi.borderwidth: 1
+rofi.padding: 10
+rofi.line-padding: 3
+rofi.width: 25
+rofi.lines: 5
+rofi.hide-scrollbar: true
+rofi.font: hack 12
