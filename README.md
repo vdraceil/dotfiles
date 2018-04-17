@@ -1,6 +1,6 @@
 ## DOT FILES
 
-All of these dot files collectively define my working environment (bash, vim, tmux, git), which I use everyday
+All of these dot files collectively define my working environment (bash, vim, i3, git), which I use everyday
 
 ## Setup
 
@@ -10,14 +10,6 @@ All of these dot files collectively define my working environment (bash, vim, tm
 ```sh
 $ git clone https://github.com/Lokaltog/powerline-fonts
 $ ./powerline-fonts/install.sh
-```
-
- - Install tmux, tmuxinator and ctags-exuberant
-
-```sh
-$ brew install tmux
-$ gem install tmuxinator
-$ brew install ctags-exuberant
 ```
 
  - Next, get the dotfiles and execute install.sh to create all symlinks in your $HOME dir
@@ -38,11 +30,6 @@ $ vim
  - Check the bash prompt color change based on success/failure of the previous command
  - Also, check tmux looks
 
-```sh
-$ tmux
-```
-
 ## Customization
 
  - Additional customization to the dot files can be done by introducing a local overrides file ~/.local/<to-be-overridden-dotfile>
- - Use tmuxinator yaml configs (under dir ~/.tmuxinator/) to create your work environments (may be, one for each project)

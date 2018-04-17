@@ -3,8 +3,8 @@
 # get the dir of this script - to avoid having to clone the git repo to $HOME directly
 sourceDir=$( cd "$( dirname "$0" )" && pwd )
 
-# define the files for which we need symlinks in the $HOME dir
-sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore" 
+# define the files/dirs for which we need symlinks in the $HOME dir
+sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .ncmpcpp .config" 
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
