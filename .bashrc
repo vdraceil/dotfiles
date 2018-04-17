@@ -36,15 +36,6 @@ alias pg='ps aux | grep '
 alias bc='bc -l'
 alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
-# tmux
-alias tmux='tmux -2'
-alias tk='tmux kill-server'
-alias ta='tmux attach'
-alias tls='tmux ls'
-alias tns='tmux new -s'
-alias tas='tmux attach -t'
-alias tks='tmux kill-session -t'
-alias tmnr='tmuxinator'
 # git
 alias g='git'
 
