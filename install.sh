@@ -4,7 +4,7 @@
 sourceDir=$( cd "$( dirname "$0" )" && pwd )
 
 # define the files/dirs for which we need symlinks in the $HOME dir
-sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .ncmpcpp .config" 
+sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .xinitrc .Xresources .ncmpcpp .config" 
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
