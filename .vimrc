@@ -51,14 +51,16 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close vim if the only open window is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree")
+    \ && b:NERDTree.isTabTree()) | q | endif
 
 " ------------------------------------------------------------------------------
 
 " EasyMotion
 Plugin 'Lokaltog/vim-easymotion'
 
-let g:Easymotion_smartcase=1 " with this, 'v' will match both 'v' and 'V', but 'V' will match 'V' only
+" with this, 'v' will match both 'v' and 'V', but 'V' will match 'V' only
+let g:Easymotion_smartcase=1
 
 map / <Plug>(easymotion-sn)| " bi-directional find characters
 omap / <Plug>(easymotion-tn)| " till before characters to the right
