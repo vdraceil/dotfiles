@@ -29,8 +29,29 @@ Plugin 'gmarik/vundle'
 " Lightline
 Plugin 'itchyny/lightline.vim'
 
+function! LightlineFileFormat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFileType()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : '*') : ''
+endfunction
+
+function! LightlineFileEncoding()
+  return winwidth(0) > 70 ? &fileencoding : ''
+endfunction
+
 let g:lightline = {}
 let g:lightline.colorscheme = 'molokai'
+let g:lightline.active = {}
+let g:lightline.active.left = [ ['mode', 'paste'],
+    \ ['readonly', 'filename', 'modified'] ]
+let g:lightline.active.right = [ ['lineinfo'], ['percent'],
+    \ ['filetype', 'fileencoding'] ]
+let g:lightline.component_function = {}
+let g:lightline.component_function.filetype = 'LightlineFileType'
+let g:lightline.component_function.fileformat = 'LightlineFileFormat'
+let g:lightline.component_function.fileencoding = 'LightlineFileEncoding'
 
 " ------------------------------------------------------------------------------
 
@@ -41,10 +62,10 @@ let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
-let g:NERDTreeIgnore=['\.pyc$', '\.git$', '^node_modules$']
+let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '^node_modules$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
-nnoremap <leader>nb :Bookmark <cr>
+nnoremap <leader>nb :Bookmark<cr>
 
 " Open NERDTree when vim is opened with no argument
 autocmd StdinReadPre * let s:std_in=1
