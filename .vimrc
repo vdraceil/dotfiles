@@ -26,19 +26,11 @@ Plugin 'gmarik/vundle'
 
 " ------------------------------------------------------------------------------
 
-" Airline
-Plugin 'bling/vim-airline'
+" Lightline
+Plugin 'itchyny/lightline.vim'
 
-let g:airline_theme='murmur'
-let g:airline_powerline_fonts=1
-let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#tabline#formatter='unique_tail_improved'
-let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#branch#empty_message='unknown'
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#syntastic#enabled=1
-let g:airline#extensions#tmuxline#enabled=1
-let g:airline#extensions#ctrlp#show_adjacent_modes=1
+let g:lightline = {}
+let g:lightline.colorscheme = 'molokai'
 
 " ------------------------------------------------------------------------------
 
@@ -163,19 +155,6 @@ let g:pymode_rope_goto_definition_cmd='vnew'
 
 " ------------------------------------------------------------------------------
 
-" TMUX Line
-Plugin 'edkolev/tmuxline.vim'
-
-let g:tmuxline_preset={
-  \'a': '#S',
-  \'win': ['#I', '#W'],
-  \'cwin': ['#I', '#W', '#F'],
-  \'y': ['%R', '%a', '%d %b'],
-  \'z': '#h'
-  \ }
-
-" ------------------------------------------------------------------------------
-
 " Tagbar
 Plugin 'majutsushi/tagbar'
 
@@ -231,6 +210,7 @@ let g:NERDSpaceDelims=1
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " ------------------------------------------------------------------------------
 
@@ -247,8 +227,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-"colorscheme badwolf
-colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 
 " Basic
 set encoding=utf-8
@@ -269,6 +248,7 @@ endif
 syntax enable
 
 " Visual Cues
+set noshowmode
 set showmatch
 set showcmd
 set incsearch
@@ -317,7 +297,7 @@ set list
 " Auto Commands
 " I do not really move in Insert mode. Taking advantage of that fact.
 autocmd InsertEnter * silent! :set number
-autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber   
+autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
 " ------------------------------------------------------------------------------
 
@@ -400,7 +380,7 @@ inoremap jk <esc>
 
 " Quick Pairs
 inoremap <leader>' ''<esc>i
-inoremap <leader>" " <esc>i
+inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
 inoremap <leader>[ []<esc>i
 inoremap <leader>{ {}<esc>i
