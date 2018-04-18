@@ -337,6 +337,8 @@ vnoremap <leader>yo "*y
 nnoremap <leader>po "*p
 
 " Normal Mode - Specifics
+" Clear highlight
+nnoremap <Leader><space> :noh<cr>
 " Edit & Source .vimrc on the fly
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>:echom "$MYVIMRC Sourced Successfully!"<cr>
