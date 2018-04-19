@@ -3,8 +3,12 @@
 # get the dir of this script - to avoid having to clone the git repo to $HOME directly
 sourceDir=$( cd "$( dirname "$0" )" && pwd )
 
+# make required directories
+mkdir $HOME/.config
+
 # define the files/dirs for which we need symlinks in the $HOME dir
-sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .xinitrc .Xresources .ncmpcpp .config" 
+sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .xinitrc
+.Xresources .ncmpcpp .config/ranger .config/mpd .config/i3"
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
@@ -17,6 +21,9 @@ function create_symlink() {
     if [ -e $dest -a $force -eq 0 ]; then
         echo "FAILURE! File already exists: $src"
     else
+        if [ -d $dest -a $force -eq 1 ]; then
+            rm -rf $dest
+        fi
         ln -sf $src $dest
         echo "SUCCESS!"
     fi
