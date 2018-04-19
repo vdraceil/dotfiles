@@ -138,5 +138,8 @@ bindsym $mod+shift+x exec "betterlockscreen --lock dim"
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# lock screen init image cache
+# launch dunst
+exec --no-startup-id dunst
+
+# lock screen - init image cache
 exec --no-startup-id betterlockscreen -u $wallpapersDir

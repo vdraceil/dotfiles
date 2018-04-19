@@ -1,0 +1,77 @@
+[global]
+    monitor = 0
+    follow = mouse
+
+    # The geometry of the window: [{width}]x{height}[+/-{x}+/-{y}]
+    geometry = "300x5-15+50"
+
+    indicate_hidden = yes
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
+    frame_width = 1
+    frame_color = "#3F3F3F"
+    separator_color = auto
+    sort = yes
+    idle_threshold = 120
+    font = Fira Mono 10
+    line_height = 1.5
+
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    icon_position = off
+    max_icon_size = 16
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    sticky_history = yes
+    history_length = 10
+
+    dmenu = /usr/bin/rofi -dmenu -p dunst
+    browser = /usr/bin/firefox -new-tab
+
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+
+[shortcuts]
+    close = mod1+space
+    close_all = ctrl+mod1+space
+    history = mod1+period
+    context = ctrl+mod1+period
+
+[urgency_low]
+    background = "#3F3F3F"
+    foreground = "#D3D7CF"
+    frame_color = "#00F4FF"
+    timeout = 10
+
+[urgency_normal]
+    background = "#3F3F3F"
+    foreground = "#D3D7CF"
+    frame_color = "#6E706B"
+    timeout = 10
+
+[urgency_critical]
+    background = "#3F3F3F"
+    foreground = "#D3D7CF"
+    frame_color = "#FF2F2F"
+    timeout = 0

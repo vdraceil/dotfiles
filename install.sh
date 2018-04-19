@@ -8,7 +8,7 @@ mkdir $HOME/.config
 
 # define the files/dirs for which we need symlinks in the $HOME dir
 sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .xinitrc
-.Xresources .ncmpcpp .config/ranger .config/mpd .config/i3"
+.Xresources .ncmpcpp .config/ranger .config/mpd .config/i3 .config/dunst"
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
