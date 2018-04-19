@@ -62,6 +62,9 @@ let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '^node_modules$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
