@@ -1,0 +1,191 @@
+[colors]
+red = #FF2F2F
+yellow = #FBA922
+green = #00FF35
+cyan = #00F4FF
+gray = #3F3F3F
+black = #000000
+white = #CCFFFF
+
+[bar/top]
+monitor = eDP-1
+width = 100%
+height = 34
+
+background = ${colors.black}
+foreground = ${colors.white}
+
+line-color = ${colors.yellow}
+line-size = 3
+
+spacing = 1
+padding-right = 2
+module-margin = 2
+
+font-0 = NotoSans-Bold:size=9;0
+font-1 = Unifont:size=9;-2
+font-2 = MaterialIcons:size=11;0
+
+modules-left = i3
+modules-center = mpd
+modules-right = volume backlight wireless-network cpu memory battery date
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+
+ws-icon-0 = term;
+ws-icon-1 = code;
+ws-icon-2 = web;
+ws-icon-3 = coffee;
+ws-icon-4 = chat;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.black}
+label-mode-background = ${colors.red}
+label-focused = %icon%
+label-focused-foreground = ${colors.white}
+label-focused-background = ${colors.gray}
+label-focused-underline = ${colors.yellow}
+label-focused-padding = 4
+label-unfocused = %icon%
+label-unfocused-padding = 4
+label-urgent = %icon%
+label-urgent-underline = ${colors.cyan}
+label-urgent-padding = 4
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+
+format-online = <label-song>  <label-time>
+label-song = %{F#FBA922}%{F-}  %{F#80}%title%%{F-}
+label-song-foreground = ${colors.white}
+label-time-foreground = ${colors.yellow}
+
+[module/volume]
+type = internal/volume
+
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 14
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
+label-muted =   0
+label-muted-foreground = #80
+
+ramp-volume-foreground = ${colors.yellow}
+ramp-volume-0 = 
+ramp-volume-0-foreground = ${colors.red}
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-3-foreground = ${colors.green}
+
+[module/backlight]
+type = internal/xbacklight
+format = <ramp> <label>
+label = %percentage%
+
+ramp-foreground = ${colors.red}
+ramp-0 = 
+ramp-1 = 
+ramp-1-foreground = ${colors.green}
+ramp-2 = 
+
+[module/wireless-network]
+type = internal/network
+interface = wlp1s0
+interval = 2.0
+
+format-connected = <ramp-signal> <label-connected>
+format-packetloss = <animation-packetloss> <label-connected>
+label-connected = %essid%  %{F#80}%downspeed:6%%{F-}
+label-disconnected =    Not Connected
+label-disconnected-foreground = #66
+
+ramp-signal-foreground = ${colors.yellow}
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.red}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.red}
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.green}
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.gray}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.white}
+animation-packetloss-framerate = 500
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format = <label> <ramp-coreload>
+label = %{F#FF5F00}%{F-} %percentage%
+
+ramp-coreload-foreground = ${colors.green}
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = ${colors.yellow}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = ${colors.yellow}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+format = <label>
+label = %{F#FF5F00}%{F-} %gb_used%
+
+[module/battery]
+type = internal/battery
+full-at = 98
+poll-interval = 10
+
+format-charging = <label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
+label-charging = %{F#00FF35}%{F-} %percentage%
+label-discharging = %percentage%
+
+ramp-capacity-foreground = ${colors.yellow}
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.green}
+
+[module/date]
+type = internal/date
+interval = 60
+
+label = %{F#00f4ff}   %{F-}%date% %{F#00f4ff}  %{F-}%time%
+date = %{F#80}%a%{F-}  %{F#fff}%d %b %Y  %{F-}
+time = %{F#fff}%I:%M %p%{F-}  %{F#80}%Z  %{F-}
