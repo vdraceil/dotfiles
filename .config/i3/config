@@ -1,30 +1,49 @@
-# It will not be overwritten, so edit it as you like.
-#
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
-#
-
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 set $wallpapersDir $HOME/Coffee/Pictures/Wallpapers
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+# ------------------------------------------------------------------------------
+
+# BASIC
+font pango:Noto Sans 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# remove title bar from all windows
+new_window 1pixel
+
+# i3 gaps
+gaps inner 5
+gaps outer 0
+smart_gaps on
+
+# ------------------------------------------------------------------------------
+
+# MODES
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# ------------------------------------------------------------------------------
+
+# KEY BINDINGS
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -53,9 +72,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent/child container
 bindsym $mod+p focus parent
 bindsym $mod+Shift+p focus child
-
-# lock screen
-bindsym $mod+shift+x exec betterlockscreen --lock
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -88,31 +104,39 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
 bindsym $mod+r mode "resize"
 
+# media keys
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+bindsym XF86AudioPrev exec "mpc prev"
+bindsym XF86AudioPlay exec "mpc toggle"
+bindsym XF86AudioNext exec "mpc next"
+
+# custom media action
+# full display screenshot
+bindsym Print exec "import -window root /home/vdraceil/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+# TODO: custom area screenshot
+# bindsym $mod+Print exec "import /home/vdraceil/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+# record screen - start
+bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium /home/vdraceil/Documents/Videos/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
+# record screen - end
+bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
+
+# launch rofi
+bindsym $mod+d exec "rofi -show run"
+
+# launch lock screen
+bindsym $mod+shift+x exec "betterlockscreen --lock dim"
+
+# ------------------------------------------------------------------------------
+
+# START UP SETTINGS
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# lock screen
+# lock screen init image cache
 exec --no-startup-id betterlockscreen -u $wallpapersDir
-
-# remove title bar from all windows
-new_window 1pixel
-
-# i3 gaps
-gaps inner 5
-gaps outer 0
-smart_gaps on
