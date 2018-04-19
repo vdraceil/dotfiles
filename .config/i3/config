@@ -8,6 +8,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $wallpapersDir $HOME/Coffee/Pictures/Wallpapers
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -43,11 +44,6 @@ bindsym $mod+t split toggle
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -57,6 +53,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent/child container
 bindsym $mod+p focus parent
 bindsym $mod+Shift+p focus child
+
+# lock screen
+bindsym $mod+shift+x exec betterlockscreen --lock
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -107,10 +106,13 @@ bindsym $mod+r mode "resize"
 # launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# lock screen
+exec --no-startup-id betterlockscreen -u $wallpapersDir
+
 # remove title bar from all windows
 new_window 1pixel
 
 # i3 gaps
-gaps inner 10
+gaps inner 5
 gaps outer 0
 smart_gaps on
