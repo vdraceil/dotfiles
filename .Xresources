@@ -40,9 +40,9 @@ Xft.lcdfilter: lcddefault
 uRxvt.internalBorder: 4
 URxvt.externalBorder: 0
 URxvt.fading: 50
-URxvt.font: xft:Liberation Mono for Powerline:pixelsize=16, 
-            xft:Unifont, \
-            xft:Wuncon Siji
+URxvt.font: xft:FiraMono-Regular:pixelsize=17,
+            xft:OfficeCodeProD-Regular:pixelsize=18, \
+            xft:Unifont
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.scrollBar_right: true
