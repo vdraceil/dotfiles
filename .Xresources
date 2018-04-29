@@ -75,4 +75,4 @@ rofi.line-padding: 3
 rofi.width: 25
 rofi.lines: 5
 rofi.hide-scrollbar: true
-rofi.font: xft:LiberationMono:pixelsize=17
+rofi.font: Liberation Mono 12
