@@ -18,17 +18,17 @@ foreground = ${colors.white}
 line-color = ${colors.yellow}
 line-size = 3
 
-spacing = 1
-padding-right = 2
-module-margin = 2
+spacing = 0
+padding-right = 0
+module-margin = 1
 
-font-0 = NotoSans-Bold:size=9;0
+font-0 = LiberationMono:size=10;-1
 font-1 = Unifont:size=9;-2
 font-2 = MaterialIcons:size=11;0
 
 modules-left = i3
 modules-center = mpd
-modules-right = volume backlight wireless-network cpu memory battery date
+modules-right = wireless-network volume backlight cpu memory battery date
 
 [module/i3]
 type = internal/i3
@@ -52,22 +52,42 @@ label-focused = %icon%
 label-focused-foreground = ${colors.white}
 label-focused-background = ${colors.gray}
 label-focused-underline = ${colors.yellow}
-label-focused-padding = 4
+label-focused-padding = 2
 label-unfocused = %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = 2
 label-urgent = %icon%
 label-urgent-underline = ${colors.cyan}
-label-urgent-padding = 4
+label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
 host = 127.0.0.1
 port = 6600
 
-format-online = <label-song>  <label-time>
-label-song = %{F#FBA922}%{F-}  %{F#80}%title%%{F-}
+format-online = <label-song> <label-time>
+label-song = %{F#FBA922}%{F-} %{F#80}%title%%{F-}
 label-song-foreground = ${colors.white}
 label-time-foreground = ${colors.yellow}
+
+[module/wireless-network]
+type = internal/network
+interface = wlp1s0
+interval = 2.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% %{F#80}%downspeed:6%%{F-}
+label-disconnected =  Not Connected
+label-disconnected-foreground = #66
+
+ramp-signal-foreground = ${colors.yellow}
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.red}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.red}
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.green}
 
 [module/volume]
 type = internal/volume
@@ -78,7 +98,7 @@ headphone-id = 14
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%
-label-muted =   0
+label-muted =  0
 label-muted-foreground = #80
 
 ramp-volume-foreground = ${colors.yellow}
@@ -100,38 +120,12 @@ ramp-1 = 
 ramp-1-foreground = ${colors.green}
 ramp-2 = 
 
-[module/wireless-network]
-type = internal/network
-interface = wlp1s0
-interval = 2.0
-
-format-connected = <ramp-signal> <label-connected>
-format-packetloss = <animation-packetloss> <label-connected>
-label-connected = %essid%  %{F#80}%downspeed:6%%{F-}
-label-disconnected =    Not Connected
-label-disconnected-foreground = #66
-
-ramp-signal-foreground = ${colors.yellow}
-ramp-signal-0 = 
-ramp-signal-0-foreground = ${colors.red}
-ramp-signal-1 = 
-ramp-signal-1-foreground = ${colors.red}
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-4-foreground = ${colors.green}
-
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = ${colors.gray}
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${colors.white}
-animation-packetloss-framerate = 500
-
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 1
 
-format = <label> <ramp-coreload>
+format = <label>
+; format = <label> <ramp-coreload>
 label = %{F#FF5F00}%{F-} %percentage%
 
 ramp-coreload-foreground = ${colors.green}
@@ -161,7 +155,7 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label = %{F#FF5F00}%{F-} %gb_used%
+label = %{F#FF5F00}%{F-} %gb_used%
 
 [module/battery]
 type = internal/battery
@@ -169,8 +163,8 @@ full-at = 98
 poll-interval = 10
 
 format-charging = <label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-format-full = <ramp-capacity><label-full>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
 label-charging = %{F#00FF35}%{F-} %percentage%
 label-discharging = %percentage%
 
@@ -186,6 +180,6 @@ ramp-capacity-3-foreground = ${colors.green}
 type = internal/date
 interval = 60
 
-label = %{F#00f4ff}   %{F-}%date% %{F#00f4ff}  %{F-}%time%
-date = %{F#80}%a%{F-}  %{F#fff}%d %b %Y  %{F-}
-time = %{F#fff}%I:%M %p%{F-}  %{F#80}%Z  %{F-}
+label = %{F#00f4ff} %{F-}%date%%{F#00f4ff} %{F-}%time%
+date = %{F#80}%a%{F-} %{F#fff}%d %b %Y %{F-}
+time = %{F#fff}%I:%M %p%{F-} %{F#80}%Z %{F-}
