@@ -11,7 +11,7 @@ xset -b
 feh --bg-scale --randomize $WALLPAPERS_DIR
 
 # start mpd (as the current user)
-[ ! -s $HOME/.mpd/pid ] && mpd
+mpd
 
 # start i3wm
 exec /usr/bin/i3
