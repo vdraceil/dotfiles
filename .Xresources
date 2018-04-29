@@ -40,10 +40,9 @@ Xft.lcdfilter: lcddefault
 uRxvt.internalBorder: 4
 URxvt.externalBorder: 0
 URxvt.fading: 50
-URxvt.font: xft:FiraMono-Regular:pixelsize=17
+URxvt.font: xft:FiraMono:pixelsize=17
             xft:DejaVuSansMono:pixelsize=20, \
-            xft:LiberationMono:pixelsize=18, \
-            xft:OfficeCodeProD:pixelsize=18, \
+            xft:LiberationMono:pixelsize=17, \
             xft:Unifont
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
@@ -76,4 +75,4 @@ rofi.line-padding: 3
 rofi.width: 25
 rofi.lines: 5
 rofi.hide-scrollbar: true
-rofi.font: hack 12
+rofi.font: xft:LiberationMono:pixelsize=17
