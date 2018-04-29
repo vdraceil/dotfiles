@@ -1,13 +1,9 @@
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
+# VARIABLES
 set $mod Mod4
 set $wallpapersDir $HOME/Coffee/Pictures/Wallpapers
 
-# ------------------------------------------------------------------------------
-
 # BASIC
-font pango:Noto Sans 8
+font pango:Liberation Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -20,12 +16,9 @@ gaps inner 5
 gaps outer 0
 smart_gaps on
 
-# ------------------------------------------------------------------------------
-
 # MODES
-# resize window (you can also use the mouse for that)
+# resize window
 mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
     bindsym h resize shrink width 5 px or 5 ppt
     bindsym j resize grow height 5 px or 5 ppt
     bindsym k resize shrink height 5 px or 5 ppt
@@ -36,7 +29,19 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# ------------------------------------------------------------------------------
+# power (logout, suspend, hibernate, shutdown, reboot)
+mode "power" {
+    bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym x exec --no-startup-id systemctl suspend, mode "default"
+    # TODO: hibernate doesnt work - fix it
+    # bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # KEY BINDINGS
 # start a terminal
@@ -70,8 +75,8 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent/child container
-bindsym $mod+p focus parent
-bindsym $mod+Shift+p focus child
+bindsym $mod+Shift+c focus parent
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -97,14 +102,16 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# automatic back-and-forth
+workspace_auto_back_and_forth yes
+
+# restart i3 in-place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+r mode "resize"
+bindsym $mod+p mode "power"
 
 # media keys
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
@@ -130,15 +137,13 @@ bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 bindsym $mod+d exec "rofi -show run"
 
 # launch lock screen
-bindsym $mod+shift+x exec "betterlockscreen --lock dim"
+bindsym $mod+shift+x exec betterlockscreen --lock dim
 
-# ------------------------------------------------------------------------------
-
-# START UP SETTINGS
-# launch polybar
+# START UP
+# polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# launch dunst
+# dunst
 exec --no-startup-id dunst
 
 # lock screen - init image cache
