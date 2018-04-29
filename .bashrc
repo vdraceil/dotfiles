@@ -20,6 +20,7 @@ function set_fancy_prompt() {
 PROMPT_COMMAND=set_fancy_prompt
 
 # aliases
+alias ls='ls --color'
 alias la='ls -a'
 alias la1='ls -a1'
 alias ll='ls -alh'
