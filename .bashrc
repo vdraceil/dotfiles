@@ -39,6 +39,8 @@ alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
 alias g='git'
 alias wm='sudo wifi-menu'
+alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
+alias t='tree -a'
 
 # history
 export HISTSIZE=1000
