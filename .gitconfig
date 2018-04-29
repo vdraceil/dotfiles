@@ -44,8 +44,9 @@
     d = diff
     dc = diff --cached
     ds = diff --staged
-    l = log --oneline -5
-    lp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l5 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -5
+    l10 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -10
     m = merge
     p = pull
     pr = pull --rebase
@@ -59,6 +60,7 @@
     ss = status -s
     sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
     st = stash
+    stp = stash pop
     sta = stash apply
     std = stash drop
     stl = stash list
