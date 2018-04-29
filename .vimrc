@@ -1,9 +1,3 @@
-" Credits
-" https://github.com/aaronjensen/vimfiles
-" https://github.com/fisadev/fisa-vim-config
-"
-" ------------------------------------------------------------------------------
-
 set nocompatible
 let mapleader=','
 
@@ -320,6 +314,13 @@ set backspace=indent,eol,start
 set numberwidth=6
 set list
 
+" OS Specific
+if system('uname -s') == "Darwin\n"
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
+
 " Auto Commands
 " I do not really move in Insert mode. Taking advantage of that fact.
 autocmd InsertEnter * silent! :set number
@@ -356,9 +357,9 @@ inoremap <s-down> <esc>guiw:i
 vnoremap <s-down> <esc>iwu
 
 " Copy/Paste from/to OS's Clipboard
-nnoremap <leader>yo "*y
-vnoremap <leader>yo "*y
-nnoremap <leader>po "*p
+nnoremap <leader>yo "+y
+vnoremap <leader>yo "+y
+nnoremap <leader>po "+p
 
 " Normal Mode - Specifics
 " Clear highlight
