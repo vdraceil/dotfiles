@@ -37,8 +37,8 @@ alias pg='ps aux | grep '
 alias bc='bc -l'
 alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
-# git
 alias g='git'
+alias wm='sudo wifi-menu'
 
 # history
 export HISTSIZE=1000
