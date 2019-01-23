@@ -124,57 +124,6 @@ nnoremap <leader>lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
 
 " ------------------------------------------------------------------------------
 
-" Syntastic
-Plugin 'scrooloose/syntastic'
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_enable_signs=1
-let g:syntastic_error_symbol="✗"
-let g:syntastic_style_error_symbol="✗"
-let g:syntastic_warning_symbol="⚠"
-let g:syntastic_style_warning_symbol="⚠"
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore="E226,E501,E126,E127,E128,W291"'
-let g:syntastic_javascript_checkers=['jshint']
-" Dont perform syntastic checks automatically
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq=0
-let g:syntastic_mode_map={
-  \'mode': 'passive',
-  \'active_filetypes': [],
-  \'passive_filetypes': []
-  \ }
-
-nnoremap <leader>sc :SyntasticCheck<cr>
-nnoremap <leader>e :lopen<cr>
-nnoremap <leader>E :lclose<cr>
-
-" ------------------------------------------------------------------------------
-
-" Python Mode
-Plugin 'klen/python-mode'
-
-let g:pymode_doc=0
-let g:pymode_run=0
-let g:pymode_folding=0
-let g:pymode_virtualenv=0
-let g:pymode_breakpoint=0
-let g:pymode_trim_whitespaces=0
-" Dont use linter, we use synstastic for that
-let g:pymode_lint=0
-let g:pymode_lint_on_write=0
-let g:pymode_lint_signs=0
-" Rope settings
-let g:pymode_rope=0
-let g:pymode_rope_lookup_project=0
-let g:pymode_rope_autoimport_modules=['os', 're', 'shutil', 'datetime']
-let g:pymode_rope_goto_definition_cmd='vnew'
-" Uncomment the below lines if rope is too slow
-"let g:pymode_rope=0
-"let g:pymode_rope_complete_on_dot=0
-
-" ------------------------------------------------------------------------------
-
 " Tagbar
 Plugin 'majutsushi/tagbar'
 
