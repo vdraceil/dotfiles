@@ -54,7 +54,7 @@ URxvt.saveLines: 9999
 URxvt.geometry: 150x40
 URxvt.cursorUnderline: true
 URxvt.cursorBlink: true
-URxvt.cursorColor: #8AE234
+URxvt.cursorColor: #00FEFF
 URxvt.perl-ext-common: default,url-select,keyboard-select,clipboard
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
