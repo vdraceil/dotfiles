@@ -52,7 +52,7 @@ let g:lightline.component_function.fileencoding = 'LightlineFileEncoding'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
@@ -247,7 +247,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme Tomorrow-Night-Bright
+colorscheme badwolf
 
 " Basic
 set encoding=utf-8
@@ -294,17 +294,19 @@ set ttymouse=xterm2
 set foldcolumn=1
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 " Tab length exceptions on some file types
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " When scrolling keep cursor 3 lines away from screen border
 set scrolloff=3
 " Open splits below and right by default
 set splitbelow
 set splitright
+" Paste mode
+set pastetoggle=<F11>
 
 " Text Format
 set wrap
@@ -418,4 +420,4 @@ inoremap <leader>{ {}<esc>i
 
 " Abbreviations
 iabbrev vdg@ vdraceil@gmail.com
-iabbrev vdy@ vdraceil@gmail.com
+iabbrev vdy@ vdraceil@yahoo.co.in
