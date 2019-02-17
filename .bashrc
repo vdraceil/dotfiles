@@ -4,7 +4,7 @@ function get_git_branch() {
 }
 
 function get_py_virtualenv() {
-    basename "$VIRTUAL_ENV"
+    basename "$VIRTUAL_ENV" | sed -e 's/^\(.\)/ \1/'
 }
 
 # shows host name in red if the previous command was a failure. If not, green.
@@ -19,7 +19,7 @@ function set_fancy_prompt() {
     gray="\[\033[0;37m\]"
 
     [ $exit_status -eq 0 ] && status_color=$green || status_color=$red
-    PS1="${status_color}\h${off}${gray} $(get_py_virtualenv)${off}${cyan}$(get_git_branch)${off}${yellow} \w${off}\n${status_color}➜ ${off}"
+    PS1="${status_color}\h${off}${gray}$(get_py_virtualenv)${off}${cyan}$(get_git_branch)${off}${yellow} \w${off}\n${status_color}➜ ${off}"
     PS2="${cyan}➜ ${off}"
 }
 PROMPT_COMMAND=set_fancy_prompt
