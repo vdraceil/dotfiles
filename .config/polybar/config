@@ -31,7 +31,7 @@ font-5 = MaterialIcons:size=12;0
 
 modules-left = i3
 modules-center = mpd
-modules-right = wireless-network volume backlight cpu memory battery date
+modules-right = wireless-network alsa backlight cpu memory battery date
 
 [module/i3]
 type = internal/i3
@@ -91,8 +91,8 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-4-foreground = ${colors.green}
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
 speaker-mixer = Speaker
 headphone-mixer = Headphone
@@ -110,6 +110,14 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-3-foreground = ${colors.green}
+
+ramp-headphones-foreground = ${colors.yellow}
+ramp-headphones-0 = 
+ramp-headphones-0-foreground = ${colors.red}
+ramp-headphones-1 = 
+ramp-headphones-2 = 
+ramp-headphones-3 = 
+ramp-headphones-3-foreground = ${colors.green}
 
 [module/backlight]
 type = internal/xbacklight
