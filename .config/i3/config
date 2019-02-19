@@ -1,6 +1,8 @@
 # VARIABLES
 set $mod Mod4
-set $wallpapersDir $HOME/Coffee/Pictures/Wallpapers
+set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
+set $IMAGES_DIR $HOME/Documents/Images
+set $VIDEOS_DIR $HOME/Documents/Videos
 
 # BASIC
 font pango:Liberation Mono 10
@@ -79,12 +81,12 @@ bindsym $mod+Shift+c focus parent
 bindsym $mod+c focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
+bindsym $mod+1 workspace 1: dashboard
+bindsym $mod+2 workspace 2: firefox
+bindsym $mod+3 workspace 3: chrome
+bindsym $mod+4 workspace 4: text
+bindsym $mod+5 workspace 5: code
+bindsym $mod+6 workspace 6: code
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -125,11 +127,11 @@ bindsym XF86AudioNext exec "mpc next"
 
 # custom media action
 # full display screenshot
-bindsym Print exec "import -window root /home/vdraceil/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+bindsym Print exec "import -window root $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # TODO: custom area screenshot
-# bindsym $mod+Print exec "import /home/vdraceil/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+# bindsym $mod+Print exec "import $HOME/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # record screen - start
-bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium /home/vdraceil/Documents/Videos/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
+bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium $VIDEOS_DIR/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
 # record screen - end
 bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 
@@ -137,14 +139,19 @@ bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 bindsym $mod+d exec "rofi -show run"
 
 # launch lock screen
-bindsym $mod+shift+x exec betterlockscreen --lock dim
+bindsym $mod+shift+x exec "betterlockscreen --lock dim"
+
+# WORKSPACE ASSIGNMENTS
+for_window [class="Firefox"] move window to workspace 2: firefox
+for_window [class="Google-chrome"] move window to workspace 3: chrome
+for_window [class="Sublime_text"] move window to workspace 4: text
 
 # START UP
 # polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # dunst
-exec --no-startup-id dunst
+exec --no-startup-id "dunst"
 
 # lock screen - init image cache
-exec --no-startup-id betterlockscreen -u $wallpapersDir
+exec --no-startup-id "betterlockscreen -u $WALLPAPERS_DIR"
