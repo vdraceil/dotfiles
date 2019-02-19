@@ -24,9 +24,9 @@ module-margin = 1
 
 font-0 = LiberationMono:size=10;-1
 font-1 = Unifont:size=9;-2
-font-2 = Font Awesome 5 Free:style=Regular:pixelsize=12;-2
-font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;-2
-font-4 = Font Awesome 5 Brands:pixelsize=12;-2
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=13;-2
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=13;-2
+font-4 = Font Awesome 5 Brands:pixelsize=13;-2
 font-5 = MaterialIcons:size=12;0
 
 modules-left = i3
@@ -39,14 +39,16 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-ws-icon-0 = dashboard;
-ws-icon-1 = firefox;
-ws-icon-2 = chrome;
-ws-icon-3 = code;
+ws-icon-0 = 1: dashboard;
+ws-icon-1 = 2: firefox;
+ws-icon-2 = 3: chrome;
+ws-icon-3 = 4: text;
+ws-icon-4 = 5: code;
+ws-icon-5 = 6: code;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
-label-mode = %mode%
+label-mode =  %mode%
 label-mode-padding = 2
 label-mode-foreground = ${colors.black}
 label-mode-background = ${colors.red}
@@ -82,13 +84,13 @@ label-disconnected =  Not Connected
 label-disconnected-foreground = #66
 
 ramp-signal-foreground = ${colors.yellow}
-ramp-signal-0 = 
+ramp-signal-0 = 
 ramp-signal-0-foreground = ${colors.red}
-ramp-signal-1 = 
+ramp-signal-1 = 
 ramp-signal-1-foreground = ${colors.red}
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-4-foreground = ${colors.green}
 
 [module/alsa]
