@@ -10,7 +10,7 @@ white = #CCFFFF
 [bar/top]
 monitor = eDP-1
 width = 100%
-height = 34
+height = 35
 
 background = ${colors.black}
 foreground = ${colors.white}
@@ -24,7 +24,10 @@ module-margin = 1
 
 font-0 = LiberationMono:size=10;-1
 font-1 = Unifont:size=9;-2
-font-2 = MaterialIcons:size=11;0
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=12;-2
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;-2
+font-4 = Font Awesome 5 Brands:pixelsize=12;-2
+font-5 = MaterialIcons:size=12;0
 
 modules-left = i3
 modules-center = mpd
@@ -36,12 +39,11 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-ws-icon-0 = term;
-ws-icon-1 = code;
-ws-icon-2 = web;
-ws-icon-3 = coffee;
-ws-icon-4 = chat;
-ws-icon-default = 
+ws-icon-0 = dashboard;
+ws-icon-1 = firefox;
+ws-icon-2 = chrome;
+ws-icon-3 = code;
+ws-icon-default = 
 
 format = <label-state> <label-mode>
 label-mode = %mode%
@@ -65,7 +67,7 @@ host = 127.0.0.1
 port = 6600
 
 format-online = <label-song> <label-time>
-label-song = %{F#FBA922}%{F-} %{F#80}%title%%{F-}
+label-song = %{F#FBA922}%{F-} %{F#80}%title%%{F-}
 label-song-foreground = ${colors.white}
 label-time-foreground = ${colors.yellow}
 
@@ -98,15 +100,15 @@ headphone-id = 14
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%
-label-muted =  0
+label-muted =  0
 label-muted-foreground = #80
 
 ramp-volume-foreground = ${colors.yellow}
-ramp-volume-0 = 
+ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.red}
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
 ramp-volume-3-foreground = ${colors.green}
 
 [module/backlight]
@@ -115,10 +117,10 @@ format = <ramp> <label>
 label = %percentage%
 
 ramp-foreground = ${colors.red}
-ramp-0 = 
-ramp-1 = 
+ramp-0 = 
+ramp-1 = 
 ramp-1-foreground = ${colors.green}
-ramp-2 = 
+ramp-2 = 
 
 [module/cpu]
 type = internal/cpu
@@ -126,7 +128,7 @@ interval = 1
 
 format = <label>
 ; format = <label> <ramp-coreload>
-label = %{F#FF5F00}%{F-} %percentage%
+label = %{F#FF5F00}%{F-} %percentage%
 
 ramp-coreload-foreground = ${colors.green}
 ramp-coreload-0 = ▁
@@ -155,7 +157,7 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label = %{F#FF5F00}%{F-} %gb_used%
+label = %{F#FF5F00}%{F-} %gb_used%
 
 [module/battery]
 type = internal/battery
@@ -165,21 +167,22 @@ poll-interval = 10
 format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-label-charging = %{F#00FF35}%{F-} %percentage%
+label-charging = %{F#00FF35}%{F-} %percentage%
 label-discharging = %percentage%
 
 ramp-capacity-foreground = ${colors.yellow}
-ramp-capacity-0 = 
+ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.green}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.green}
 
 [module/date]
 type = internal/date
 interval = 60
 
-label = %{F#00f4ff} %{F-}%date%%{F#00f4ff} %{F-}%time%
+label = %{F#00f4ff} %{F-}%date%%{F#00f4ff} %{F-}%time%
 date = %{F#80}%a%{F-} %{F#fff}%d %b %Y %{F-}
 time = %{F#fff}%I:%M %p%{F-} %{F#80}%Z %{F-}
