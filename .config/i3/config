@@ -1,8 +1,9 @@
 # VARIABLES
 set $mod Mod4
-set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
+set $CONFIG_DIR $HOME/.config
 set $IMAGES_DIR $HOME/Documents/Images
 set $VIDEOS_DIR $HOME/Documents/Videos
+set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
 
 # BASIC
 font pango:Liberation Mono 10
@@ -141,17 +142,31 @@ bindsym $mod+d exec "rofi -show run"
 # launch lock screen
 bindsym $mod+shift+x exec "betterlockscreen --lock dim"
 
-# WORKSPACE ASSIGNMENTS
-for_window [class="Firefox"] move window to workspace 2: firefox
-for_window [class="Google-chrome"] move window to workspace 3: chrome
-for_window [class="Sublime_text"] move window to workspace 4: text
+# WORKSPACE ASSIGNMENTS & LAYOUTS
+assign [title="ranger"] 1: dashboard
+assign [class="Firefox"] 2: firefox
+assign [class="Google-chrome"] 3: chrome
+assign [class="Sublime_text"] 4: text
+
+# exec --no-startup-id "i3-msg 'workspace 1: dashboard; append_layout $CONFIG_DIR/.i3/layouts/dashboard.json'"
 
 # START UP
 # polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec_always --no-startup-id "$CONFIG_DIR/polybar/launch.sh"
 
 # dunst
 exec --no-startup-id "dunst"
+
+# browsers
+exec --no-startup-id "firefox"
+exec --no-startup-id "google-chrome-stable"
+
+# text editor
+exec --no-startup-id "subl"
+
+# utilities
+exec --no-startup-id "urxvt -e ranger"
+# exec --no-startup-id "urxvt -e bc"
 
 # lock screen - init image cache
 exec --no-startup-id "betterlockscreen -u $WALLPAPERS_DIR"
