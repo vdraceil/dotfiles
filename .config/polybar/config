@@ -53,13 +53,13 @@ label-mode-padding = 2
 label-mode-foreground = ${colors.black}
 label-mode-background = ${colors.red}
 label-focused = %icon%
-label-focused-foreground = ${colors.white}
-label-focused-background = ${colors.gray}
+label-focused-foreground = ${colors.green}
 label-focused-underline = ${colors.yellow}
 label-focused-padding = 2
 label-unfocused = %icon%
 label-unfocused-padding = 2
 label-urgent = %icon%
+label-urgent-foreground = ${colors.red}
 label-urgent-underline = ${colors.cyan}
 label-urgent-padding = 2
 
@@ -69,7 +69,7 @@ host = 127.0.0.1
 port = 6600
 
 format-online = <label-song> <label-time>
-label-song = %{F#FBA922}%{F-} %{F#80}%title%%{F-}
+label-song = %{F#FBA922} %{F-} %{F#80}%title%%{F-}
 label-song-foreground = ${colors.white}
 label-time-foreground = ${colors.yellow}
 
@@ -80,17 +80,17 @@ interval = 2.0
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid% %{F#80}%downspeed:6%%{F-}
-label-disconnected =  Not Connected
+label-disconnected =  Not Connected
 label-disconnected-foreground = #66
 
 ramp-signal-foreground = ${colors.yellow}
-ramp-signal-0 = 
+ramp-signal-0 = 
 ramp-signal-0-foreground = ${colors.red}
-ramp-signal-1 = 
+ramp-signal-1 = 
 ramp-signal-1-foreground = ${colors.red}
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-4-foreground = ${colors.green}
 
 [module/alsa]
@@ -167,7 +167,7 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label = %{F#FF5F00}%{F-} %gb_used%
+label = %{F#FF5F00}%{F-} %gb_used%
 
 [module/battery]
 type = internal/battery
