@@ -1,7 +1,10 @@
 # VARIABLES
 set $mod Mod4
 
-set $CONFIG_DIR $HOME/.config
+set $I3_LAYOUTS_DIR $HOME/.config/i3/layouts
+set $I3_SCRIPTS_DIR $HOME/.config/i3/scripts
+set $POLYBAR_CONFIG_DIR $HOME/.config/polybar
+
 set $IMAGES_DIR $HOME/Documents/Images
 set $VIDEOS_DIR $HOME/Documents/Videos
 set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
@@ -38,20 +41,6 @@ mode "resize" {
     bindsym j resize grow height 5 px or 5 ppt
     bindsym k resize shrink height 5 px or 5 ppt
     bindsym l resize grow width 5 px or 5 ppt
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# power (logout, suspend, hibernate, shutdown, reboot)
-mode "power" {
-    bindsym l exec --no-startup-id i3-msg exit, mode "default"
-    bindsym x exec --no-startup-id systemctl suspend, mode "default"
-    # TODO: hibernate doesnt work - fix it
-    # bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -135,7 +124,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+r mode "resize"
-bindsym $mod+p mode "power"
+bindsym $mod+p exec "$I3_SCRIPTS_DIR/power.sh"
 
 # media keys
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
@@ -161,19 +150,19 @@ bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 bindsym $mod+d exec "rofi -show run"
 
 # launch lock screen
-bindsym $mod+shift+x exec "betterlockscreen --lock dim"
+bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 
 # WORKSPACE ASSIGNMENTS & LAYOUTS
-assign [title="ranger"] 1: dashboard
-assign [class="Firefox"] 2: firefox
-assign [class="Google-chrome"] 3: chrome
-assign [class="Sublime_text"] 4: text
+assign [title="ranger"] $WS1
+assign [class="Firefox"] $WS2
+assign [class="Google-chrome"] $WS3
+assign [class="Sublime_text"] $WS4
 
-# exec --no-startup-id "i3-msg 'workspace 1: dashboard; append_layout $CONFIG_DIR/.i3/layouts/dashboard.json'"
+# exec --no-startup-id "i3-msg 'workspace $WS1; append_layout $I3_LAYOUTS_DIR/.i3/layouts/dashboard.json'"
 
 # START UP
 # polybar
-exec_always --no-startup-id "$CONFIG_DIR/polybar/launch.sh"
+exec_always --no-startup-id "$POLYBAR_CONFIG_DIR/launch.sh"
 
 # dunst
 exec --no-startup-id "dunst"
