@@ -1,9 +1,21 @@
 # VARIABLES
 set $mod Mod4
+
 set $CONFIG_DIR $HOME/.config
 set $IMAGES_DIR $HOME/Documents/Images
 set $VIDEOS_DIR $HOME/Documents/Videos
 set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
+
+set $WS1 "1: dashboard"
+set $WS2 "2: firefox"
+set $WS3 "3: chrome"
+set $WS4 "4: text"
+set $WS5 "5: code"
+set $WS6 "6: code"
+set $WS7 "7: code"
+set $WS8 "8"
+set $WS9 "9"
+set $WS0 "10"
 
 # BASIC
 font pango:Liberation Mono 10
@@ -50,9 +62,6 @@ mode "power" {
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -81,29 +90,41 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+c focus parent
 bindsym $mod+c focus child
 
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# kill all windows in focused workspace
+bindsym $mod+Shift+x [workspace=__focused__] kill
+
 # switch to workspace
-bindsym $mod+1 workspace 1: dashboard
-bindsym $mod+2 workspace 2: firefox
-bindsym $mod+3 workspace 3: chrome
-bindsym $mod+4 workspace 4: text
-bindsym $mod+5 workspace 5: code
-bindsym $mod+6 workspace 6: code
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
+
+# # rename workspace with i3-input using numbers and text
+# bindsym $mod+Shift+n exec i3-input -F 'rename workspace to "%s"' -P 'Name: '
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
 
 # automatic back-and-forth
 workspace_auto_back_and_forth yes
