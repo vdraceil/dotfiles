@@ -1,0 +1,12 @@
+rofi.color-window: #2E3436,#6E706B,#6E706B
+rofi.color-normal: #2E3436,#EEEEEC,#2E3436,#2E3436,#00FF35
+rofi.color-urgent: #2E3436,#EEEEEC,#2E3436,#2E3436,#FF2F2F
+rofi.color-active: #2E3436,#EEEEEC,#2E3436,#2E3436,#27A8F7
+rofi.separator-style: dash
+rofi.borderwidth: 1
+rofi.padding: 10
+rofi.line-padding: 3
+rofi.width: 25
+rofi.lines: 5
+rofi.hide-scrollbar: true
+rofi.font: Liberation Mono 12

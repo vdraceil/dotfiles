@@ -55,6 +55,7 @@ export HISTCONTROL=ignoredups
 
 # others
 export EDITOR=vim
+export XDG_USER_CONFIG_DIR="$HOME/.config"
 
 # source overrides, if any
 if [ -f ~/.local/.bashrc ];then
