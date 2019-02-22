@@ -42,6 +42,10 @@ then
   do
     (urxvt -cd $selectedProject &)
   done
+
+  # focus main window - vim
+  sleep 0.5
+  i3-msg -q "workspace \"$selectedWorkspace\"; [title=\"vim\"] focus"
 else
   exit 1
 fi

@@ -13,5 +13,6 @@ i3-msg -q "workspace \"$WS1\"; append_layout $I3_WS_LAYOUT"
 (urxvt -e ncmpcpp -s visualizer &)
 (urxvt -T tty-clock -e sh -c "tty-clock -sb -C 1" &)
 
-# focus main window - ranger
-i3-msg -q "workspace \"$WS1\"; [title="ranger"] focus"
+# focus workspace and main window - ranger
+sleep 0.5
+i3-msg -q "workspace \"$WS1\"; [title=\"ranger\"] focus"
