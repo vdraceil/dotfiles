@@ -1,0 +1,100 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 844,
+       "width": 1504,
+       "x": 0,
+       "y": 0
+    },
+    "name": "urxvt",
+    "percent": 0.7,
+    "swallows": [
+       {
+             "class": "^URxvt$",
+             "title": "ranger"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 844,
+                       "width": 1504,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "urxvt",
+                    "percent": 0.4,
+                    "swallows": [
+                       {
+                             "class": "^URxvt$",
+                             "title": "tty-clock"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 844,
+                       "width": 1504,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "urxvt",
+                    "percent": 0.6,
+                    "swallows": [
+                       {
+                             "class": "^URxvt$",
+                             "title": "bc"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 844,
+               "width": 1504,
+               "x": 0,
+               "y": 0
+            },
+            "name": "urxvt",
+            "percent": 0.5,
+            "swallows": [
+               {
+                    "class": "^URxvt$",
+                    "title": "ncmpcpp"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
