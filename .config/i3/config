@@ -47,6 +47,15 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
+mode "code_layout" {
+    bindsym 2 exec "$I3_SCRIPTS_DIR/ws_code_setup.sh 2", mode "default"
+    bindsym 3 exec "$I3_SCRIPTS_DIR/ws_code_setup.sh 3", mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # KEY BINDINGS
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -76,8 +85,8 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent/child container
-bindsym $mod+Shift+c focus parent
-bindsym $mod+c focus child
+bindsym $mod+Shift+p focus parent
+bindsym $mod+Shift+c focus child
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -123,7 +132,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# modes
 bindsym $mod+r mode "resize"
+bindsym $mod+c mode "code_layout"
+
+# power options
 bindsym $mod+p exec "$I3_SCRIPTS_DIR/power.sh"
 
 # media keys
