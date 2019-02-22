@@ -3,33 +3,25 @@
     follow = mouse
 
     # The geometry of the window: [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "300x5-15+50"
+    geometry = "350x5-15+50"
 
     indicate_hidden = yes
     separator_height = 2
     padding = 10
     horizontal_padding = 10
-    frame_width = 1
-    frame_color = "#00BFFF"
-    separator_color = auto
-    sort = yes
+    frame_width = 2
+    frame_color = "#8EC07C"
+    separator_color = frame
+    sort = no
     idle_threshold = 120
-    font = Fira Mono 10
+    font = DejaVu Sans Mono 11
     line_height = 1.5
 
-    # The format of the message.  Possible variables are:
-    #   %a  appname
-    #   %s  summary
-    #   %b  body
-    #   %i  iconname (including its path)
-    #   %I  iconname (without its path)
-    #   %p  progress value if set ([  0%] to [100%]) or nothing
-    #   %n  progress value if set without any extra characters
-    #   %%  Literal %
-    markup = full
-    format = "<b>%s</b>\n%b"
+    # http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
+    markup = yes
+    format = "<span foreground="white">%s</span>\n%b"
 
-    alignment = left
+    alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -43,7 +35,7 @@
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     sticky_history = yes
-    history_length = 10
+    history_length = 15
 
     dmenu = /usr/bin/rofi -dmenu -p dunst
     browser = /usr/bin/firefox -new-tab
@@ -59,19 +51,19 @@
     context = ctrl+mod1+period
 
 [urgency_low]
-    background = "#3F3F3F"
-    foreground = "#D3D7CF"
-    frame_color = "#00F4FF"
-    timeout = 10
+  background = "#3F3F3F"
+  foreground = "#98F5FF"
+  frame_color = "#98F5FF"
+  timeout = 5
 
 [urgency_normal]
-    background = "#3F3F3F"
-    foreground = "#D3D7CF"
-    frame_color = "#6E706B"
-    timeout = 10
+  background = "#2E3436"
+  foreground = "#82B12B"
+  frame_color = "#82B12B"
+  timeout = 10
 
 [urgency_critical]
-    background = "#3F3F3F"
-    foreground = "#D3D7CF"
-    frame_color = "#FF2F2F"
-    timeout = 0
+  background = "#2E3436"
+  foreground = "#EE3B3B"
+  frame_color = "#EE3B3B"
+  timeout = 20
