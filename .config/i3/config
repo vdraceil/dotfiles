@@ -160,7 +160,7 @@ bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:
 bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 
 # launch rofi
-bindsym $mod+d exec "rofi -show run"
+bindsym $mod+d exec "rofi -show drun"
 
 # launch lock screen
 bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
