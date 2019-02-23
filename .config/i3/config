@@ -118,14 +118,15 @@ bindsym $mod+Shift+8 move container to workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS10
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# # switch to workspace with urgent window automatically
+# for_window [urgent=latest] focus
 
 # # automatic back-and-forth
 # workspace_auto_back_and_forth yes
 
 # restart i3 in-place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -135,6 +136,10 @@ bindsym $mod+c mode "code_layout"
 
 # reset dashboard
 bindsym $mod+Shift+d exec "$I3_SCRIPTS_DIR/ws_dashboard.sh"
+
+# dashboard apps quick focus
+bindsym $mod+b [title="^bc$"] focus
+bindsym $mod+e [title="^ranger$"] focus
 
 # power options
 bindsym $mod+p exec "$I3_SCRIPTS_DIR/power.sh"
