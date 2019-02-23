@@ -10,8 +10,5 @@ xset -b
 # set random wallpaper
 feh --bg-scale --randomize $WALLPAPERS_DIR
 
-# start mpd (as the current user)
-mpd
-
 # start i3wm
 exec /usr/bin/i3
