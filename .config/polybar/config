@@ -45,6 +45,7 @@ ws-icon-2 = 3: chrome;
 ws-icon-3 = 4: text;
 ws-icon-4 = 5: code;
 ws-icon-5 = 6: code;
+ws-icon-6 = 7: code;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
