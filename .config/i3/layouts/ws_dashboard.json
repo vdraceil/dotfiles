@@ -62,12 +62,12 @@
                        "x": 0,
                        "y": 0
                     },
-                    "name": "cal",
+                    "name": "bc",
                     "percent": 0.35,
                     "swallows": [
                        {
                              "class": "^URxvt$",
-                             "title": "^cal$"
+                             "title": "^bc$"
                        }
                     ],
                     "type": "con"
@@ -121,12 +121,12 @@
                        "x": 0,
                        "y": 0
                     },
-                    "name": "bc",
+                    "name": "cal",
                     "percent": 0.6,
                     "swallows": [
                        {
                              "class": "^URxvt$",
-                             "title": "^bc$"
+                             "title": "^cal$"
                        }
                     ],
                     "type": "con"
