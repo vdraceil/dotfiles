@@ -1,0 +1,8 @@
+[Unit]
+Description=Check Battery Status
+
+[Service]
+ExecStart=%h/.config/scripts/check_battery.sh
+
+[Install]
+WantedBy=default.target
