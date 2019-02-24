@@ -12,6 +12,7 @@ $ git clone git@github.com:vdraceil/dotfiles.git
 $ ./dotfiles/install.sh
 ```
 
+ - `pip3 uninstall greenlet` followed by `pip3 install --user pynvim` - required for deoplete Plugin
  - Next, open vim. It'll take care of installing all the plugins
  - After the installation completes, dismiss the Vundle Preview Split and check if vim looks visually alright (Check Airline bar, Tab bar, Colorscheme, etc.)
 
