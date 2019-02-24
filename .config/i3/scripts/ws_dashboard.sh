@@ -11,7 +11,7 @@ i3-msg -q "workspace \"$WS1\"; append_layout $I3_WS_LAYOUT"
 (urxvt -e ranger "$HOME/Downloads" &)
 (urxvt -e bc &)
 (urxvt -e ncmpcpp -s visualizer &)
-(urxvt -T tty-clock -e sh -c "tty-clock -sb -C 1" &)
+(urxvt -T tty-clock -e sh -c "tty-clock -bc -C 1" &)
 (urxvt -T neofetch -hold -e sh -c "neofetch" &)
 (urxvt -T cal -hold -e sh -c "cal -n 2" &)
 
