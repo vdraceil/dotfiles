@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 CRITICAL_BATTERY_PERCENT=10
 

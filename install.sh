@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # get the dir of this script - to avoid having to clone the git repo to $HOME directly
 sourceDir=$( cd "$( dirname "$0" )" && pwd )

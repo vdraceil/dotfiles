@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /usr/bin/env bash
 
 mountedUSBMedia=$(mount | grep -oP '/run/media/[^ ]+')
 if [ -n "$mountedUSBMedia" ]

@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 WS1="1: dashboard"
 I3_WS_LAYOUT="$HOME/.config/i3/layouts/ws_dashboard.json"
 

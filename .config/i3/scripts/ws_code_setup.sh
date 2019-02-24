@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 WS_DIR=$HOME/Workplace
 WS_PERSONAL_DIR=$WS_DIR/Personal
 WS_FREELANCE_DIR=$WS_DIR/Freelance

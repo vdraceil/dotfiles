@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 # get user option
 options='reboot\nshutdown\nsuspend\nlogout'
