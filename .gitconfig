@@ -54,10 +54,11 @@
     pr = pull --rebase
     pu = push
     r = rebase
-    rs = reset --soft
-    rs1 = reset --soft HEAD~1
-    rh = reset --hard
-    rh1 = reset --hard HEAD~1
+    rh = reset HEAD
+    rso = reset --soft
+    rso1 = reset --soft HEAD~1
+    rha = reset --hard
+    rha1 = reset --hard HEAD~1
     s = status
     ss = status -s
     sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
