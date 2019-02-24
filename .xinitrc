@@ -10,5 +10,8 @@ xset -b
 # set random wallpaper
 feh --bg-scale --randomize $WALLPAPERS_DIR
 
+# auto detect & mount USB drives
+udiskie &
+
 # start i3wm
 exec /usr/bin/i3

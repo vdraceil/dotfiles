@@ -1,6 +1,7 @@
 # VARIABLES
 set $mod Mod4
 
+set $SCRIPTS_DIR $HOME/.config/scripts
 set $I3_LAYOUTS_DIR $HOME/.config/i3/layouts
 set $I3_SCRIPTS_DIR $HOME/.config/i3/scripts
 set $POLYBAR_CONFIG_DIR $HOME/.config/polybar
@@ -163,6 +164,8 @@ bindsym Print exec "import -window root $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_
 bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium $VIDEOS_DIR/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
 # record screen - end
 bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
+# unmount and detach USB drives
+bindsym $mod+minus exec "$SCRIPTS_DIR/usb_detach.sh"
 
 # launch rofi
 bindsym $mod+d exec "rofi -show drun"
