@@ -137,32 +137,24 @@ nnoremap <silent> <F10> :TagbarToggle<cr>
 
 " ------------------------------------------------------------------------------
 
-" Neocomplcache
-Plugin 'Shougo/neocomplcache.vim'
+" Deoplete
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 
-let g:neocomplcache_max_list=15
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_ignore_case=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_auto_select=1
-let g:neocomplcache_enable_fuzzy_completion=1
-let g:neocomplcache_enable_camel_case_completion=1
-let g:neocomplcache_enable_underbar_completion=1
-let g:neocomplcache_fuzzy_completion_start_length=1
-let g:neocomplcache_auto_completion_start_length=1
-let g:neocomplcache_manual_completion_start_length=1
-let g:neocomplcache_min_keyword_length=1
-let g:neocomplcache_min_syntax_length=1
-" Complete with words from any opened file
-let g:neocomplcache_same_filetype_lists={}
-let g:neocomplcache_same_filetype_lists._='_'
+set runtimepath+=~/.vim/bundle/deoplete.nvim
+set completeopt+=noinsert
+set completeopt-=preview
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#option('max_list', 15)
+call deoplete#custom#option('smart_case', v:true)
+
+let g:deoplete#enable_at_startup = 1
+
+inoremap <expr> <esc> pumvisible() ? deoplete#close_popup() : "\<esc>"
+inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " ------------------------------------------------------------------------------
 
