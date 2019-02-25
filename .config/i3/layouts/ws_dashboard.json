@@ -102,7 +102,7 @@
                        "y": 0
                     },
                     "name": "tty-clock",
-                    "percent": 0.4,
+                    "percent": 0.5,
                     "swallows": [
                        {
                              "class": "^URxvt$",
@@ -122,7 +122,7 @@
                        "y": 0
                     },
                     "name": "cal",
-                    "percent": 0.6,
+                    "percent": 0.5,
                     "swallows": [
                        {
                              "class": "^URxvt$",
