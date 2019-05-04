@@ -152,7 +152,7 @@ call deoplete#custom#option('smart_case', v:true)
 
 let g:deoplete#enable_at_startup = 1
 
-inoremap <expr> <esc> pumvisible() ? deoplete#close_popup() : "\<esc>"
+inoremap <expr> <esc> pumvisible() ? deoplete#close_popup()."\<esc>" : "\<esc>"
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
@@ -292,12 +292,12 @@ vmap <left> <nop>
 vmap <right> <nop>
 
 " Word Capitalizations
-nnoremap <s-up> gUiw
-inoremap <s-up> <esc>gUiw:i
-vnoremap <s-up> <esc>iwU
-nnoremap <s-down> guiw
-inoremap <s-down> <esc>guiw:i
-vnoremap <s-down> <esc>iwu
+nnoremap <leader>U gUiw
+inoremap <leader>U <esc>gUiw:i
+vnoremap <leader>U <esc>iwU
+nnoremap <leader>u guiw
+inoremap <leader>u <esc>guiw:i
+vnoremap <leader>u <esc>iwu
 
 " Copy/Paste from/to OS's Clipboard
 nnoremap <leader>yo "+y
@@ -306,7 +306,7 @@ nnoremap <leader>po "+p
 
 " Normal Mode - Specifics
 " Clear highlight
-nnoremap <Leader><space> :noh<cr>
+nnoremap <leader><space> :noh<cr>
 " Edit & Source .vimrc on the fly
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>:echom "$MYVIMRC Sourced Successfully!"<cr>
