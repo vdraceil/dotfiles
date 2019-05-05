@@ -9,13 +9,13 @@ I3_WS_LAYOUT="$HOME/.config/i3/layouts/ws_code_${PANES_COUNT}panes.json"
 
 # compile projects list, recently modified first
 personalProjects=$(
-  find $WS_PERSONAL_DIR -mindepth 1 -maxdepth 1 -type d -printf '%T@\t%p\n' |
+  find $WS_PERSONAL_DIR -mindepth 1 -maxdepth 2 -type d -printf '%T@\t%p\n' |
   grep -vP 'env$' |
   cut -f2 |
   sed -n "s|${WS_PERSONAL_DIR}|\$WS_PERSONAL_DIR|p")
 freelanceProjects=$(
-  find $WS_FREELANCE_DIR -mindepth 2 -maxdepth 2 -type d -printf '%T@\t%p\n' |
-  grep -vP '(node_modules|__pycache__|output|_ROUGH|env$)' |
+  find $WS_FREELANCE_DIR -mindepth 2 -maxdepth 3 -type d -printf '%T@\t%p\n' |
+  grep -vP '(node_modules|__pycache__|output|_ROUGH|env|.git$)' |
   cut -f2 |
   sed -n "s|${WS_FREELANCE_DIR}|\$WS_FREELANCE_DIR|p")
 projects=("\$WS_PERSONAL_DIR" "${personalProjects[@]}"
