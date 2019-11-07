@@ -97,9 +97,17 @@ ramp-signal-4-foreground = ${colors.green}
 [module/alsa]
 type = internal/alsa
 
+master-soundcard = hw:0
+speaker-soundcard = hw:0
+headphone-soundcard = hw:0
+
+master-mixer = Master
 speaker-mixer = Speaker
-headphone-mixer = Headphone
-headphone-id = 14
+;headphone-mixer = Headphone
+;headphone-id = 14
+
+mapped = true
+interval = 5
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%

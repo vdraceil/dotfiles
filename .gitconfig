@@ -39,6 +39,10 @@
     ca = commit -a -m
     cam = commit --amend --no-edit
     cama = commit -a --amend --no-edit
+    ce = commit --allow-empty
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
     cl = clone
     co = checkout
     cob = checkout -b
@@ -54,6 +58,8 @@
     pr = pull --rebase
     pu = push
     r = rebase
+    rc = cherry-pick --continue
+    ra = cherry-pick --abort
     rh = reset HEAD
     rso = reset --soft
     rso1 = reset --soft HEAD~1

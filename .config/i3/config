@@ -162,6 +162,8 @@ bindsym Print exec "import -window root $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_
 # bindsym $mod+Print exec "import $HOME/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # record screen - start
 bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium $VIDEOS_DIR/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
+# record screen with audio - start
+bindsym Ctrl+Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -f alsa -ac 2 -i hw:0 -preset medium $VIDEOS_DIR/Screencast_With_Audio_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
 # record screen - end
 bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 # unmount and detach USB drives
