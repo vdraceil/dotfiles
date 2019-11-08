@@ -45,6 +45,7 @@ alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
 alias g='git'
 alias wm='sudo wifi-menu'
+alias pacs='sudo pacman -S'
 alias pacsyu='sudo pacman -Syu'
 alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
 
