@@ -7,10 +7,10 @@ sourceDir=$( cd "$( dirname "$0" )" && pwd )
 mkdir -p $HOME/.config
 
 # define the files/dirs for which we need symlinks in the $HOME dir
-sourceFiles=".bashrc .bash_profile .vimrc .gitconfig .gitignore .xinitrc
-.Xresources .ncmpcpp .config/polybar .config/ranger .config/mpd .config/i3
-.config/dunst .config/neofetch .config/htop .config/rofi .config/systemd
-.config/scripts"
+sourceFiles=".bashrc .bash_profile .asoundrc .vimrc .gitconfig .gitignore
+.xinitrc .Xresources .ncmpcpp .config/polybar .config/ranger .config/mpd
+.config/i3 .config/dunst .config/neofetch .config/htop .config/rofi
+.config/systemd .config/scripts"
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
