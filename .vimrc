@@ -59,7 +59,7 @@ let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
-let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '^node_modules$', '^__pycache__$']
+let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$', '^node_modules$', '^__pycache__$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
@@ -114,13 +114,13 @@ function! CtrlPWithSearchText(search_text, ctrlp_command_end)
     call feedkeys(a:search_text)
 endfunction
 
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>m :CtrlPMRUFiles<cr>
-nnoremap <leader>l :CtrlPLine<cr>
+nnoremap <leader>P :CtrlP<cr>
+nnoremap <leader>M :CtrlPMRUFiles<cr>
+nnoremap <leader>L :CtrlPLine<cr>
 " Same as previous mappings, but calling with word under cursor as default text
-nnoremap <leader>pw :call CtrlPWithSearchText(expand('<cword>'), '')<cr>
-nnoremap <leader>mw :call CtrlPWithSearchText(expand('<cword>'), 'MRUFiles')<cr>
-nnoremap <leader>lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
+nnoremap <leader>Pw :call CtrlPWithSearchText(expand('<cword>'), '')<cr>
+nnoremap <leader>Mw :call CtrlPWithSearchText(expand('<cword>'), 'MRUFiles')<cr>
+nnoremap <leader>Lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
 
 " ------------------------------------------------------------------------------
 
@@ -300,9 +300,9 @@ inoremap <leader>u <esc>guiw:i
 vnoremap <leader>u <esc>iwu
 
 " Copy/Paste from/to OS's Clipboard
-nnoremap <leader>yo "+y
-vnoremap <leader>yo "+y
-nnoremap <leader>po "+p
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
 " Normal Mode - Specifics
 " Clear highlight
@@ -318,7 +318,7 @@ nnoremap trr :tabfirst<cr>
 nnoremap ty :tabnext<cr>
 nnoremap tyy :tablast<cr>
 nnoremap tt :tabnew<cr>
-nnoremap tm :tabmove<cr>
+nnoremap tm :tabm<cr>
 
 " Splits
 " Navigation
