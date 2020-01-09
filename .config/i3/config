@@ -177,7 +177,7 @@ bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 
 # WORKSPACE ASSIGNMENTS & LAYOUTS
 assign [title="ranger"] $WS1
-assign [class="Firefox"] $WS2
+assign [class="firefox"] $WS2
 assign [class="Google-chrome"] $WS3
 assign [class="Sublime_text"] $WS4
 
