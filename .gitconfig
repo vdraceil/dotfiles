@@ -58,8 +58,8 @@
     pr = pull --rebase
     pu = push
     r = rebase
-    rc = cherry-pick --continue
-    ra = cherry-pick --abort
+    rc = rebase --continue
+    ra = rebase --abort
     rh = reset HEAD
     rso = reset --soft
     rso1 = reset --soft HEAD~1
