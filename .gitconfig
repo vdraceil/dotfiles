@@ -65,6 +65,7 @@
     rso1 = reset --soft HEAD~1
     rha = reset --hard
     rha1 = reset --hard HEAD~1
+    res = restore --staged
     s = status
     ss = status -s
     sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
