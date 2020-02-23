@@ -48,6 +48,11 @@ alias wm='sudo wifi-menu'
 alias pacs='sudo pacman -S'
 alias pacsyu='sudo pacman -Syu'
 alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
+alias q='quasar'
+alias qi='quasar i'
+alias qc='quasar c'
+alias qb='quasar b -m ssr'
+alias qd='quasar d -m ssr'
 
 # history
 export HISTSIZE=1000
