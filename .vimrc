@@ -172,6 +172,7 @@ Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'morhetz/gruvbox'
 
 " ------------------------------------------------------------------------------
 
@@ -188,7 +189,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme badwolf
+colorscheme gruvbox
 
 " Basic
 set encoding=utf-8
