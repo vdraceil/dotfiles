@@ -94,19 +94,19 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 " CtrlP
 Plugin 'kien/ctrlp.vim'
 
-let g:ctrlp_working_path_mode='r'
+let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_mruf_max=50
 let g:ctrlp_max_depth=20
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_cache_dir='~/.vim/ctrlp'
 let g:ctrlp_custom_ignore={
-  \ 'dir': '\.git$',
-  \ 'file': '\.pyc$',
+    \ 'dir':  '\.git$\|dist$\|build$\|node_modules$\|env$',
+    \ 'file': '\.svg$\|\.pyc$',
   \ }
 let g:ctrlp_prompt_mappings={
-  \ 'AcceptSelection("e")': ['<cr>'],
-  \ 'AcceptSelection("t")': ['<c-t>'],
+  \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+  \ 'AcceptSelection("t")': ['<cr>'],
   \ }
 
 function! CtrlPWithSearchText(search_text, ctrlp_command_end)
@@ -161,9 +161,13 @@ inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " Others
 " Vim Surround
 Plugin 'tpope/vim-surround'
+
 " NERD Commenter
 Plugin 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
+
+" Vim CSS Color Highlight
+Plugin 'ap/vim-css-color'
 
 " ------------------------------------------------------------------------------
 
