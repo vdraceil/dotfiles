@@ -1,0 +1,88 @@
+snippet init "<template> <script>" b
+<template lang="pug">
+$1
+</template>
+
+<script>
+export default {
+}
+</script>
+endsnippet
+
+snippet style "<style>" b
+<style lang="${1:sass}">
+$2
+</style>
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet lifecyclehook "mounted()" b
+${1:mounted} () {
+  $2
+}
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet methods "methods {}" b
+methods: {
+  ${1:newMethod} () {
+    $2
+  }
+}
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet components "components {}" b
+components: {
+  $1
+}
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet props "props {}" b
+props: {
+  $1: $2
+},
+endsnippet
+
+snippet requiredprop "prop { required, type }" w
+{
+  required: true,
+  type: ${2:String}
+}
+endsnippet
+
+snippet defaultprop "prop { default, type }" w
+{
+  default: $1,
+  type: ${2:String}
+}
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet data "data arrow function" b
+data: () => ({
+  $1: $2
+}),
+endsnippet
+
+pre_expand "snip.buffer[snip.line] = ' '*2; snip.cursor.set(snip.line, 2)"
+snippet datafn "data function" b
+data: function () {
+  return {
+    $1: $2
+  }
+},
+endsnippet
+
+snippet vfor "v-for" w
+v-for="item in ${1:items}" :key="item.${2:id}"
+endsnippet
+
+snippet log "console.log()" b
+console.log(${1:0})
+endsnippet
+
+snippet logvisible "console.log('@@@')" b
+console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+endsnippet

@@ -158,6 +158,18 @@ inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " ------------------------------------------------------------------------------
 
+" Ultisnips
+Plugin 'SirVer/ultisnips'
+
+let g:UltiSnipsSnippetDirectories=["quick-snippets"]
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsListSnippets="<leader>sl"
+let g:UltiSnipsExpandTrigger="<leader>s"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" ------------------------------------------------------------------------------
+
 " Others
 " Vim Surround
 Plugin 'tpope/vim-surround'
