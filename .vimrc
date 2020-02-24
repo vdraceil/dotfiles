@@ -36,7 +36,7 @@ function! LightlineFileEncoding()
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'molokai'
+let g:lightline.colorscheme = 'wombat'
 let g:lightline.active = {}
 let g:lightline.active.left = [ ['mode', 'paste'],
     \ ['readonly', 'filename', 'modified'] ]
@@ -167,6 +167,16 @@ let g:UltiSnipsListSnippets="<leader>sl"
 let g:UltiSnipsExpandTrigger="<leader>s"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" ------------------------------------------------------------------------------
+
+" Ale
+Plugin 'dense-analysis/ale'
+
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+let g:ale_linters = {'javascript': ['eslint'], 'vue': ['eslint', 'vls']}
+let b:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fix_on_save = 1
 
 " ------------------------------------------------------------------------------
 
