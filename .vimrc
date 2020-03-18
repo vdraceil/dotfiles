@@ -252,7 +252,7 @@ set fileformats=unix,dos
 " Show warning at line #80 and danger (background change) #120
 "let &colorcolumn='80,'.join(range(120,999), ',')
 let &colorcolumn="80,120"
-highlight colorcolumn ctermbg=235 guibg=#2c2d27
+highlight colorcolumn ctermbg=237 guibg=#2c2d27
 
 " UI
 set laststatus=2
