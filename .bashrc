@@ -48,11 +48,14 @@ alias wm='sudo wifi-menu'
 alias pacs='sudo pacman -S'
 alias pacsyu='sudo pacman -Syu'
 alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
+alias n='neofetch'
 alias q='quasar'
 alias qi='quasar i'
 alias qc='quasar c'
 alias qb='quasar b -m ssr'
 alias qd='quasar d -m ssr'
+
+alias radio='mpv --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36" --referrer="http://www.tamilradios.com/embed/index.php" --playlist=/home/vdraceil/Coffee/Music/Chennai-Radio.m3u --loop-playlist --force-window --really-quiet'
 
 # history
 export HISTSIZE=1000
