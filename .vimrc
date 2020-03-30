@@ -193,6 +193,9 @@ let g:NERDSpaceDelims=1
 " Vim CSS Color Highlight
 Plugin 'ap/vim-css-color'
 
+" Vim Elixir
+Plugin 'elixir-editors/vim-elixir'
+
 " ------------------------------------------------------------------------------
 
 " Color Schemes
