@@ -35,6 +35,10 @@ function! LightlineFileEncoding()
   return winwidth(0) > 70 ? &fileencoding : ''
 endfunction
 
+function! LightlineFileName()
+  return winwidth(0) > 90 ? expand('%') : expand('%:t')
+endfunction
+
 let g:lightline = {}
 let g:lightline.colorscheme = 'wombat'
 let g:lightline.active = {}
@@ -43,6 +47,7 @@ let g:lightline.active.left = [ ['mode', 'paste'],
 let g:lightline.active.right = [ ['lineinfo'], ['percent'],
     \ ['filetype', 'fileencoding'] ]
 let g:lightline.component_function = {}
+let g:lightline.component_function.filename = 'LightlineFileName'
 let g:lightline.component_function.filetype = 'LightlineFileType'
 let g:lightline.component_function.fileformat = 'LightlineFileFormat'
 let g:lightline.component_function.fileencoding = 'LightlineFileEncoding'
