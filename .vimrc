@@ -24,11 +24,13 @@ Plugin 'gmarik/vundle'
 Plugin 'itchyny/lightline.vim'
 
 function! LightlineFileFormat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  return winwidth(0) > 70 ?
+    \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 function! LightlineFileType()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : '*') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ?
+    \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : '*') : ''
 endfunction
 
 function! LightlineFileEncoding()
@@ -201,6 +203,10 @@ Plugin 'ap/vim-css-color'
 " Vim Elixir
 Plugin 'elixir-editors/vim-elixir'
 
+" Vim Dev Icons
+Plugin 'ryanoasis/vim-devicons'
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+
 " ------------------------------------------------------------------------------
 
 " Color Schemes
@@ -225,7 +231,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme gruvbox
+colorscheme Tomorrow-Night-Bright
 
 " Basic
 set encoding=utf-8
