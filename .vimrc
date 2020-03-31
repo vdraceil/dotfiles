@@ -207,6 +207,33 @@ Plugin 'elixir-editors/vim-elixir'
 Plugin 'ryanoasis/vim-devicons'
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+let g:NERDTreeSyntaxEnabledExtensions = ['py', 'ex', 'exs', 'js', 'ts', 'vue',
+  \ 'css', 'scss', 'sass', 'xml', 'html', 'pug', 'pdf',
+  \ 'json', 'yml', 'yaml', 'md', 'txt', 'csv', 'tsv']
+let g:NERDTreeExtensionHighlightColor = {
+  \'py': 'FFD343',
+  \'ex': '4E2A8E',
+  \'exs': '4E2A8E',
+  \'js': 'E9D54D',
+  \'ts': '0077C6',
+  \'vue': '3FB37F',
+  \'css': '3595D0',
+  \'scss': 'CD6799',
+  \'sass': 'CD6799',
+  \'xml': 'EF7901',
+  \'html': 'DD4D25',
+  \'pug': 'E8C69F',
+  \'json': '6395F8',
+  \'yml': '6395F8',
+  \'yaml': '6395F8',
+  \'pdf': 'D61C00',
+  \'md': 'F83D84',
+  \'txt': 'F83D84',
+  \'csv': 'F83D84',
+  \'tsv': 'F83D84'
+  \}
+
 " ------------------------------------------------------------------------------
 
 " Color Schemes
