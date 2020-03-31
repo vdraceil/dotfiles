@@ -40,7 +40,7 @@ Xft.lcdfilter: lcddefault
 uRxvt.internalBorder: 4
 URxvt.externalBorder: 0
 URxvt.fading: 50
-URxvt.font: xft:FiraMono:pixelsize=17
+URxvt.font: xft:FiraCode Nerd Font Mono:pixelsize=17
             xft:DejaVuSansMono:pixelsize=20, \
             xft:LiberationMono:pixelsize=17, \
             xft:Unifont
