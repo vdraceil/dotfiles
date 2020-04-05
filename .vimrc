@@ -66,7 +66,8 @@ let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
-let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$', '^node_modules$', '^__pycache__$']
+let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
+    \ '^node_modules$', '^__pycache__$', '^deps$', '^_build$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
@@ -181,11 +182,26 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 Plugin 'dense-analysis/ale'
 
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'javascript': ['eslint'], 'vue': ['eslint', 'vls']}
-let b:ale_fixers = {'javascript': ['eslint']}
+let g:ale_linters = {
+  \ 'javascript': ['eslint'],
+  \ 'vue': ['eslint', 'vls'],
+  \ 'python': ['flake8']
+\}
+let g:ale_fixers = {
+  \ 'javascript': ['eslint'],
+  \ 'python': ['autopep8']
+\}
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
 let g:ale_fix_on_save = 1
+
+" Do not lint or fix minified files.
+let g:ale_pattern_options = {
+  \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+\}
+
+nnoremap <F7> :ALEFix<cr>
 
 " ------------------------------------------------------------------------------
 
