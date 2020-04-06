@@ -180,6 +180,7 @@ assign [title="ranger"] $WS1
 assign [class="firefox"] $WS2
 assign [class="google-chrome"] $WS3
 assign [class="code-oss"] $WS4
+assign [class="upwork"] $WS10
 
 # START UP
 # polybar
