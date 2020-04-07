@@ -31,7 +31,7 @@ font-4 = Font Awesome 5 Brands:pixelsize=13;-2
 font-5 = MaterialIcons:size=12;0
 
 modules-left = i3
-modules-center = mpd
+modules-center = mpd radio
 modules-right = wireless-network alsa backlight cpu memory battery date
 
 [module/i3]
@@ -78,6 +78,15 @@ label-song = %{F#59B1FC} %{F-} %{F#80}%title%%{F-}
 label-song-foreground = ${colors.white}
 label-time-foreground = ${colors.blue}
 label-song-maxlen = 50
+
+[module/radio]
+type = custom/script
+interval = 2
+
+format = <label>
+label = %{F#59B1FC} %{F-} %{F#80}%output:0:50%%{F-}
+exec = $HOME/.config/scripts/radio.sh print-title
+exec-if = $HOME/.config/scripts/radio.sh is-active
 
 [module/wireless-network]
 type = internal/network

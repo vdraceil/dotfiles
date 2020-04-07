@@ -151,9 +151,10 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
-bindsym XF86AudioPrev exec "mpc prev"
-bindsym XF86AudioPlay exec "mpc toggle"
-bindsym XF86AudioNext exec "mpc next"
+bindsym $mod+XF86AudioPlay exec "$SCRIPTS_DIR/music.sh toggle" # toggle radio/mpd
+bindsym XF86AudioPlay exec "$SCRIPTS_DIR/music.sh play-toggle" # toggle play/pause
+bindsym XF86AudioNext exec "$SCRIPTS_DIR/music.sh next"
+bindsym XF86AudioPrev exec "$SCRIPTS_DIR/music.sh prev"
 
 # custom media action
 # full display screenshot
