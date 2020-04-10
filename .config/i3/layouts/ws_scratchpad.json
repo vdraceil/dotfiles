@@ -1,0 +1,41 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "type": "con",
+    "geometry": {
+       "height": 884,
+       "width": 1504,
+       "x": 0,
+       "y": 0
+    },
+    "name": "urxvt",
+    "percent": 0.8,
+    "swallows": [
+        {
+            "class": "^URxvt$",
+            "title": "^scratchpad$"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "user_off",
+    "type": "con",
+    "geometry": {
+       "height": 625,
+       "width": 345,
+       "x": 1540,
+       "y": 59
+    },
+    "name": "upwork",
+    "percent": 0.2,
+    "swallows": [
+        {
+            "class": "^Upwork$"
+        }
+    ]
+}
+
