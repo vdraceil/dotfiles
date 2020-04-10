@@ -1,3 +1,8 @@
+# global functions
+function psgrep() {
+  ps aux | grep -i $1 | grep -v grep
+}
+
 # prompt
 function get_git_branch() {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
@@ -24,7 +29,7 @@ function set_fancy_prompt() {
 }
 PROMPT_COMMAND=set_fancy_prompt
 
-# aliases
+# aliases - bash
 alias ls='ls --color'
 alias la='ls -a'
 alias l1='ls -1'
@@ -38,23 +43,28 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias v='vim'
-alias historygrep='history | grep '
-alias psgrep='ps aux | grep '
+alias hgrep='history | grep'
 alias bc='bc -l'
-alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
+alias grl='grep -rl'
+alias gril='grep -ril'
+
+# aliases - os
 alias g='git'
 alias wm='sudo wifi-menu'
 alias pacs='sudo pacman -S'
 alias pacsyu='sudo pacman -Syu'
-alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
 alias n='neofetch'
+alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
+
+# aliases - work
 alias q='quasar'
 alias qi='quasar i'
 alias qc='quasar c'
 alias qb='quasar b -m ssr'
 alias qd='quasar d -m ssr'
 
+# aliases - personal
 alias radio='mpv --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36" --referrer="http://www.tamilradios.com/embed/index.php" --playlist=/home/vdraceil/Coffee/Music/Chennai-Radio.m3u --loop-playlist --demuxer-seekable-cache=yes --force-seekable=no --really-quiet'
 
 # history
