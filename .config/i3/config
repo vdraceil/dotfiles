@@ -36,12 +36,39 @@ gaps outer 0
 smart_gaps on
 
 # MODES
-# resize window
 mode "resize" {
+    # incremental/decremental resizing
     bindsym h resize shrink width 5 px or 5 ppt
     bindsym j resize grow height 5 px or 5 ppt
     bindsym k resize shrink height 5 px or 5 ppt
     bindsym l resize grow width 5 px or 5 ppt
+
+    bindsym x mode "resize_width"
+    bindsym y mode "resize_height"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "resize_width" {
+    # instant resizing
+    bindsym 2 resize set width 20 ppt
+    bindsym 3 resize set width 30 ppt
+    bindsym 7 resize set width 70 ppt
+    bindsym 8 resize set width 80 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "resize_height" {
+    # instant resizing
+    bindsym 2 resize set height 20 ppt
+    bindsym 3 resize set height 30 ppt
+    bindsym 7 resize set height 70 ppt
+    bindsym 8 resize set height 80 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -151,8 +178,8 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
-bindsym $mod+XF86AudioPlay exec "$SCRIPTS_DIR/music.sh toggle" # toggle radio/mpd
-bindsym XF86AudioPlay exec "$SCRIPTS_DIR/music.sh play-toggle" # toggle play/pause
+bindsym $mod+XF86AudioPlay exec "$SCRIPTS_DIR/music.sh toggle"
+bindsym XF86AudioPlay exec "$SCRIPTS_DIR/music.sh play-toggle"
 bindsym XF86AudioNext exec "$SCRIPTS_DIR/music.sh next"
 bindsym XF86AudioPrev exec "$SCRIPTS_DIR/music.sh prev"
 
@@ -179,7 +206,7 @@ bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 # WORKSPACE ASSIGNMENTS & LAYOUTS
 assign [title="ranger"] $WS1
 assign [class="firefox"] $WS2
-assign [class="google-chrome"] $WS3
+assign [class="Google-chrome"] $WS3
 assign [class="code-oss"] $WS4
 assign [class="upwork"] $WS10
 
