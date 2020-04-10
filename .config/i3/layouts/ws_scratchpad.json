@@ -10,7 +10,8 @@
        "y": 0
     },
     "name": "urxvt",
-    "percent": 0.8,
+    // "percent": 0.8,
+    "percent": 1,
     "swallows": [
         {
             "class": "^URxvt$",
@@ -19,7 +20,7 @@
     ]
 }
 
-{
+/*{
     "border": "pixel",
     "current_border_width": 1,
     "floating": "user_off",
@@ -37,5 +38,5 @@
             "class": "^Upwork$"
         }
     ]
-}
+}*/
 
