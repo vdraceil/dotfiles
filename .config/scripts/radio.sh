@@ -11,8 +11,8 @@ REFERER="http://www.tamilradios.com/embed/index.php"
 case "$1" in
   play)
     mpv --user-agent=$USER_AGENT --referrer=$REFERER \
-      --playlist=$PLAYLIST --loop-playlist \
-      --input-ipc-server=$SOCKET --really-quiet &
+      --playlist=$PLAYLIST --loop-playlist --input-ipc-server=$SOCKET \
+      --demuxer-seekable-cache=yes --force-seekable=no --really-quiet &
     ;;
   pause|stop|quit)
     echo 'quit' | socat - $SOCKET
@@ -31,7 +31,8 @@ case "$1" in
       socat - $SOCKET | jq -r .data
     ;;
   is-active)
-    echo 'show-text test' | socat - $SOCKET >/dev/null 2>&1
+    (ps aux | grep mpv | grep -v grep >/dev/null) &&
+      echo 'show-text test' | socat - $SOCKET >/dev/null 2>&1
     [ $? -eq 0 ]
     ;;
   *)
