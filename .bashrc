@@ -55,7 +55,11 @@ alias wm='sudo wifi-menu'
 alias pacs='sudo pacman -S'
 alias pacsyu='sudo pacman -Syu'
 alias n='neofetch'
-alias tree='tree -C -I "node_modules|__pycache__|.git|*.pyc"'
+
+TREE_EXCLUDE="node_modules|__pycache__|env|build|_build|dist|.git|*.pyc"
+alias t='tree -C -I "$TREE_EXCLUDE"'
+alias t1='tree -C -I "$TREE_EXCLUDE" -L 1'
+alias t2='tree -C -I "$TREE_EXCLUDE" -L 2'
 
 # aliases - work
 alias q='quasar'
