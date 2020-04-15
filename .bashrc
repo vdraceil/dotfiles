@@ -12,7 +12,7 @@ function get_py_virtualenv() {
     basename "$VIRTUAL_ENV" | sed -e 's/^\(.\)/ \1/'
 }
 
-# shows host name in red if the previous command was a failure. If not, green.
+# shows host name in red if the previous command was a failure; else green
 function set_fancy_prompt() {
     exit_status=$?
 
@@ -31,14 +31,14 @@ PROMPT_COMMAND=set_fancy_prompt
 
 # aliases - bash
 alias ls='ls --color'
-alias la='ls -a'
-alias l1='ls -1'
-alias la1='ls -a1'
-alias ll='ls -alh'
-alias ld='ls -aF | grep /$'
-alias lld='ls -alF | grep /$'
-alias lf='ls -aF | grep [^/]$'
-alias llf='ls -alF | grep [^/]$'
+alias la='ls --color -a'
+alias l1='ls --color -1'
+alias la1='ls --color -a1'
+alias ll='ls --color -alh'
+alias ld='ls --color -aF | grep /$'
+alias lld='ls --color -alF | grep /$'
+alias lf='ls --color -aF | grep [^/]$'
+alias llf='ls --color -alF | grep [^/]$'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -52,24 +52,22 @@ alias gril='grep -ril'
 # aliases - os
 alias g='git'
 alias wm='sudo wifi-menu'
-alias pacs='sudo pacman -S'
-alias pacsyu='sudo pacman -Syu'
+alias pacs='sudo pacman --color=always -S'
+alias pacsyu='sudo pacman --color=always -Syu'
 alias n='neofetch'
 
 TREE_EXCLUDE="node_modules|__pycache__|env|build|_build|dist|.git|*.pyc"
 alias t='tree -C -I "$TREE_EXCLUDE"'
 alias t1='tree -C -I "$TREE_EXCLUDE" -L 1'
 alias t2='tree -C -I "$TREE_EXCLUDE" -L 2'
+alias t3='tree -C -I "$TREE_EXCLUDE" -L 3'
 
 # aliases - work
 alias q='quasar'
 alias qi='quasar i'
 alias qc='quasar c'
-alias qb='quasar b -m ssr'
-alias qd='quasar d -m ssr'
-
-# aliases - personal
-alias radio='mpv --user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36" --referrer="http://www.tamilradios.com/embed/index.php" --playlist=/home/vdraceil/Coffee/Music/Chennai-Radio.m3u --loop-playlist --demuxer-seekable-cache=yes --force-seekable=no --really-quiet'
+alias qbs='quasar b -m ssr'
+alias qds='quasar d -m ssr'
 
 # history
 export HISTSIZE=1000
