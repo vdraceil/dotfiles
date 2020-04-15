@@ -67,7 +67,7 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
-    \ '^node_modules$', '^__pycache__$', '^deps$', '^_build$']
+    \ '^node_modules$', '^__pycache__$', '^deps$', '^_build$', '^env$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
