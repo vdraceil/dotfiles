@@ -67,7 +67,8 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
-    \ '^node_modules$', '^__pycache__$', '^deps$', '^_build$', '^env$']
+    \ '^node_modules$', '^__pycache__$', '^\.pytest_cache$', '^env$',
+    \ '^deps$', '^_build$']
 
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
@@ -404,7 +405,7 @@ nnoremap trr :tabfirst<cr>
 nnoremap ty :tabnext<cr>
 nnoremap tyy :tablast<cr>
 nnoremap tt :tabnew<cr>
-nnoremap tm :tabm<cr>
+nnoremap tm :tabm
 
 " Splits
 " Navigation

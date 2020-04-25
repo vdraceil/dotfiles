@@ -56,7 +56,7 @@ alias pacs='sudo pacman --color=always -S'
 alias pacsyu='sudo pacman --color=always -Syu'
 alias n='neofetch'
 
-TREE_EXCLUDE="node_modules|__pycache__|env|build|_build|dist|.git|*.pyc"
+TREE_EXCLUDE="node_modules|__pycache__|.pytest_cache|env|build|_build|dist|.git|*.pyc"
 alias t='tree -C -I "$TREE_EXCLUDE"'
 alias t1='tree -C -I "$TREE_EXCLUDE" -L 1'
 alias t2='tree -C -I "$TREE_EXCLUDE" -L 2'
