@@ -42,7 +42,7 @@ function! LightlineFileName()
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'wombat'
+let g:lightline.colorscheme = 'onehalfdark'
 let g:lightline.active = {}
 let g:lightline.active.left = [ ['mode', 'paste'],
     \ ['readonly', 'filename', 'modified'] ]
@@ -259,6 +259,8 @@ Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'morhetz/gruvbox'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'joshdick/onedark.vim'
 
 " ------------------------------------------------------------------------------
 
@@ -275,7 +277,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme Tomorrow-Night-Bright
+colorscheme onedark
 
 " Basic
 set encoding=utf-8
