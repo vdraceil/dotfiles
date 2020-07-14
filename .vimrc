@@ -70,6 +70,9 @@ let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
     \ '^node_modules$', '^__pycache__$', '^\.pytest_cache$', '^env$',
     \ '^deps$', '^_build$']
 
+" 'm' key conflict with 'vim-signature'
+let g:NERDTreeMapMenu='M'
+
 nnoremap <silent> <F9> :NERDTreeToggle<cr>
 nnoremap <leader>nb :Bookmark<cr>
 
@@ -213,6 +216,9 @@ Plugin 'tpope/vim-surround'
 " NERD Commenter
 Plugin 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
+
+" Vim Signature - Place, toggle and display marks
+Plugin 'kshenoy/vim-signature'
 
 " Vim CSS Color Highlight
 Plugin 'ap/vim-css-color'
