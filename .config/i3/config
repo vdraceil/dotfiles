@@ -213,6 +213,8 @@ assign [class="Google-chrome"] $WS3
 assign [class="code-oss"] $WS4
 assign [class="Upwork"] $WS10
 
+for_window [class="Upwork"] floating disable; [class="Upwork"] focus; resize set width 20 ppt
+
 # START UP
 # polybar
 exec_always --no-startup-id "$POLYBAR_CONFIG_DIR/launch.sh"
