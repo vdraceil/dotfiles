@@ -1,0 +1,40 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1043,
+       "width": 1918,
+       "x": 1,
+       "y": 36
+    },
+    "name": "code-oss",
+    "percent": 0.7,
+    "swallows": [
+        {
+            "class": "^code\\-oss$"
+        }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "user_off",
+    "geometry": {
+       "height": 660,
+       "width": 460,
+       "x": 730,
+       "y": 210
+    },
+    "name": "skype",
+    "percent": 0.3,
+    "swallows": [
+        {
+            "class": "^Skype$"
+        }
+    ],
+    "type": "con"
+}
+

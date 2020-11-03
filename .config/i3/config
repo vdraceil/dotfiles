@@ -226,12 +226,10 @@ exec --no-startup-id "dunst"
 exec --no-startup-id "firefox"
 exec --no-startup-id "google-chrome-stable"
 
-# text editor
-exec --no-startup-id "code"
-
 # lock screen - init image cache
 exec --no-startup-id "betterlockscreen -u $WALLPAPERS_DIR"
 
 # set up pre-defined workspaces
+exec "$I3_SCRIPTS_DIR/ws_text.sh"
 exec "$I3_SCRIPTS_DIR/ws_scratchpad.sh"
 exec "$I3_SCRIPTS_DIR/ws_dashboard.sh"
