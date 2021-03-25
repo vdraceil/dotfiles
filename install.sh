@@ -10,7 +10,7 @@ mkdir -p $HOME/.config
 sourceFiles=".bashrc .bash_profile .asoundrc .vimrc .gitconfig .gitignore
 .xinitrc .Xresources .ncmpcpp .config/polybar .config/ranger .config/mpd
 .config/i3 .config/dunst .config/neofetch .config/htop .config/rofi
-.config/httpie .config/systemd .config/scripts .vim/quick-snippets"
+.config/systemd .config/scripts .vim/quick-snippets"
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed
