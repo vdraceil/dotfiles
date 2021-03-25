@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+WS_DOWNLOADS_DIR=/data/downloads
+
 WS1="1: dashboard"
 I3_WS_LAYOUT="$HOME/.config/i3/layouts/ws_dashboard.json"
 
@@ -10,7 +12,7 @@ i3-msg -q "[workspace=\"$WS1\"] kill"
 i3-msg -q "workspace \"$WS1\"; append_layout $I3_WS_LAYOUT"
 
 # start applications to be absorbed into the placeholders
-(urxvt -e ranger "$HOME/Downloads" &)
+(urxvt -e ranger "$WS_DOWNLOADS_DIR" &)
 (BC_ENV_ARGS=<(echo "scale=2") urxvt -e bc &)
 (urxvt -T cal -hold -e sh -c "cal -n 2" &)
 

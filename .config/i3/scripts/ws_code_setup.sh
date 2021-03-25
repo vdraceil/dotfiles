@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-WS_DIR=$HOME/Workplace
-WS_PERSONAL_DIR=$WS_DIR/Personal
-WS_FREELANCE_DIR=$WS_DIR/Freelance
+WS_DIR=/work
+WS_PERSONAL_DIR=$WS_DIR/personal
+WS_FREELANCE_DIR=$WS_DIR/freelance
 
 PANES_COUNT=$1
 I3_WS_LAYOUT="$HOME/.config/i3/layouts/ws_code_${PANES_COUNT}panes.json"

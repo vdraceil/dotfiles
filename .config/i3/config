@@ -6,9 +6,9 @@ set $I3_LAYOUTS_DIR $HOME/.config/i3/layouts
 set $I3_SCRIPTS_DIR $HOME/.config/i3/scripts
 set $POLYBAR_CONFIG_DIR $HOME/.config/polybar
 
-set $IMAGES_DIR $HOME/Documents/Images
-set $VIDEOS_DIR $HOME/Documents/Videos
-set $WALLPAPERS_DIR $HOME/Coffee/Pictures/Wallpapers
+set $IMAGES_DIR /data/documents/images
+set $VIDEOS_DIR /data/documents/videos
+set $WALLPAPERS_DIR /data/coffee/pictures/wallpapers
 
 set $WS1 "1: dashboard"
 set $WS2 "2: firefox"
@@ -190,7 +190,7 @@ bindsym XF86AudioPrev exec "$SCRIPTS_DIR/music.sh prev"
 # full display screenshot
 bindsym Print exec "import -window root $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # TODO: custom area screenshot
-# bindsym $mod+Print exec "import $HOME/Documents/Images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+# bindsym $mod+Print exec "import /data/documents/images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # record screen - start
 bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium $VIDEOS_DIR/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
 # record screen with audio - start
