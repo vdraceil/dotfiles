@@ -61,6 +61,12 @@ alias t='tree -C -I "$TREE_EXCLUDE"'
 alias t1='tree -C -I "$TREE_EXCLUDE" -L 1'
 alias t2='tree -C -I "$TREE_EXCLUDE" -L 2'
 alias t3='tree -C -I "$TREE_EXCLUDE" -L 3'
+alias t4='tree -C -I "$TREE_EXCLUDE" -L 4'
+alias td='tree -C -I "$TREE_EXCLUDE" -d'
+alias td1='tree -C -I "$TREE_EXCLUDE" -L 1 -d'
+alias td2='tree -C -I "$TREE_EXCLUDE" -L 2 -d'
+alias td3='tree -C -I "$TREE_EXCLUDE" -L 3 -d'
+alias td4='tree -C -I "$TREE_EXCLUDE" -L 4 -d'
 
 # aliases - work
 alias q='quasar'
