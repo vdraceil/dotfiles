@@ -183,8 +183,8 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 bindsym $mod+XF86AudioPlay exec "$SCRIPTS_DIR/music.sh toggle"
 bindsym XF86AudioPlay exec "$SCRIPTS_DIR/music.sh play-toggle"
-bindsym XF86AudioNext exec "$SCRIPTS_DIR/music.sh next"
-bindsym XF86AudioPrev exec "$SCRIPTS_DIR/music.sh prev"
+bindsym Home exec "$SCRIPTS_DIR/music.sh prev"
+bindsym End exec "$SCRIPTS_DIR/music.sh next"
 
 # custom media action
 # full display screenshot
