@@ -6,9 +6,9 @@ set $I3_LAYOUTS_DIR $HOME/.config/i3/layouts
 set $I3_SCRIPTS_DIR $HOME/.config/i3/scripts
 set $POLYBAR_CONFIG_DIR $HOME/.config/polybar
 
-set $IMAGES_DIR /data/documents/images
-set $VIDEOS_DIR /data/documents/videos
-set $WALLPAPERS_DIR /data/coffee/pictures/wallpapers
+set $IMAGES_DIR $HOME/local/documents/images
+set $VIDEOS_DIR $HOME/local/documents/videos
+set $WALLPAPERS_DIR $HOME/local/wallpapers
 
 set $WS1 "1: dashboard"
 set $WS2 "2: firefox"
@@ -190,7 +190,7 @@ bindsym XF86AudioPrev exec "$SCRIPTS_DIR/music.sh prev"
 # full display screenshot
 bindsym Print exec "import -window root $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # TODO: custom area screenshot
-# bindsym $mod+Print exec "import /data/documents/images/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
+# bindsym $mod+Print exec "import $IMAGES_DIR/Screenshot_$(date +%d-%b-%Y_T%H-%M-%S_%Z).png"
 # record screen - start
 bindsym Shift+Print exec "ffmpeg -r 25 -s 1920x1080 -f x11grab -i :0.0 -r 25 -c:v libx264 -preset medium $VIDEOS_DIR/Screencast_$(date +%d-%b-%Y_%H-%M-%S_%Z).mkv"
 # record screen with audio - start
@@ -210,7 +210,7 @@ bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 assign [title="ranger"] $WS1
 assign [class="firefox"] $WS2
 assign [class="Google-chrome"] $WS3
-assign [class="code-oss"] $WS4
+assign [class="Subl"] $WS4
 assign [class="Upwork"] $WS10
 
 for_window [class="Upwork"] floating disable; [class="Upwork"] focus; resize set width 20 ppt

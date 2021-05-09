@@ -2,7 +2,7 @@
 
 SELF="$HOME/.config/scripts/radio.sh"
 
-PLAYLIST="/data/coffee/music/Chennai-Radio.m3u"
+PLAYLIST="$HOME/local/music/tamil-radio.m3u"
 SOCKET="/tmp/mpvsocket"
 
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0"

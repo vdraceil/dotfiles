@@ -1,5 +1,5 @@
 # variables
-WALLPAPERS_DIR=/data/coffee/pictures/wallpapers
+WALLPAPERS_DIR=/home/vdraceil/local/wallpapers
 
 # load the resource file and merge it with the current urxvt settings
 [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources

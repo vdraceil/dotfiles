@@ -4,7 +4,7 @@ lyrics_directory = ~/.lyrics
 # Connection
 mpd_host = localhost
 mpd_port = 6600
-mpd_music_dir = /data/coffee/music
+mpd_music_dir = /home/vdraceil/local/music
 mpd_connection_timeout = 5
 mpd_crossfade_time = 5
 

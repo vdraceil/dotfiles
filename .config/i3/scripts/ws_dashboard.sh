@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-WS_DOWNLOADS_DIR=/data/downloads
+WS_DOWNLOADS_DIR="$HOME/local/downloads"
 
 WS1="1: dashboard"
 I3_WS_LAYOUT="$HOME/.config/i3/layouts/ws_dashboard.json"
