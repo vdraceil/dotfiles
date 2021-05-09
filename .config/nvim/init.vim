@@ -2,18 +2,18 @@ set nocompatible
 let mapleader=','
 
 " Vundle
-let isVundleInstalled=filereadable(expand('~/.vim/bundle/vundle/README.md'))
+let isVundleInstalled=filereadable(expand('~/.config/nvim/bundle/vundle/README.md'))
 let installPlugins=0
 if !isVundleInstalled
     echo 'Installing Vundle...'
     echo ''
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !mkdir -p ~/.config/nvim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.config/nvim/bundle/vundle
     let installPlugins=1
 endif
 
 filetype off
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.config/nvim/bundle/vundle
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
@@ -21,7 +21,7 @@ Plugin 'gmarik/vundle'
 " ------------------------------------------------------------------------------
 
 " Lightline
-Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.config/nvim'
 
 function! LightlineFileFormat()
   return winwidth(0) > 70 ?
@@ -59,13 +59,14 @@ let g:lightline.component_function.fileencoding = 'LightlineFileEncoding'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+let g:NERDTreeHighlightCursorline=0
 let g:NERDTreeWinSize=30
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
+let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
     \ '^node_modules$', '^__pycache__$', '^\.pytest_cache$', '^env$',
     \ '^deps$', '^_build$']
@@ -104,14 +105,14 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 " ------------------------------------------------------------------------------
 
 " CtrlP
-Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.config/nvim'
 
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_mruf_max=50
 let g:ctrlp_max_depth=20
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_cache_dir='~/.vim/ctrlp'
+let g:ctrlp_cache_dir='~/.config/nvim/ctrlp'
 let g:ctrlp_custom_ignore={
     \ 'dir':  '\.git$\|dist$\|build$\|node_modules$\|env$',
     \ 'file': '\.svg$\|\.pyc$',
@@ -154,7 +155,7 @@ Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 
-set runtimepath+=~/.vim/bundle/deoplete.nvim
+set runtimepath+=~/.config/nvim/bundle/deoplete.nvim
 set completeopt+=noinsert
 set completeopt-=preview
 
@@ -266,7 +267,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'morhetz/gruvbox'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'joshdick/onedark.vim'
+Plugin 'joshdick/onedark.config/nvim'
 
 " ------------------------------------------------------------------------------
 
@@ -283,7 +284,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme onedark
+colorscheme onehalfdark
 
 " Basic
 set encoding=utf-8
@@ -293,8 +294,8 @@ set synmaxcol=0
 set term=screen-256color
 set history=1000
 set undofile
-set undodir=~/.vim/undo//
-set directory=~/.vim/swap//
+set undodir=~/.config/nvim/undo//
+set directory=~/.config/nvim/swap//
 if !isdirectory(&undodir)
     call mkdir(&undodir)
 endif
@@ -326,7 +327,6 @@ set shortmess=aIT
 set cmdheight=2
 set shiftround
 set linespace=0
-set ttymouse=xterm2
 set foldcolumn=1
 set expandtab
 set smarttab
@@ -402,7 +402,7 @@ nnoremap <leader>p "+p
 " Normal Mode - Specifics
 " Clear highlight
 nnoremap <leader><space> :noh<cr>
-" Edit & Source .vimrc on the fly
+" Edit & Source .config/nvim/init.vim on the fly
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>:echom "$MYVIMRC Sourced Successfully!"<cr>
 

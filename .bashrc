@@ -42,7 +42,7 @@ alias llf='ls --color -alF | grep [^/]$'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias v='vim'
+alias nv='nvim'
 alias hgrep='history | grep'
 alias bc='bc -l'
 alias path='echo -e ${PATH//:/\\n}'
@@ -81,7 +81,7 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 
 # others
-export EDITOR=vim
+export EDITOR=nvim
 export XDG_USER_CONFIG_DIR="$HOME/.config"
 
 # source overrides, if any
@@ -94,3 +94,5 @@ if [ -f '/home/vdraceil/google-cloud-sdk/path.bash.inc' ]; then . '/home/vdracei
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/vdraceil/google-cloud-sdk/completion.bash.inc' ]; then . '/home/vdraceil/google-cloud-sdk/completion.bash.inc'; fi
+
+source /usr/share/nvm/init-nvm.sh

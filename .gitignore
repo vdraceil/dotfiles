@@ -8,6 +8,9 @@
 # Temporary files
 *.swp
 *~
+*/nvim/swap/*
+*/nvim/undo/*
+*/nvim/bundle/*
 
 # Packages
 *.7z
