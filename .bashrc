@@ -68,13 +68,6 @@ alias td2='tree -C -I "$TREE_EXCLUDE" -L 2 -d'
 alias td3='tree -C -I "$TREE_EXCLUDE" -L 3 -d'
 alias td4='tree -C -I "$TREE_EXCLUDE" -L 4 -d'
 
-# aliases - work
-alias q='quasar'
-alias qi='quasar i'
-alias qc='quasar c'
-alias qbs='quasar b -m ssr'
-alias qds='quasar d -m ssr'
-
 # history
 export HISTSIZE=1000
 export HISTFILESIZE=10000
@@ -95,4 +88,5 @@ if [ -f '/home/vdraceil/google-cloud-sdk/path.bash.inc' ]; then . '/home/vdracei
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/vdraceil/google-cloud-sdk/completion.bash.inc' ]; then . '/home/vdraceil/google-cloud-sdk/completion.bash.inc'; fi
 
+# node/nvm
 source /usr/share/nvm/init-nvm.sh
