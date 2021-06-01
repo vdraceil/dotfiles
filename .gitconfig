@@ -2,14 +2,14 @@
     name = Vinoth Kumar Kannan
     email = vdraceil@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
     whitespace = fix,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
 [web]
     browser = firefox
 [push]
-	default = current
+    default = current
 [color]
     ui = auto
 [color "branch"]
@@ -35,6 +35,7 @@
     aa = add --all
     b = branch -v
     ba = branch -av
+    bd = branch -D
     c = commit -m
     ca = commit -a -m
     cam = commit --amend --no-edit
@@ -65,10 +66,12 @@
     rso1 = reset --soft HEAD~1
     rha = reset --hard
     rha1 = reset --hard HEAD~1
+    re = restore
     res = restore --staged
     s = status
     ss = status -s
-    sh = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
+    sh = show
+    shp = show --pretty=format:'%Cred%h %C(bold blue)%an' --stat
     st = stash
     stp = stash pop
     sta = stash apply
