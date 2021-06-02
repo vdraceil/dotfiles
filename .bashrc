@@ -90,7 +90,3 @@ if [ -f '/home/vdraceil/google-cloud-sdk/completion.bash.inc' ]; then . '/home/v
 
 # node/nvm
 source /usr/share/nvm/init-nvm.sh
-
-# add local bin to $PATH
-# ex. this exposes autopep8, flake8, etc. installed using pip
-export PATH="~/.local/bin:$PATH"

@@ -1,6 +1,6 @@
 ## DOT FILES
 
-All of these dot files collectively define my working environment (bash, vim, i3, git, etc.), which I use everyday
+All of these dot files collectively define my working environment (bash, nvim, i3, git, etc.), which I use everyday
 
 ## How does my setup look?
 ![setup screenshot](static/setup_current_look.png)
@@ -16,12 +16,15 @@ $ git clone git@github.com:vdraceil/dotfiles.git
 $ ./dotfiles/install.sh
 ```
 
- - `pip3 uninstall greenlet` followed by `pip3 install --user pynvim` - required for deoplete Plugin
- - Next, open vim. It'll take care of installing all the plugins
+ - `pip uninstall greenlet` followed by `pip install --user pynvim` - required for deoplete Plugin
+ - `pip install flake8 autopep8` - required for ale Plugin
+ - `npm install -g eslint vls` - required for ale Plugin
+ - make sure flake8, autopep8, eslint, etc. are all directly accessible (executables in $PATH) or else move them over to `/usr/local/bin` manually
+ - Next, open nvim. It'll take care of installing all the plugins
  - After the installation completes, dismiss the Vundle Preview Split and check if vim looks visually alright (Check Airline bar, Tab bar, Colorscheme, etc.)
 
 ```sh
-$ vim
+$ nv
 ```
 
  - Check the bash prompt color change based on success/failure of the previous command
