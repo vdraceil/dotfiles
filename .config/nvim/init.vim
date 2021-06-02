@@ -283,6 +283,8 @@ Plugin 'sickill/vim-monokai'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'morhetz/gruvbox'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'srcery-colors/srcery-vim'
+Plugin 'sainnhe/sonokai'
 
 " ------------------------------------------------------------------------------
 
@@ -299,7 +301,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme badwolf
+colorscheme srcery
 
 " Basic
 set encoding=utf-8
