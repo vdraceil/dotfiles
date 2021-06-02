@@ -11,6 +11,7 @@
 */nvim/swap/*
 */nvim/undo/*
 */nvim/bundle/*
+*/nvim/ctrlp/*
 */mpd/db
 */mpd/log
 */mpd/pid

@@ -21,7 +21,7 @@ Plugin 'gmarik/vundle'
 " ------------------------------------------------------------------------------
 
 " Lightline
-Plugin 'itchyny/lightline.config/nvim'
+Plugin 'itchyny/lightline.vim'
 
 function! LightlineFileFormat()
   return winwidth(0) > 70 ?
@@ -42,7 +42,7 @@ function! LightlineFileName()
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'onehalfdark'
+let g:lightline.colorscheme = 'solarized'
 let g:lightline.active = {}
 let g:lightline.active.left = [ ['mode', 'paste'],
     \ ['readonly', 'filename', 'modified'] ]
@@ -105,7 +105,7 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 " ------------------------------------------------------------------------------
 
 " CtrlP
-Plugin 'kien/ctrlp.config/nvim'
+Plugin 'kien/ctrlp.vim'
 
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_mruf_max=50
@@ -234,7 +234,7 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 let g:NERDTreeSyntaxEnabledExtensions = ['py', 'ex', 'exs', 'js', 'ts', 'vue',
   \ 'css', 'scss', 'sass', 'xml', 'html', 'pug', 'pdf',
-  \ 'json', 'yml', 'yaml', 'md', 'txt', 'csv', 'tsv']
+  \ 'json', 'yml', 'yaml', 'md', 'ini', 'txt', 'csv', 'tsv']
 let g:NERDTreeExtensionHighlightColor = {
   \'py': 'FFD343',
   \'ex': '4E2A8E',
@@ -253,9 +253,25 @@ let g:NERDTreeExtensionHighlightColor = {
   \'yaml': '6395F8',
   \'pdf': 'D61C00',
   \'md': 'F83D84',
+  \'ini': '98FB98',
   \'txt': 'F83D84',
   \'csv': 'F83D84',
   \'tsv': 'F83D84'
+  \}
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightColor = {
+  \'Dockerfile': '0DB7ED',
+  \'.*\.env$': '9FB3BC',
+  \'.*\.ini$': '98FB98',
+  \'.*\.log*$': '808080',
+  \'.*\.md$': 'F83D84',
+  \'\..*rc$': 'FF9595',
+  \'\.git.*$': 'F09B61',
+  \}
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightColor = {
+  \'.dockerignore': '0DB7ED',
+  \'docker-compose.yml': '0DB7ED'
   \}
 
 " ------------------------------------------------------------------------------
@@ -267,7 +283,6 @@ Plugin 'sickill/vim-monokai'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'morhetz/gruvbox'
 Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'joshdick/onedark.config/nvim'
 
 " ------------------------------------------------------------------------------
 
@@ -284,14 +299,14 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme onehalfdark
+colorscheme badwolf
 
 " Basic
 set encoding=utf-8
 set dict=/usr/share/dict/words
 set autoread
 set synmaxcol=0
-set term=screen-256color
+set term=rxvt-256color
 set history=1000
 set undofile
 set undodir=~/.config/nvim/undo//
