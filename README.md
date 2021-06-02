@@ -17,7 +17,7 @@ $ ./dotfiles/install.sh
 ```
 
  - `pip uninstall greenlet` followed by `pip install --user pynvim` - required for deoplete vim Plugin
- - `pip install flake8 autopep8` - required for ale vim Plugin
+ - `pip install pycodestyle pyflakes flake8 autopep8` - required for ale vim Plugin
  - `npm install -g eslint vls` - required for ale vim Plugin
  - `yay ctags` - install exuberant-ctags for tagbar vim Plugin
  - make sure flake8, autopep8, eslint, etc. are all directly accessible (executables in $PATH) or else move them over to `/usr/local/bin` manually
