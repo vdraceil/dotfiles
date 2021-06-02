@@ -335,6 +335,7 @@ set fileformats=unix,dos
 "let &colorcolumn='80,'.join(range(120,999), ',')
 let &colorcolumn="80,120"
 highlight colorcolumn ctermbg=237 guibg=#2c2d27
+highlight Comment cterm=italic gui=italic
 
 " UI
 set laststatus=2
