@@ -46,6 +46,8 @@ alias nv='nvim'
 alias hgrep='history | grep'
 alias bc='bc -l'
 alias path='echo -e ${PATH//:/\\n}'
+alias grr='grep -r'
+alias grri='grep -ri'
 alias grl='grep -rl'
 alias gril='grep -ril'
 
@@ -74,6 +76,7 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 
 # others
+export TERMINAL=alacritty
 export EDITOR=nvim
 export XDG_USER_CONFIG_DIR="$HOME/.config"
 
@@ -90,3 +93,12 @@ if [ -f '/home/vdraceil/google-cloud-sdk/completion.bash.inc' ]; then . '/home/v
 
 # node/nvm
 source /usr/share/nvm/init-nvm.sh
+
+# set fish as interactive shell only
+# startup from bash, drop into fish
+if [[ $DISPLAY == ":0" && $XDG_VTNR -eq 1 && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
+  # exec bash scripts if the parent process is not fish
+  # if this step is skipped, we can still do
+  # `bash --norc` to prevent bashrc from being loaded
+  exec fish
+fi
