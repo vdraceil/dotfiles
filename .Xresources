@@ -43,8 +43,8 @@ URxvt.fading: 50
 URxvt.font: xft:FiraCode Nerd Font Mono:pixelsize=15
             xft:DejaVuSansMono:pixelsize=18, \
             xft:LiberationMono:pixelsize=15, \
-            xft:Unifont
-URxvt.letterSpace: -1
+            xft:Noto Color Emoji:minspace=False
+URxvt.letterSpace: 1
 URxvt.scrollBar: false
 URxvt.scrollBar_right: true
 URxvt.scrollTtyOutput: false
