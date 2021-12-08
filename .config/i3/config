@@ -11,7 +11,7 @@ set $VIDEOS_DIR $HOME/local/documents/videos
 set $WALLPAPERS_DIR $HOME/local/wallpapers
 
 set $WS1 "1: dashboard"
-set $WS2 "2: firefox"
+set $WS2 "2: brave"
 set $WS3 "3: chrome"
 set $WS4 "4: text"
 set $WS5 "5: code"
@@ -55,6 +55,9 @@ mode "resize_width" {
     # instant resizing
     bindsym 2 resize set width 20 ppt
     bindsym 3 resize set width 30 ppt
+    bindsym 4 resize set width 40 ppt
+    bindsym 5 resize set width 50 ppt
+    bindsym 6 resize set width 60 ppt
     bindsym 7 resize set width 70 ppt
     bindsym 8 resize set width 80 ppt
 
@@ -67,6 +70,9 @@ mode "resize_height" {
     # instant resizing
     bindsym 2 resize set height 20 ppt
     bindsym 3 resize set height 30 ppt
+    bindsym 4 resize set height 40 ppt
+    bindsym 5 resize set height 50 ppt
+    bindsym 6 resize set height 60 ppt
     bindsym 7 resize set height 70 ppt
     bindsym 8 resize set height 80 ppt
 
@@ -176,8 +182,8 @@ bindsym $mod+e [title="^ranger$"] focus
 bindsym $mod+p exec "$I3_SCRIPTS_DIR/power.sh"
 
 # media keys
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 3"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 3"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
@@ -208,22 +214,23 @@ bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 
 # WORKSPACE ASSIGNMENTS & LAYOUTS
 assign [title="ranger"] $WS1
-assign [class="firefox"] $WS2
+assign [class="Brave-browser"] $WS2
 assign [class="Google-chrome"] $WS3
-assign [class="Subl"] $WS4
+assign [class="VSCodium"] $WS4
+assign [class="Skype"] $WS4
 assign [class="Upwork"] $WS10
 
 for_window [class="Upwork"] floating disable; [class="Upwork"] focus; resize set width 20 ppt
 
 # START UP
-# polybar
+# top bar
 exec_always --no-startup-id "$POLYBAR_CONFIG_DIR/launch.sh"
 
-# dunst
+# notifications
 exec --no-startup-id "dunst"
 
 # browsers
-exec --no-startup-id "firefox"
+exec --no-startup-id "brave"
 exec --no-startup-id "google-chrome-stable"
 
 # lock screen - init image cache
