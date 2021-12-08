@@ -318,7 +318,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme snazzy
+colorscheme srcery
 
 " Basic
 set encoding=utf-8
