@@ -90,7 +90,7 @@ exec-if = $HOME/.config/scripts/radio.sh is-active
 
 [module/wireless-network]
 type = internal/network
-interface = wlp1s0
+interface = wlp0s20f3
 interval = 2.0
 
 format-connected = <ramp-signal> <label-connected>
