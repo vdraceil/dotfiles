@@ -161,6 +161,9 @@ bindsym $mod+Shift+0 move container to workspace $WS10
 # enable/disable floating for selected windows
 for_window [class="Upwork"] floating disable
 
+# change wallpaper on demand
+bindsym Ctrl+Mod1+w exec "feh --bg-scale --randomize $WALLPAPERS_DIR"
+
 # restart i3 in-place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
