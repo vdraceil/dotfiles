@@ -8,11 +8,11 @@
        "x": 1,
        "y": 36
     },
-    "name": "code-oss",
+    "name": "vscodium",
     "percent": 0.7,
     "swallows": [
         {
-            "class": "^code\\-oss$"
+            "class": "^VSCodium$"
         }
     ],
     "type": "con"
@@ -37,4 +37,3 @@
     ],
     "type": "con"
 }
-

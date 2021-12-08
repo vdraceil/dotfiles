@@ -10,5 +10,5 @@ i3-msg -q "[workspace=\"$WS4\"] kill"
 i3-msg -q "workspace \"$WS4\"; append_layout $I3_WS_LAYOUT"
 
 # start applications to be absorbed into the placeholders
-(code-oss &)
+(vscodium &)
 (skypeforlinux &)
