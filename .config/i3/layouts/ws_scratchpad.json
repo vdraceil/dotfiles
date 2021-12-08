@@ -9,12 +9,12 @@
        "x": 0,
        "y": 0
     },
-    "name": "urxvt",
+    "name": "scratchpad",
     // "percent": 0.8,
     "percent": 1,
     "swallows": [
         {
-            "class": "^URxvt$",
+            "class": "^Alacritty$",
             "title": "^scratchpad$"
         }
     ]

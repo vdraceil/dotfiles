@@ -19,7 +19,7 @@
             "percent": 1,
             "swallows": [
                 {
-                    "class": "^URxvt$",
+                    "class": "^Alacritty$",
                     "title": "^ranger$"
                 }
             ],
@@ -56,7 +56,7 @@
                     "percent": 0.5,
                     "swallows": [
                         {
-                            "class": "^URxvt$",
+                            "class": "^Alacritty$",
                             "title": "^cal$"
                         }
                     ],
@@ -76,7 +76,7 @@
                     "percent": 0.5,
                     "swallows": [
                         {
-                            "class": "^URxvt$",
+                            "class": "^Alacritty$",
                             "title": "^bc$"
                         }
                     ],

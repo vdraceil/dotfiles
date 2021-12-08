@@ -10,4 +10,4 @@ i3-msg -q "[workspace=\"$WS10\"] kill"
 i3-msg -q "workspace \"$WS10\"; append_layout $I3_WS_LAYOUT"
 
 # start applications to be absorbed into the placeholders
-(urxvt -T scratchpad &)
+(alacritty -t scratchpad &)
