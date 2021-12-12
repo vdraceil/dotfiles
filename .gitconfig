@@ -7,25 +7,25 @@
     whitespace = fix,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
 [web]
-    browser = firefox
+    browser = brave
 [push]
     default = current
 [color]
     ui = auto
 [color "branch"]
     current = yellow bold
-    local = green bold
-    remote = cyan bold
+    local = green normal
+    remote = cyan normal dim
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
+    meta = yellow italic
+    frag = magenta italic
     old = red bold
     new = green bold
     whitespace = red reverse
 [color "status"]
     added = green bold
     changed = yellow bold
-    untracked = red bold
+    untracked = cyan italic dim
 [diff]
     tool = vimdiff
 [difftool]
@@ -50,6 +50,7 @@
     d = diff
     dc = diff --cached
     ds = diff --staged
+    f = fetch -p
     l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     l5 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -5
     l10 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -10
