@@ -35,31 +35,3 @@ Xft.hintstyle: hintslight
 Xft.antialias: true
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
-
-! URxvt
-uRxvt.internalBorder: 4
-URxvt.externalBorder: 0
-URxvt.fading: 50
-URxvt.font: xft:FiraCode Nerd Font Mono:pixelsize=15
-            xft:DejaVuSansMono:pixelsize=18, \
-            xft:LiberationMono:pixelsize=15, \
-            xft:Noto Color Emoji:minspace=False
-URxvt.letterSpace: 1
-URxvt.scrollBar: false
-URxvt.scrollBar_right: true
-URxvt.scrollTtyOutput: false
-URxvt.scrollWithBuffer: true
-URxvt.scrollTtyKeypress: true
-URxvt.saveLines: 9999
-URxvt.geometry: 150x40
-URxvt.cursorUnderline: true
-URxvt.cursorBlink: true
-URxvt.cursorColor: #00FEFF
-URxvt.perl-ext-common: default,url-select,keyboard-select,clipboard
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
