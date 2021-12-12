@@ -5,6 +5,7 @@ set $SCRIPTS_DIR $HOME/.config/scripts
 set $I3_LAYOUTS_DIR $HOME/.config/i3/layouts
 set $I3_SCRIPTS_DIR $HOME/.config/i3/scripts
 set $POLYBAR_CONFIG_DIR $HOME/.config/polybar
+set $ROFI_CONFIG_DIR $HOME/.config/rofi
 
 set $IMAGES_DIR $HOME/local/documents/images
 set $VIDEOS_DIR $HOME/local/documents/videos
@@ -181,9 +182,6 @@ bindsym $mod+Shift+d exec "$I3_SCRIPTS_DIR/ws_dashboard.sh"
 bindsym $mod+b [title="^bc$"] focus
 bindsym $mod+e [title="^ranger$"] focus
 
-# power options
-bindsym $mod+p exec "$I3_SCRIPTS_DIR/power.sh"
-
 # media keys
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 3"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 3"
@@ -209,8 +207,9 @@ bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 # unmount and detach USB drives
 bindsym $mod+minus exec "$SCRIPTS_DIR/usb_detach.sh"
 
-# launch rofi
-bindsym $mod+d exec "rofi -no-lazy-grab -show drun -modi drun -theme style7"
+# dmenu & power options
+bindsym $mod+d exec --no-startup-id "rofi -no-lazy-grab -show drun -modi drun -theme launcher"
+bindsym $mod+p exec --no-startup-id "$ROFI_CONFIG_DIR/bin/powermenu.sh"
 
 # launch lock screen
 bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"

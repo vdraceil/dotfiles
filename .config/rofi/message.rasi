@@ -1,0 +1,53 @@
+/* Confirm Dialog */
+
+
+configuration {
+  font: "DroidSansMono Nerd Font Mono 10";
+  disable-history: false;
+  sidebar-mode: false;
+}
+
+@import "themes/colors.rasi"
+
+window {
+  transparency: "real";
+  background-color: @bg;
+  text-color: @fg;
+  border: 1px;
+  border-color: @ac;
+  border-radius: 5px;
+  width: 30%;
+  location: center;
+  x-offset: 0;
+  y-offset: 0;
+}
+
+prompt {
+  enabled: true;
+  padding: 0.30% 1% 0% -0.5%;
+  background-color: @al;
+  text-color: @fg;
+  font: "DroidSansMono Nerd Font Mono 12";
+}
+
+inputbar {
+  children: [ prompt ];
+  background-color: @bg;
+  text-color: @fg;
+  expand: false;
+  border: 0% 0% 0% 0%;
+  border-radius: 0px;
+  border-color: @ac;
+  margin: 0% 0% 0% 0%;
+  padding: 1.5%;
+}
+
+mainbox {
+  background-color: @al;
+  border: 0% 0% 0% 0%;
+  border-radius: 5px;
+  border-color: @ac;
+  children: [ inputbar ];
+  spacing: 0%;
+  padding: 0.5%;
+}

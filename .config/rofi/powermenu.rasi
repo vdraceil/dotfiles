@@ -1,0 +1,92 @@
+/*
+ * Ref: https://github.com/adi1090x/rofi/blob/master/1080p/powermenu/card_rounded.rasi
+ */
+
+configuration {
+  font: "FantasqueSansMono Nerd Font 14";
+  show-icons: false;
+  icon-theme: "Papirus";
+  drun-display-format: "{name}";
+  disable-history: false;
+  sidebar-mode: false;
+}
+
+@import "themes/colors.rasi"
+
+window {
+  transparency: "real";
+  background-color: @bg;
+  text-color: @fg;
+  border: 1px;
+  border-color: @ac;
+  border-radius: 5px;
+  height: 34.5%;
+  width: 5%;
+  location: east;
+  x-offset: 0;
+  y-offset: 0;
+}
+
+listview {
+  background-color: @bg;
+  margin: 0% 0% 0% 0%;
+  spacing: 1%;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [ listview ];
+  spacing: 2%;
+  padding: 1% 0.5% 0% 0.5%;
+}
+
+element {
+  background-color: @bg;
+  text-color: @fg;
+  orientation: vertical;
+  border-radius: 5px;
+}
+
+element-text {
+  background-color: @al;
+  text-color: inherit;
+  font: "feather 28";
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 1% 0% 1% 0%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+  background-color: @se;
+  text-color: @fg;
+  border-radius: 5px;
+}
+
+element normal.active,
+element alternate.active {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element selected {
+  background-color: @ac;
+  text-color: @bg;
+  border: 0% 0% 0% 0%;
+  border-radius: 5px;
+  border-color: @bg;
+}
+
+element selected.urgent {
+  background-color: @se;
+  text-color: @fg;
+}
+
+element selected.active {
+  background-color: @ac;
+  text-color: @bg;
+}

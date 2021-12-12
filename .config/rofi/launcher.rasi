@@ -12,7 +12,7 @@ configuration {
   sidebar-mode: false;
 }
 
-@import "colors.rasi"
+@import "themes/colors.rasi"
 
 window {
   transparency: "real";
@@ -38,7 +38,7 @@ prompt {
 entry {
   background-color: @al;
   text-color: @fg;
-  placeholder-color: @fg;
+  placeholder-color: #757975;
   expand: true;
   horizontal-align: 0;
   placeholder: "Search";
