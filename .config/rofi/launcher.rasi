@@ -20,7 +20,7 @@ window {
   text-color: @fg;
   border: 1px;
   border-color: @ac;
-  border-radius: 5px;
+  border-radius: 0px;
   width: 30%;
   location: center;
   x-offset: 0;
@@ -72,7 +72,7 @@ listview {
 mainbox {
   background-color: @al;
   border: 0% 0% 0% 0%;
-  border-radius: 5px;
+  border-radius: 0px;
   border-color: @ac;
   children: [ inputbar, listview ];
   spacing: 0%;
