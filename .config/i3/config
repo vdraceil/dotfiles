@@ -210,7 +210,7 @@ bindsym $mod+Shift+Print exec "pkill --signal SIGINT ffmpeg"
 bindsym $mod+minus exec "$SCRIPTS_DIR/usb_detach.sh"
 
 # launch rofi
-bindsym $mod+d exec "rofi -modi drun -show drun"
+bindsym $mod+d exec "rofi -no-lazy-grab -show drun -modi drun -theme style7"
 
 # launch lock screen
 bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
