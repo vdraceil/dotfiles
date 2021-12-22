@@ -1,12 +1,6 @@
 # prompt setup
 starship init fish | source
 
-# key bindings
-function fish_user_key_bindings
-  bind ! bind_bang
-  bind '$' bind_dollar
-end
-
 # aliases
 alias ls="ls --color"
 alias la="ls --color -a"
@@ -15,7 +9,6 @@ alias la1="ls --color -a1"
 alias ll="ls --color -alh"
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias nv="nvim"
 alias hgrep="history | grep"
 alias grr="grep -r"
 alias grri="grep -ri"
@@ -25,6 +18,7 @@ alias gril="grep -ril"
 alias g="git"
 alias wm="sudo wifi-menu"
 alias n="neofetch"
+alias nv="nvim"
 
 set "TREE_EXCLUDE" "node_modules|__pycache__|.pytest_cache|env|build|_build|dist|.git|*.pyc"
 alias t='tree -C -I "$TREE_EXCLUDE"'
