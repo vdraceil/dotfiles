@@ -2,11 +2,6 @@
 starship init fish | source
 
 # aliases
-alias ls="ls --color"
-alias la="ls --color -a"
-alias l1="ls --color -1"
-alias la1="ls --color -a1"
-alias ll="ls --color -alh"
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias hgrep="history | grep"

@@ -7,7 +7,7 @@ sourceDir=$( cd "$( dirname "$0" )" && pwd )
 mkdir -p $HOME/.config
 
 # define the files/dirs for which we need symlinks in the $HOME dir
-sourceFiles=".bashrc .bash_profile .asoundrc .gitconfig .gitignore
+sourceFiles=".bashrc .bash_profile .asoundrc .gitconfig .gitignore .dircolors
 .xinitrc .Xresources .ncmpcpp .config/polybar .config/ranger .config/mpd
 .config/i3 .config/dunst .config/neofetch .config/htop .config/rofi
 .config/systemd .config/scripts .config/nvim .config/fish .config/alacritty
