@@ -20,8 +20,8 @@ window {
   border: 1px;
   border-color: @ac;
   border-radius: 0px;
-  height: 34.5%;
-  width: 5%;
+  height: 29%;
+  width: 4%;
   location: east;
   x-offset: 0;
   y-offset: 0;
@@ -30,7 +30,7 @@ window {
 listview {
   background-color: @bg;
   margin: 0% 0% 0% 0%;
-  spacing: 1%;
+  spacing: 0.5%;
   cycle: true;
   dynamic: true;
   layout: vertical;
@@ -40,20 +40,20 @@ mainbox {
   background-color: @bg;
   children: [ listview ];
   spacing: 2%;
-  padding: 1% 0.5% 0% 0.5%;
+  padding: 0.5% 0.25% 0% 0.25%;
 }
 
 element {
   background-color: @bg;
   text-color: @fg;
   orientation: vertical;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 element-text {
   background-color: @al;
   text-color: inherit;
-  font: "feather 28";
+  font: "feather 24";
   expand: true;
   horizontal-align: 0.5;
   vertical-align: 0.5;
@@ -64,7 +64,7 @@ element normal.urgent,
 element alternate.urgent {
   background-color: @se;
   text-color: @fg;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 element normal.active,
@@ -77,7 +77,7 @@ element selected {
   background-color: @ac;
   text-color: @bg;
   border: 0% 0% 0% 0%;
-  border-radius: 5px;
+  border-radius: 0px;
   border-color: @bg;
 }
 

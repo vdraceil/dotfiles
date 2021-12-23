@@ -37,7 +37,7 @@ prompt {
 
 entry {
   background-color: @al;
-  text-color: @fg;
+  text-color: @ac;
   placeholder-color: #757975;
   expand: true;
   horizontal-align: 0;
@@ -60,7 +60,7 @@ inputbar {
 
 listview {
   background-color: @al;
-  padding: 10px;
+  padding: 3px;
   columns: 2;
   lines: 7;
   spacing: 1%;
@@ -109,6 +109,6 @@ element selected {
   background-color: @ac;
   text-color: @bg;
   border: 0% 0% 0% 0%;
-  border-radius: 5px;
+  border-radius: 0px;
   border-color: @bg;
 }

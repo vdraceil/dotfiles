@@ -318,7 +318,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " Settings
-colorscheme srcery
+colorscheme sonokai
 
 " Basic
 set encoding=utf-8

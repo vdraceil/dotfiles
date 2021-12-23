@@ -1,3 +1,28 @@
+colors:
+  primary:
+    background: '0x2E3436'
+    foreground: '0xF7F7F7'
+
+  normal:
+    black: '0x6E706B'
+    red: '0xEE7757'
+    green: '0xABC191'
+    yellow: '0xFBDF3A'
+    blue: '0x98D4FF'
+    magenta: '0xFFB2FF'
+    cyan: '0x89FFFF'
+    white: '0xD3D7CF'
+
+  bright:
+    black: '0x2E3436'
+    red: '0xF43D3D'
+    green: '0x82C237'
+    yellow: '0xFFAC00'
+    blue: '0x319FF5'
+    magenta: '0xFF00FF'
+    cyan: '0x4DFFFF'
+    white: '0xF7F7F7'
+
 font:
   normal:
     family: "FiraCode Nerd Font"

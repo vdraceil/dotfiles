@@ -13,19 +13,19 @@
 [color]
     ui = auto
 [color "branch"]
-    current = yellow bold
-    local = green normal
-    remote = cyan normal dim
+    current = brightyellow bold
+    local = brightgreen normal
+    remote = brightcyan normal dim
 [color "diff"]
-    meta = yellow italic
-    frag = magenta italic
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+    meta = brightyellow italic
+    frag = brightmagenta italic
+    old = brightred bold
+    new = brightgreen bold
+    whitespace = brightred reverse
 [color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = cyan italic dim
+    added = brightgreen bold
+    changed = brightyellow bold
+    untracked = magenta italic dim
 [core]
     pager = delta
 [interactive]
@@ -59,10 +59,10 @@
     dc = diff --cached
     ds = diff --staged
     f = fetch -p
-    l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    l5 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -5
-    l10 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -10
-    l20 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -20
+    l = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative
+    l5 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -5
+    l10 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -10
+    l20 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -20
     m = merge
     p = pull
     pr = pull --rebase
