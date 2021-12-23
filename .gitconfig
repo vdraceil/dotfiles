@@ -59,10 +59,10 @@
     dc = diff --cached
     ds = diff --staged
     f = fetch -p
-    l = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative
-    l5 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -5
-    l10 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -10
-    l20 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(brightmagenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -20
+    l = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative
+    l5 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -5
+    l10 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -10
+    l20 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -20
     m = merge
     p = pull
     pr = pull --rebase
