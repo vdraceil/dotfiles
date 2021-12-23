@@ -2,26 +2,29 @@
     monitor = 0
     follow = mouse
 
-    # The geometry of the window: [{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "350x5-15+50"
+    width = 350
+    height = 500
+    origin = top-right
+    offset = 10x50
+    scale = 0
 
     indicate_hidden = yes
     separator_height = 2
     padding = 10
-    horizontal_padding = 10
+    horizontal_padding = 20
     frame_width = 2
-    frame_color = "#94FBAB"
+    frame_color = "#319FF5"
     separator_color = frame
     sort = no
     idle_threshold = 120
-    font = DejaVu Sans Mono 11
-    line_height = 1.5
+    font = "CMU Typewriter Text 13"
+    line_height = 2
 
-    # http://developer.gnome.org/pango/stable/PangoMarkupFormat.html
     markup = yes
-    format = "<span foreground="white">%s</span>\n%b"
+    format = "<span foreground='white'>%s</span>\n%b"
 
     alignment = center
+    vertical_alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -31,39 +34,36 @@
     show_indicators = yes
 
     icon_position = off
-    max_icon_size = 16
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Adwaita/48x48/status/:/usr/share/icons/Adwaita/48x48/devices/:/usr/share/icons/Adwaita/48x48/legacy/
 
     sticky_history = yes
     history_length = 15
 
     dmenu = /usr/bin/rofi -dmenu -p dunst
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/brave -new-tab
 
     always_run_script = true
     title = Dunst
     class = Dunst
 
-[shortcuts]
-    close = mod1+space
-    close_all = ctrl+mod1+space
-    history = mod1+period
-    context = ctrl+mod1+period
-
 [urgency_low]
-  background = "#3F3F3F"
-  foreground = "#98F5FF"
-  frame_color = "#00FFFF"
-  timeout = 4
+  background = "#202426"
+  foreground = "#D3D7CF"
+  frame_color = "#319FF5"
+  format = "<span foreground='#319FF5'>%s</span>\n%b"
+  timeout = 3
 
 [urgency_normal]
-  background = "#2E3436"
-  foreground = "#82B12B"
-  frame_color = "#94FBAB"
-  timeout = 8
+  background = "#202426"
+  foreground = "#D3D7CF"
+  frame_color = "#FFAC00"
+  format = "<span foreground='#FFAC00'>%s</span>\n%b"
+  timeout = 5
 
 [urgency_critical]
-  background = "#2E3436"
-  foreground = "#EE3B3B"
-  frame_color = "#EC2424"
-  timeout = 12
+  background = "#202426"
+  foreground = "#D3D7CF"
+  frame_color = "#F43D3D"
+  format = "<span foreground='#F43D3D'>%s</span>\n%b"
+  timeout = 10

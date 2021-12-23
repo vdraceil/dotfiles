@@ -214,6 +214,12 @@ bindsym $mod+p exec --no-startup-id "$ROFI_CONFIG_DIR/bin/powermenu.sh"
 # launch lock screen
 bindsym $mod+Ctrl+l exec "betterlockscreen --lock dim"
 
+# notifications options
+bindsym Mod1+space exec "dunstctl close"
+bindsym Ctrl+Mod1+space exec "dunstctl close-all"
+bindsym Mod1+period exec "dunstctl history-pop"
+bindsym Ctrl+Mod1+period exec "dunstctl context"
+
 # WORKSPACE ASSIGNMENTS & LAYOUTS
 assign [title="ranger"] $WS1
 assign [class="Brave-browser"] $WS2
