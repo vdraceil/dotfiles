@@ -1,6 +1,9 @@
 # prompt setup
 starship init fish | source
 
+# shell greeting
+alias fish_greeting="fortune | cowsay -f (cowsay -l | tail -n+2 | tr ' ' '\n' | shuf -n 1)"
+
 # aliases
 alias ld="ls -d */"
 alias l1="ls -1 --group-directories-first"
@@ -9,6 +12,7 @@ alias l1a="ls -1a --group-directories-first"
 alias ll="ls -lh --group-directories-first"
 alias lla="ls -lah --group-directories-first"
 alias lld="ls -ldh */"
+
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias hgrep="history | grep"
