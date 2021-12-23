@@ -7,7 +7,7 @@ success_symbol = "[➜](bold bright-green)"
 error_symbol = "[➜](bold bright-red)"
 
 [directory]
-style = "bright-yellow"
+style = "bold bright-yellow"
 read_only = " 🔒"
 
 [hostname]
@@ -15,7 +15,7 @@ ssh_only = true
 format =  "on [$hostname](bright-red) "
 
 [git_branch]
-style = "bright-purple"
+style = "bold bright-purple"
 
 [git_commit]
 style = "bright-green"
