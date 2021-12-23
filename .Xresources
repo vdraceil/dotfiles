@@ -2,12 +2,12 @@
 *background: #2E3436
 *foreground: #EEEEEC
 *borderColor: #2E3436
-*underlineColor: #FFAC00
+*underlineColor: #E98218
 ! black dark/light
 *color0: #2E3436
 *color8: #6E706B
 ! red dark/light
-*color1: #F43D3D
+*color1: #F22A70
 *color9: #EE7757
 ! green dark/light
 *color2: #82C237
@@ -16,10 +16,10 @@
 *color3: #FFAC00
 *color11: #FBDF3A
 ! blue dark/light
-*color4: #27A8F7
+*color4: #0076DE
 *color12: #98D4FF
 ! magenta dark/light
-*color5: #FF00FF
+*color5: #AA7CF3
 *color13: #FFB2FF
 ! cyan dark/light
 *color6: #00FFFF

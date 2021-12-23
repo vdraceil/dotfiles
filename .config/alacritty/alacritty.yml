@@ -15,11 +15,11 @@ colors:
 
   bright:
     black: '0x2E3436'
-    red: '0xF43D3D'
+    red: '0xF22A70'
     green: '0x82C237'
     yellow: '0xFFAC00'
-    blue: '0x319FF5'
-    magenta: '0xFF00FF'
+    blue: '0x0076DE'
+    magenta: '0xAA7CF3'
     cyan: '0x4DFFFF'
     white: '0xF7F7F7'
 
