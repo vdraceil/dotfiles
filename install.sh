@@ -44,8 +44,17 @@ for file in $sourceFiles; do
     create_symlink $src $dest $force
 done
 
-# special symlink for systemctl service to show lockscreen on suspend
+# custom systemd services
 if [ "$1" = "-s" -o "$1" = "--sudo" -o "$2" = "-s" -o "$2" = "--sudo" ]; then
-  sudo ln -sf "$HOME/.config/systemd/etc/suspend@vdraceil.service" \
-    "/etc/systemd/system/suspend@vdraceil.service"
+  # setup betterlockscreen for suspend/resume
+  sudo ln -sf "$HOME/.config/systemd/user/betterlockscreen@.service" \
+    "/usr/lib/systemd/system/betterlockscreen@.service"
+  sudo systemctl enable "betterlockscreen@$USER"
+
+  # setup battery monitor
+  sudo ln -sf "$HOME/.config/systemd/user/check_battery.service" \
+    "/usr/lib/systemd/system/check_battery.service"
+  sudo ln -sf "$HOME/.config/systemd/user/check_battery.timer" \
+    "/usr/lib/systemd/system/check_battery.timer"
+  sudo systemctl enable check_battery.timer
 fi
