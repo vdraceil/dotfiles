@@ -41,3 +41,5 @@ alias td4='tree -C -I "$TREE_EXCLUDE" -L 4 -d'
 # # set LS_COLORS (uncomment when you migrate to lsd)
 # source ~/.config/fish/functions/ls-colors.fish
 # set_lscolors
+
+source ~/.config/fish/functions/work-grata.fish
