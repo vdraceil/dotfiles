@@ -83,7 +83,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeIgnore=['\.class$', '\.pyc$', '\.git$', '\.cache$',
     \ '^node_modules$', '^__pycache__$', '^\.pytest_cache$', '^env$',
-    \ '^deps$', '^_build$']
+    \ '^deps$', '^_build$', '^\.github$', '^\.vscode$']
 
 " 'm' key conflict with 'vim-signature'
 let g:NERDTreeMapMenu='M'
