@@ -15,27 +15,22 @@ endif
 
 " ------------------------------------------------------------------------------
 
-" Vundle
-let isVundleInstalled=filereadable(expand('~/.config/nvim/bundle/vundle/README.md'))
-let installPlugins=0
-if !isVundleInstalled
-    echo 'Installing Vundle...'
+" Vim-Plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    echo 'Installing Vim-Plug...'
     echo ''
-    silent !mkdir -p ~/.config/nvim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.config/nvim/bundle/vundle
-    let installPlugins=1
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-filetype off
-set rtp+=~/.config/nvim/bundle/vundle
-call vundle#begin()
-
-Plugin 'gmarik/vundle'
+call plug#begin()
 
 " ------------------------------------------------------------------------------
 
 " Lightline
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 function! LightlineFileFormat()
   return winwidth(0) > 70 ?
@@ -71,7 +66,7 @@ let g:lightline.component_function.fileencoding = 'LightlineFileEncoding'
 " ------------------------------------------------------------------------------
 
 " NERDTree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 let g:NERDTreeHighlightCursorline=0
 let g:NERDTreeWinSize=30
@@ -102,7 +97,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree")
 " ------------------------------------------------------------------------------
 
 " EasyMotion
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 
 " with this, 'v' will match both 'v' and 'V', but 'V' will match 'V' only
 let g:Easymotion_smartcase=1
@@ -119,7 +114,7 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 " ------------------------------------------------------------------------------
 
 " CtrlP
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_mruf_max=50
@@ -152,7 +147,7 @@ nnoremap <leader>Lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
 " ------------------------------------------------------------------------------
 
 " Tagbar
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 let g:tagbar_width=40
 let g:tagbar_autofocus=1
@@ -165,9 +160,9 @@ nnoremap <silent> <F10> :TagbarToggle<cr>
 " ------------------------------------------------------------------------------
 
 " Deoplete
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 set runtimepath+=~/.config/nvim/bundle/deoplete.nvim
 set completeopt+=noinsert
@@ -186,7 +181,7 @@ inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " ------------------------------------------------------------------------------
 
 " Ultisnips
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 let g:UltiSnipsSnippetDirectories=["quick-snippets"]
 let g:UltiSnipsEditSplit="vertical"
@@ -198,7 +193,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " ------------------------------------------------------------------------------
 
 " Ale
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {
@@ -224,28 +219,11 @@ nnoremap <F7> :ALEFix<cr>
 
 " ------------------------------------------------------------------------------
 
-" Others
-" Vim Surround
-Plugin 'tpope/vim-surround'
-
-" NERD Commenter
-Plugin 'scrooloose/nerdcommenter'
-let g:NERDSpaceDelims=1
-
-" Vim Signature - Place, toggle and display marks
-Plugin 'kshenoy/vim-signature'
-
-" Vim CSS Color Highlight
-Plugin 'ap/vim-css-color'
-
-" Vim Elixir
-Plugin 'elixir-editors/vim-elixir'
-
 " Vim Dev Icons
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let g:NERDTreeSyntaxEnabledExtensions = ['py', 'ex', 'exs', 'js', 'ts', 'vue',
   \ 'css', 'scss', 'sass', 'xml', 'html', 'pug', 'pdf',
   \ 'json', 'yml', 'yaml', 'md', 'ini', 'txt', 'csv', 'tsv']
@@ -288,32 +266,45 @@ let g:NERDTreeExactMatchHighlightColor = {
   \'docker-compose.yml': '0DB7ED'
   \}
 
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
+
+" ------------------------------------------------------------------------------
+
+" Others
+" Vim Surround
+Plug 'tpope/vim-surround'
+
+" NERD Commenter
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims=1
+
+" Vim Signature - Place, toggle and display marks
+Plug 'kshenoy/vim-signature'
+
+" Vim CSS Color Highlight
+Plug 'ap/vim-css-color'
+
+" Vim Elixir
+Plug 'elixir-editors/vim-elixir'
+
 " ------------------------------------------------------------------------------
 
 " Color Schemes
-Plugin 'sjl/badwolf'
-Plugin 'tomasr/molokai'
-Plugin 'sickill/vim-monokai'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'morhetz/gruvbox'
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'srcery-colors/srcery-vim'
-Plugin 'sainnhe/sonokai'
-Plugin 'connorholyday/vim-snazzy'
-Plugin 'mhartington/oceanic-next'
-Plugin 'drewtempelmeyer/palenight.vim'
+Plug 'sjl/badwolf'
+Plug 'tomasr/molokai'
+Plug 'sickill/vim-monokai'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'srcery-colors/srcery-vim'
+Plug 'sainnhe/sonokai'
+Plug 'connorholyday/vim-snazzy'
+Plug 'mhartington/oceanic-next'
+Plug 'drewtempelmeyer/palenight.vim'
 
-" ------------------------------------------------------------------------------
-
-call vundle#end()
-filetype plugin indent on
-
-" Install the above plugins
-if installPlugins
-    echo 'Installing Plugins...'
-    echo ''
-    :PluginInstall
-endif
+call plug#end()
 
 " ------------------------------------------------------------------------------
 
