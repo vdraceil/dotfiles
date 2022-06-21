@@ -42,3 +42,5 @@ end
 
 # aliases
 alias db-prod='ssh -N -p80 -i ~/.ssh/bastion.pem -L 5432:grata-search-prod.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@ec2-3-216-95-167.compute-1.amazonaws.com'
+alias dcdapp='docker-compose up app -d'
+alias dctest='docker-compose run --rm app python manage.py test --keepdb'
