@@ -15,7 +15,7 @@ endif
 
 " ------------------------------------------------------------------------------
 
-" Vim-Plug
+" Vim-Plug Plugin Manager
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
     echo 'Installing Vim-Plug...'
@@ -94,6 +94,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree")
     \ && b:NERDTree.isTabTree()) | q | endif
 
+# Focus main pane
+autocmd VimEnter * wincmd w
+
 " ------------------------------------------------------------------------------
 
 " EasyMotion
@@ -113,36 +116,15 @@ nmap <leader>F <Plug>(easymotion-F)| " 1 char, backward
 
 " ------------------------------------------------------------------------------
 
-" CtrlP
-Plug 'kien/ctrlp.vim'
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_mruf_max=50
-let g:ctrlp_max_depth=20
-let g:ctrlp_use_caching=1
-let g:ctrlp_clear_cache_on_exit=0
-let g:ctrlp_cache_dir='~/.config/nvim/ctrlp'
-let g:ctrlp_custom_ignore={
-    \ 'dir':  '\.git$\|dist$\|build$\|node_modules$\|env$',
-    \ 'file': '\.svg$\|\.pyc$',
-  \ }
-let g:ctrlp_prompt_mappings={
-  \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-  \ 'AcceptSelection("t")': ['<cr>'],
-  \ }
+require('telescope-config')
 
-function! CtrlPWithSearchText(search_text, ctrlp_command_end)
-    execute ':CtrlP' . a:ctrlp_command_end
-    call feedkeys(a:search_text)
-endfunction
-
-nnoremap <leader>P :CtrlP<cr>
-nnoremap <leader>M :CtrlPMRUFiles<cr>
-nnoremap <leader>L :CtrlPLine<cr>
-" Same as previous mappings, but calling with word under cursor as default text
-nnoremap <leader>Pw :call CtrlPWithSearchText(expand('<cword>'), '')<cr>
-nnoremap <leader>Mw :call CtrlPWithSearchText(expand('<cword>'), 'MRUFiles')<cr>
-nnoremap <leader>Lw :call CtrlPWithSearchText(expand('<cword>'), 'Line')<cr>
+nnoremap <leader>ff <cmd>lua require'telescope-config'.project_files()<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 
 " ------------------------------------------------------------------------------
 
@@ -427,7 +409,7 @@ nnoremap <leader>p "+p
 
 " Normal Mode - Specifics
 " Clear highlight
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><backspace> :noh<cr>
 " Edit & Source .config/nvim/init.vim on the fly
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>:echom "$MYVIMRC Sourced Successfully!"<cr>
