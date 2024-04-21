@@ -30,6 +30,9 @@ floating_modifier $mod
 
 # remove title bar from all windows
 new_window 1pixel
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # i3 gaps
 gaps inner 5
