@@ -16,6 +16,7 @@
 */mpd/log
 */mpd/pid
 */mpd/state
+**/_nvm_*
 
 # Packages
 *.7z
