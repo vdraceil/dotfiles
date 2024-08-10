@@ -36,11 +36,23 @@ function staging-pod
   connect-pod --context "grata-staging.grata.com" $argv
 end
 
+function beta-pod
+  connect-pod --context "grata-beta.grata.com" $argv
+end
+
 function prod-pod
   connect-pod --context "grata-prod.grata.com" $argv
 end
 
+function crawl-pod
+  connect-pod --context "crawl-prod.grata.com" $argv
+end
+
+# path
+fish_add_path ~/.hermes/bin/gcommand
+
 # aliases
-alias db-prod='ssh -N -p80 -i ~/.ssh/bastion.pem -L 5432:grata-search-prod.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@ec2-3-216-95-167.compute-1.amazonaws.com'
+alias db-prod='ssh -N -p80 -i ~/.ssh/bastion-prod.pem -L 5432:grata-search-prod.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@ec2-3-216-95-167.compute-1.amazonaws.com'
+alias db-staging='ssh -N -p80 -i ~/.ssh/bastion-staging.pem -L 5432:grata-search-staging-blue.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@bastion-staging.devapp.grata.com'
 alias dcdapp='docker-compose up app -d'
 alias dctest='docker-compose run --rm app python manage.py test --keepdb'

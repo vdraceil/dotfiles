@@ -1,5 +1,5 @@
 # ls
-alias ld="ls -d */"
+#alias ld="ls -d */"
 alias l1="ls -1 --group-directories-first"
 alias la="ls -a --group-directories-first"
 alias l1a="ls -1a --group-directories-first"
@@ -36,4 +36,5 @@ alias g="git"
 alias wm="sudo wifi-menu"
 alias n="neofetch"
 alias nv="nvim"
-alias dc='docker-compose'
+alias dc="docker-compose"
+alias codon="/home/vdraceil/.codon/bin/codon"
