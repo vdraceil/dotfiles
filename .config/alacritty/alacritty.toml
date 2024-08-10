@@ -1,31 +1,41 @@
 [bell]
 animation = "EaseOutExpo"
-color = "0xffffff"
+color = "#ffffff"
 duration = 0
 
 [colors.bright]
-black = "0x2E3436"
-blue = "0x0076DE"
-cyan = "0x4DFFFF"
-green = "0x82C237"
-magenta = "0xAA7CF3"
-red = "0xF22A70"
-white = "0xF7F7F7"
-yellow = "0xFFAC00"
+black = "#2E3436"
+blue = "#0076DE"
+cyan = "#4DFFFF"
+green = "#82C237"
+magenta = "#AA7CF3"
+red = "#F4005F"
+white = "#F7F7F7"
+yellow = "#FFAC00"
 
 [colors.normal]
-black = "0x6E706B"
-blue = "0x98D4FF"
-cyan = "0x89FFFF"
-green = "0xABC191"
-magenta = "0xFFB2FF"
-red = "0xEE7757"
-white = "0xD3D7CF"
-yellow = "0xFBDF3A"
+black = "#6E706B"
+blue = "#98D4FF"
+cyan = "#89FFFF"
+green = "#ABC191"
+magenta = "#FFB2FF"
+red = "#EE7757"
+white = "#D3D7CF"
+yellow = "#FBDF3A"
 
 [colors.primary]
-background = "0x2E3436"
-foreground = "0xF7F7F7"
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+dim_foreground = "#7F849C"
+bright_foreground = "#CDD6F4"
+
+[colors.cursor]
+text = "#1E1E2E"
+cursor = "#F5E0DC"
+
+[colors.selection]
+text = "#2E3436"
+background = "#D8EAFA"
 
 [cursor]
 style = "Beam"
@@ -38,7 +48,7 @@ family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Liberation Mono"
+family = "Fantasque Sans Mono"
 style = "Italic"
 
 [font.normal]
