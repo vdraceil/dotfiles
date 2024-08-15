@@ -41,8 +41,8 @@ vim.keymap.set('n', '<leader>T', '<C-w>T', { desc = 'Move current split to a new
 vim.keymap.set('n', '<C->>', '<C-w>r', { desc = 'Rotate split clockwise' })
 vim.keymap.set('n', '<C-<>', '<C-w>R', { desc = 'Rotate split anti-clockwise' })
 
-vim.keymap.set('n', '<leader>+', '<C-w>>', { desc = 'Resize split vertical increase' })
-vim.keymap.set('n', '<leader>-', '<C-w><', { desc = 'Resize split vertical decrease' })
+vim.keymap.set('n', '<leader>+', '20<C-w>>', { desc = 'Resize split vertical increase' })
+vim.keymap.set('n', '<leader>-', '20<C-w><', { desc = 'Resize split vertical decrease' })
 
 -- buffers
 vim.keymap.set('n', 'bv', ':bprev<CR>', { desc = 'Move focus to previous buffer' })
@@ -53,7 +53,7 @@ vim.keymap.set('n', 'bnn', ':blast<CR>', { desc = 'Move focus to last buffer' })
 -- plugin: fzf-lua
 vim.keymap.set('n', '<leader>ff', ':FzfLua files<CR>', { desc = 'Fzf Find Files' })
 vim.keymap.set('n', '<leader>fr', ':FzfLua oldfiles<CR>', { desc = 'Fzf Recent Files' })
-vim.keymap.set('n', '<leader>gl', ':FzfLua live_grep<CR>', { desc = 'Fzf Live Grep' })
+vim.keymap.set('n', '<leader>rg', ':FzfLua live_grep<CR>', { desc = 'Fzf Live Grep' })
 vim.keymap.set('n', '<leader>gw', ':FzfLua grep_cword<CR>', { desc = 'Fzf Grep Curr Word' })
 vim.keymap.set('n', '<leader>m', ':FzfLua marks<CR>', { desc = 'Fzf Marks' })
 vim.keymap.set('n', '<leader>gb', ':FzfLua git_branches<CR>', { desc = 'Fzf Git Branches' })
@@ -64,3 +64,12 @@ vim.keymap.set('n', '<leader>gs', ':FzfLua git_stash<CR>', { desc = 'Fzf Git Sta
 vim.keymap.set('n', '<leader>nt', ':NvimTreeToggle<CR>', { desc = 'NvimTree Toggle' })
 vim.keymap.set('n', '<leader>nr', ':NvimTreeRefresh<CR>', { desc = 'NvimTree Refresh' })
 vim.keymap.set('n', '<leader>nc', ':NvimTreeCollapse<CR>', { desc = 'NvimTree Collapse' })
+
+-- plugin: gitsigns
+vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<CR>', { desc = 'Git Blame' })
+
+-- plugin: diffview
+vim.keymap.set('n', '<leader>do', ':DiffviewOpen<CR>', { desc = 'DiffView Open' })
+vim.keymap.set('n', '<leader>dc', ':DiffviewClose<CR>', { desc = 'DiffView Close' })
+vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory %<CR>', { desc = 'DiffView File History Current File' })
+vim.keymap.set('n', '<leader>dx', ':DiffviewFileHistory<CR>', { desc = 'DiffView File History - Current Branch' })

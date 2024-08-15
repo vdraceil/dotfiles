@@ -13,7 +13,14 @@ return {
   { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
 
   -- git
-  { 'lewis6991/gitsigns.nvim', opts = {} },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#6E706B', italic = true })
+      require('gitsigns').setup()
+    end
+  },
+  'sindrets/diffview.nvim',
 
   -- highlight text colors
   {
