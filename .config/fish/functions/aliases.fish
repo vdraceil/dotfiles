@@ -6,7 +6,7 @@ alias du="dust"
 
 # grep
 set "RG_EXCLUDE" "!{**/node_modules/*,**/.git/*,**/dist/*,**/build/*,**/env/*,**/__pycache__/*,.pyc}"
-set "RG_EXCLUDE_TESTS" "!{**/node_modules/*,**/.git/*,**/dist/*,**/build/*,**/env/*,**/__pycache__/*,.pyc,**/tests/*}"
+set "RG_EXCLUDE_TESTS" "!{**/node_modules/*,**/.git/*,**/dist/*,**/build/*,**/env/*,**/__pycache__/*,.pyc,**/tests/*,**/management/*}"
 alias rgi='rg -i -g "$RG_EXCLUDE"'
 alias rgc='rg -g "$RG_EXCLUDE_TESTS"'
 
