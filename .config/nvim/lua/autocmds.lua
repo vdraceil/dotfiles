@@ -33,3 +33,21 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
   end
 })
+
+local LEAP_PATCH_COLORSCHEMES = { 'gruvbox-material', 'sonokai' }
+vim.api.nvim_create_autocmd('ColorScheme', {
+  desc = 'Colorscheme customizations',
+  callback = function ()
+    local utils = require('utils.base')
+
+    if utils.contains(LEAP_PATCH_COLORSCHEMES, vim.g.colors_name) then
+      require('leap').init_highlight(true)
+
+      -- define custom highlight groups
+      vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' })
+      vim.api.nvim_set_hl(0, 'LeapMatch', { fg = '#0076DE', bold = true, underline = true, nocombine = true })
+      vim.api.nvim_set_hl(0, 'LeapLabel', { fg = '#F4005F', bold = true, nocombine = true })
+      vim.api.nvim_set_hl(0, 'LeapLabelSelected', { fg = '#FFAC00', bold = true, nocombine = true })
+    end
+  end
+})
