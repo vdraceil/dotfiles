@@ -11,13 +11,11 @@ local all_colorschemes = {
 }
 
 for _, item in ipairs(all_colorschemes) do
-  local today_colorscheme = colors.today_colorscheme()
-
-  if item.name == today_colorscheme.name then
+  if item.name == colors.colorscheme.name then
     item.lazy = false
     item.priority = 1000
     item.config = function()
-      vim.cmd.colorscheme(today_colorscheme.variant)
+      vim.cmd.colorscheme(colors.colorscheme.variant)
     end
     break
   end

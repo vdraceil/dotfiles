@@ -10,13 +10,14 @@ return {
     local alpha = require('alpha')
     local dashboard = require('alpha.themes.dashboard')
     local ascii = require('utils.ascii')
+    local colors = require('utils.colors')
     local quotes = require('utils.quotes')
 
     -- define custom highlight groups
-    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#F4005F' })
+    vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = colors.alpha.AlphaHeader })
     vim.api.nvim_set_hl(0, 'AlphaSubHeader', { fg = '#6E706B', italic = true })
-    vim.api.nvim_set_hl(0, 'AlphaButton', { fg = '#FFAC00' })
-    vim.api.nvim_set_hl(0, 'AlphaShortcut', { fg = '#0076DE', bold = true })
+    vim.api.nvim_set_hl(0, 'AlphaButton', { fg = colors.alpha.AlphaButton })
+    vim.api.nvim_set_hl(0, 'AlphaShortcut', { fg = colors.alpha.AlphaShortcut, bold = true })
     vim.api.nvim_set_hl(0, 'AlphaFooter', { fg = '#6E706B', italic = true })
 
     -- dynamic header
@@ -92,12 +93,17 @@ return {
       pattern = 'LazyVimStarted',
       callback = function()
         local v = vim.version()
-        local version = ' ' .. v.major .. '.' .. v.minor .. '.' .. v.patch
+        local version_info = ' ' .. v.major .. '.' .. v.minor .. '.' .. v.patch
+
         local stats = require('lazy').stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+        local plugins_info = '⚡loaded ' .. stats.loaded .. '/' .. stats.count .. 'plugins in ' .. ms .. 'ms'
+
+        local coloscheme_info = '🎨 ' .. colors.colorscheme.variant
+
         table.insert(dashboard.section.header.val, {
           type = 'text',
-          val = '⚡loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms\t\t\t' .. version,
+          val = plugins_info .. '\t\t\t' .. version_info .. '\t\t\t' .. coloscheme_info,
           opts = { hl = 'AlphaSubHeader', shrink_margin = false, position = 'center'},
         })
         pcall(vim.cmd.AlphaRedraw)

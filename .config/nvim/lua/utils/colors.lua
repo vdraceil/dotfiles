@@ -8,11 +8,19 @@ local DAY_COLORSCHEME_MAP = {
   Saturday = { name = 'monokai-nightasty', variant = 'monokai-nightasty' },
 }
 
-local function today_colorscheme()
-  local today = os.date("%A")
-  return DAY_COLORSCHEME_MAP[today]
-end
+local DAY_ALPHA_COLORS_MAP = {
+  Sunday = { AlphaHeader = '#F7F7F7', AlphaButton = '#F4005F', AlphaShortcut = '#4DFFFF' },
+  Monday = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' },
+  Tuesday = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' },
+  Wednesday = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' },
+  Thursday = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' },
+  Friday = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' },
+  Saturday = { AlphaHeader = '#F7F7F7', AlphaButton = '#F4005F', AlphaShortcut = '#4DFFFF' },
+}
+
+local TODAY = os.date("%A")
 
 return {
-  today_colorscheme = today_colorscheme,
+  alpha = DAY_ALPHA_COLORS_MAP[TODAY],
+  colorscheme = DAY_COLORSCHEME_MAP[TODAY],
 }

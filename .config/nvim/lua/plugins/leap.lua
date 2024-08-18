@@ -2,7 +2,7 @@ return {
   'ggandor/leap.nvim',
   config = function()
     -- bidirectional search
-    vim.keymap.set('n', '/', function()
+    vim.keymap.set('n', '\\', function()
       local current_window = vim.fn.win_getid()
       require('leap').leap({ target_windows = { current_window } })
     end)
