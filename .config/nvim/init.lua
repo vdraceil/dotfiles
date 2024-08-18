@@ -66,5 +66,3 @@ require('lazy').setup({
 require 'opts'
 require 'keys'
 require 'autocmds'
-
-vim.cmd.colorscheme('one_monokai')

@@ -1,11 +1,4 @@
 return {
-  -- colorschemes
-  { 'cpea2506/one_monokai.nvim', lazy = false, priority = 1000 },
-  -- 'navarasu/onedark.nvim',
-  -- 'sainnhe/sonokai',
-  -- 'rebelot/kanagawa.nvim',
-  -- 'sainnhe/gruvbox-material',
-
   -- spacing
   'tpope/vim-sleuth',
 
