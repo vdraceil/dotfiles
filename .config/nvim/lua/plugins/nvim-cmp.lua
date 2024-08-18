@@ -22,12 +22,12 @@ return {
       window = {
         completion = {
           border = vim.g.border,
-          winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuThumb,Search:None',
+          winhighlight = 'Normal:CmpNormal,FloatBorder:CmpNormal,CursorLine:Visual,Search:None',
           scrollbar = false,
         },
         documentation = {
           border = vim.g.border,
-          winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuThumb,Search:None',
+          winhighlight = 'Normal:CmpDocNormal,FloatBorder:CmpDocNormal,CursorLine:PmenuSel,Search:None',
           scrollbar = false,
         },
       },
