@@ -5,7 +5,7 @@ local all_colorschemes = {
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
   { 'folke/tokyonight.nvim', name = 'tokyonight', lazy = true },
   { 'sainnhe/sonokai', name = 'sonokai', lazy = true },
-  { 'rebelot/kanagawa.nvim', name = 'kanagawa', lazy = true },
+  { 'sainnhe/edge', name = 'edge', lazy = true },
   { 'sainnhe/gruvbox-material', name = 'gruvbox-material', lazy = true },
   { 'polirritmico/monokai-nightasty.nvim', name = 'monokai-nightasty', lazy = true },
 }

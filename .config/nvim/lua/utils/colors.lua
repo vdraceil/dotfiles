@@ -1,9 +1,10 @@
 local DAY_COLORSCHEME_MAP = {
   Sunday = { name = 'sonokai', variant = 'sonokai' },
   Monday = { name = 'one_monokai', variant = 'one_monokai' },
-  Tuesday = { name = 'kanagawa', variant = 'kanagawa-dragon' },
+  -- Tuesday = { name = 'edge', variant = 'edge' },
   Wednesday = { name = 'gruvbox-material', variant = 'gruvbox-material' },
-  Thursday = { name = 'catppuccin', variant = 'catppuccin' },
+  -- Thursday = { name = 'catppuccin', variant = 'catppuccin' },
+  Thursday = { name = 'edge', variant = 'edge' },
   Friday = { name = 'tokyonight', variant = 'tokyonight' },
   Saturday = { name = 'monokai-nightasty', variant = 'monokai-nightasty' },
 }
