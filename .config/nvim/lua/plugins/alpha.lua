@@ -97,7 +97,7 @@ return {
 
         local stats = require('lazy').stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        local plugins_info = '⚡loaded ' .. stats.loaded .. '/' .. stats.count .. 'plugins in ' .. ms .. 'ms'
+        local plugins_info = '⚡loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms'
 
         local coloscheme_info = '🎨 ' .. colors.colorscheme.variant
 

@@ -1,4 +1,4 @@
-function connect-pod
+function pod-connect
   argparse 'c/context=' 'a/app=' 'p/podnum=' 's/shell' 'clean' -- $argv
 
   kubectl config use-context $_flag_context > /dev/null
@@ -32,20 +32,20 @@ function connect-pod
   eval "kubectl exec -it $pod -n search -- $cmd"
 end
 
-function staging-pod
-  connect-pod --context "grata-staging.grata.com" $argv
+function pod-staging
+  pod-connect --context "grata-staging.grata.com" $argv
 end
 
-function beta-pod
-  connect-pod --context "grata-beta.grata.com" $argv
+function pod-beta
+  pod-connect --context "grata-beta.grata.com" $argv
 end
 
-function prod-pod
-  connect-pod --context "grata-prod.grata.com" $argv
+function pod-prod
+  pod-connect --context "grata-prod.grata.com" $argv
 end
 
-function crawl-pod
-  connect-pod --context "crawl-prod.grata.com" $argv
+function pod-crawl
+  pod-connect --context "crawl-prod.grata.com" $argv
 end
 
 # path
