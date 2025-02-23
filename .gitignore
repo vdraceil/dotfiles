@@ -8,15 +8,13 @@
 # Temporary files
 *.swp
 *~
+**/node_modules/*
 */nvim/swap/*
 */nvim/undo/*
 */nvim/bundle/*
 */nvim/ctrlp/*
-*/mpd/db
-*/mpd/log
-*/mpd/pid
-*/mpd/state
 **/_nvm_*
+*pycache*
 
 # Packages
 *.7z
@@ -27,6 +25,7 @@
 *.rar
 *.tar
 *.zip
+*.bin
 
 # Logs and databases
 *.log
