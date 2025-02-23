@@ -2,7 +2,7 @@
 starship init fish | source
 
 # shell greeting
-alias fish_greeting="fortune | cowsay -f (cowsay -l | tail -n+2 | tr ' ' '\n' | shuf -n 1)"
+alias fish_greeting="fortune | cowsay -f (random choice (cowsay -l | tail -n+2 | tr ' ' '\n'))"
 
 # set $LS_COLORS
 source ~/.config/fish/functions/ls-colors.fish
