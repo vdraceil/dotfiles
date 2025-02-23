@@ -48,13 +48,11 @@ function pod-crawl
   pod-connect --context "crawl-prod.grata.com" $argv
 end
 
-# path
-fish_add_path ~/.hermes/bin/gcommand
-
 # aliases
 alias db-prod='ssh -N -p80 -i ~/.ssh/bastion-prod.pem -L 5432:grata-search-prod.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@ec2-3-216-95-167.compute-1.amazonaws.com'
 alias db-staging='ssh -N -p80 -i ~/.ssh/bastion-staging.pem -L 5432:grata-search-staging-blue.cxmnmuyxrqly.us-east-1.rds.amazonaws.com:5432 forward@bastion-staging.devapp.grata.com'
+alias psql-prod='psql -h localhost -p 5432 -U gsd enterprise-search'
+
 alias dctest='docker-compose -f docker-compose-test.yaml'
 alias dctestrun-nodb='dctest run -e TEST_ENV=true app-test python manage.py test'
 alias dctestrun='dctestrun-nodb --keepdb'
-alias psql-prod='psql -h localhost -p 5432 -U gsd enterprise-search'
