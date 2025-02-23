@@ -1,8 +1,9 @@
-# prompt setup
+# prompt & z setup
 starship init fish | source
+zoxide init fish | source
 
 # shell greeting
-alias fish_greeting="fortune | cowsay -f (random choice (cowsay -l | tail -n+2 | tr ' ' '\n'))"
+alias fish_greeting="fortune -s | cowsay -f (random choice (cowsay -l | tail -n+2 | tr ' ' '\n'))"
 
 # set $LS_COLORS
 source ~/.config/fish/functions/ls-colors.fish
