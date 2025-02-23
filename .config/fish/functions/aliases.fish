@@ -1,6 +1,3 @@
-# cp
-alias cp="xcp"
-
 # du
 alias du="dust"
 
@@ -12,7 +9,7 @@ alias rgc='rg -g "$RG_EXCLUDE_TESTS"'
 
 # ls & tree
 alias ls="eza --icons --group-directories-first"
-alias ll="ls --no-user -l"
+alias ll="eza --no-user -l"
 alias l1="eza --no-icons --group-directories-first -1"
 
 set "TREE_EXCLUDE" "node_modules|__pycache__|.pytest_cache|env|build|_build|dist|.git|*.pyc"
