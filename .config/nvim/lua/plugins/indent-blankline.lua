@@ -4,7 +4,7 @@ return {
   opts = {
     enabled = true,
     indent = {
-      char = '|',
+      char = '│',
       smart_indent_cap = true,
     },
     scope = {
