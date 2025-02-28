@@ -1,3 +1,6 @@
+# brew
+fish_add_path -gP '/opt/homebrew/bin' '/opt/homebrew/sbin'
+
 # prompt & z setup
 starship init fish | source
 zoxide init fish | source

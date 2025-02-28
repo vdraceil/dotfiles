@@ -4,7 +4,7 @@ function pod-connect
   kubectl config use-context $_flag_context > /dev/null
   echo "CONTEXT: $_flag_context"
 
-  set -q _flag_app; or set -l _flag_app "grata-search"
+  set -q _flag_app; or set -l _flag_app 'grata-search'
   echo "APP: $_flag_app"
 
   set -l pods (kubectl get pods -n search --field-selector=status.phase=Running --no-headers -o custom-columns=":metadata.name" --selector=app=$_flag_app)
@@ -16,12 +16,13 @@ function pod-connect
   set -l pod $pods[$_flag_podnum]
   echo "POD#$_flag_podnum/$total_pods: $pod"
 
-  set -l cmd "/bin/bash"
+  set -l cmd '/bin/bash'
   if set -q _flag_clean
-    set cmd "pkill -9 -f manage.py"
+    set cmd 'pkill -9 -f manage.py'
   else if set -q _flag_shell
-    if [ $_flag_app = "grata-search" ]
-      set cmd "python manage.py shell"
+    if [ $_flag_app = 'grata-search' ]
+      set cmd 'python manage.py shell'
+    else if string match -r 'crawl' $_flag_app
     else
       set cmd "python"
     end
@@ -33,19 +34,19 @@ function pod-connect
 end
 
 function pod-staging
-  pod-connect --context "grata-staging.grata.com" $argv
+  pod-connect --context 'grata-staging.grata.com' $argv
 end
 
 function pod-beta
-  pod-connect --context "grata-beta.grata.com" $argv
+  pod-connect --context 'grata-beta.grata.com' $argv
 end
 
 function pod-prod
-  pod-connect --context "grata-prod.grata.com" $argv
+  pod-connect --context 'grata-prod.grata.com' $argv
 end
 
 function pod-crawl
-  pod-connect --context "crawl-prod.grata.com" $argv
+  pod-connect --context 'crawl-prod.grata.com' $argv
 end
 
 # aliases
