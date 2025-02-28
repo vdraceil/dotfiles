@@ -6,7 +6,9 @@ starship init fish | source
 zoxide init fish | source
 
 # shell greeting
-alias fish_greeting="fortune -s | cowsay -f (random choice (cowsay -l | tail -n+2 | tr ' ' '\n'))"
+set -l cowsay_greeting "fortune -s | cowsay -f (random choice (cowsay -l | tail -n+2 | tr ' ' '\n'))"
+set -l center_greeting "fortune -s | fmt -c -w (tput cols)"
+alias fish_greeting="echo -n (set_color -i brwhite);$center_greeting;echo -n (set_color normal)"
 
 # set $LS_COLORS
 source ~/.config/fish/functions/ls-colors.fish
