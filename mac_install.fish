@@ -31,7 +31,8 @@ mkdir -p $HOME/.config
 
 # collect relevant config files/dirs
 set source_files '.gitconfig' '.gitignore' '.dircolors'
-set source_files $source_files '.config/neofetch' '.config/scripts' '.config/nvim' '.config/fish' '.config/starship.toml'
+set source_files $source_files '.config/wezterm' '.config/fish' '.config/nvim' '.config/starship.toml'
+set source_files $source_files '.config/neofetch' '.config/scripts' '.config/starship.toml'
 
 # create symlinks in $HOME
 for file in $source_files
