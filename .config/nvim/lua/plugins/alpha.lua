@@ -42,7 +42,7 @@ return {
         dashboard.button('f', '    Find File', ':FzfLua files<CR>'),
         dashboard.button('r', '    Recent File', ':FzfLua oldfiles<CR>'),
         dashboard.button('n', '    New File', ':ene <bar> startinsert<CR>'),
-        dashboard.button('g', '    Live Grep', ':FzfLua live_grep<CR>'),
+        dashboard.button('g', '󰁁    Live Grep', ':FzfLua live_grep<CR>'),
         dashboard.button('t', '    File Explorer', ':NvimTreeOpen<CR>'),
         dashboard.button('u', '    Update Plugins', ':Lazy update<CR>'),
         dashboard.button('c', '    Config', ':e $MYVIMRC | :cd %:p:h <CR>'),

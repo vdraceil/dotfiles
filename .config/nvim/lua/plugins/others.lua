@@ -19,7 +19,7 @@ return {
   {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup({ 'css', 'scss', 'javascript', 'html', 'vue', 'lua' })
+      require('colorizer').setup({ 'css', 'scss', 'javascript', 'jsx', 'html', 'vue', 'lua', 'toml', 'yaml' })
     end
   },
 
