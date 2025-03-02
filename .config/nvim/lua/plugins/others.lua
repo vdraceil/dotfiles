@@ -17,9 +17,9 @@ return {
 
   -- highlight text colors
   {
-    'norcalli/nvim-colorizer.lua',
+    'brenoprata10/nvim-highlight-colors',
     config = function()
-      require('colorizer').setup({ 'css', 'scss', 'javascript', 'jsx', 'html', 'vue', 'lua', 'toml', 'yaml' })
+      require('nvim-highlight-colors').setup()
     end
   },
 

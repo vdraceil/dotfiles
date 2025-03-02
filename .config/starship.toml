@@ -5,8 +5,8 @@ scan_timeout = 10
 palette = "custom"
 
 [character]
-success_symbol = "[➜](bold bright-green)"
-error_symbol = "[➜](bold bright-red)"
+success_symbol = "[->](bold bright-green)"
+error_symbol = "[->](bold bright-red)"
 
 [directory]
 style = "bold bright-purple"
