@@ -10,7 +10,7 @@ mkdir -p $HOME/.config
 sourceFiles=".bashrc .bash_profile .gitconfig .gitignore .dircolors .xinitrc
 .Xresources .config/polybar .config/ranger .config/i3 .config/dunst
 .config/neofetch .config/rofi .config/systemd .config/scripts
-.config/nvim .config/fish .config/alacritty .config/starship.toml"
+.config/nvim .config/fish .config/wezterm .config/starship.toml"
 
 # this function creates symlinks in $HOME dir
 # existing symlinks won"t be overridden unless the "--force" option is passed

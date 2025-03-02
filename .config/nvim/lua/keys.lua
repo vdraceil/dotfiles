@@ -31,10 +31,10 @@ vim.keymap.set('n', 'tt', ':tabnew<CR>', { desc = 'Create new tab' })
 vim.keymap.set('n', 'tm', ':tabm', { desc = 'Move current tab' })
 
 -- splits
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move focus to the left split' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right split' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower split' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper split' })
+vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Move focus to the left split' })
+vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Move focus to the right split' })
+vim.keymap.set('n', '<leader>j', '<C-w>j', { desc = 'Move focus to the lower split' })
+vim.keymap.set('n', '<leader>k', '<C-w>k', { desc = 'Move focus to the upper split' })
 
 vim.keymap.set('n', '<leader>T', '<C-w>T', { desc = 'Move current split to a new tab' })
 
