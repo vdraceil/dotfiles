@@ -4,8 +4,8 @@ local config = wezterm.config_builder()
 
 -- window
 config.window_padding = {
-  left = 2,
-  right = 2,
+  left = 3,
+  right = 3,
   top = 0,
   bottom = 0,
 }
@@ -53,6 +53,10 @@ end
 
 config.allow_square_glyphs_to_overflow_width = 'Always'
 config.color_scheme = color_scheme
+config.colors = {
+  cursor_border = '#fba922',
+  cursor_bg = '#fba922',
+}
 config.default_cursor_style = 'SteadyUnderline'
 config.underline_thickness = 3
 

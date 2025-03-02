@@ -81,4 +81,13 @@ return {
       end),
     },
   },
+  -- clear screen (as CTRL+L is already assigned above)
+  {
+    key = 'l',
+    mods = 'CTRL|ALT',
+    action = wezterm.action.Multiple {
+      wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+      wezterm.action.SendKey { key = 'l', mods = 'CTRL' },
+    },
+  },
 }
