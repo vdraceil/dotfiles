@@ -2,6 +2,20 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
+-- window
+config.window_padding = {
+  left = 2,
+  right = 2,
+  top = 0,
+  bottom = 0,
+}
+
+config.visual_bell = {
+  fade_in_duration_ms = 75,
+  fade_out_duration_ms = 75,
+  target = 'CursorColor',
+}
+
 -- tab bar
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 50
@@ -24,15 +38,29 @@ wezterm.on('update-status', function(window)
 end)
 
 -- visual
-config.allow_square_glyphs_to_overflow_width = 'Always'
-config.color_scheme = 'Monokai (terminal.sexy)'
-config.default_cursor_style = 'SteadyUnderline'
+local weekday = os.date('%a')
+local color_scheme, font, font_italics
 
-config.font = wezterm.font 'FiraCode Nerd Font'
+if weekday == 'Sat' or weekday == 'Sun' then
+  color_scheme = 'Catppuccin Latte'  -- light theme on weekends
+  font = 'Hack Nerd Font Mono'
+  font_italics = 'Cascadia Code'
+else
+  color_scheme = 'Monokai (terminal.sexy)'  -- dark theme on weekdays
+  font = 'FiraCode Nerd Font'
+  font_italics = 'FantasqueSansM Nerd Font'
+end
+
+config.allow_square_glyphs_to_overflow_width = 'Always'
+config.color_scheme = color_scheme
+config.default_cursor_style = 'SteadyUnderline'
+config.underline_thickness = 3
+
+config.font = wezterm.font(font)
 config.font_rules = {
   {
     italic = true,
-    font = wezterm.font { family = 'FantasqueSansM Nerd Font', italic = true }
+    font = wezterm.font { family = font_italics, italic = true }
   }
 }
 config.font_size = 14
@@ -45,9 +73,10 @@ config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 -- others
 config.front_end = 'WebGpu'
+config.quit_when_all_windows_are_closed = true
 config.scrollback_lines = 10000
 config.show_update_window = false
-config.quit_when_all_windows_are_closed = true
+config.warn_about_missing_glyphs = true
 
 config.quick_select_patterns = {
   '#[0-9a-z]',  -- hashtags

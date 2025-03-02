@@ -1,6 +1,12 @@
 local wezterm = require 'wezterm'
 
 return {
+  -- debug overlay
+  {
+    key = 'd',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.ShowDebugOverlay
+  },
   -- close pane
   {
     key = 'w',
