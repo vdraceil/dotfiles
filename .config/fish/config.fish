@@ -1,5 +1,8 @@
-# brew
-fish_add_path -gP '/opt/homebrew/bin' '/opt/homebrew/sbin'
+# mac specific
+set -l os (uname)
+if test "$os" = Darwin
+  source ~/.config/fish/functions/mac.fish
+end
 
 # prompt & z setup
 starship init fish | source

@@ -55,5 +55,6 @@ alias db-staging='ssh -N -p80 -i ~/.ssh/bastion-staging.pem -L 5432:grata-search
 alias psql-prod='psql -h localhost -p 5432 -U gsd enterprise-search'
 
 alias dctest='docker-compose -f docker-compose-test.yaml'
-alias dctestrun-nodb='dctest run -e TEST_ENV=true app-test python manage.py test'
+alias dctestpy='dctest run -e TEST_ENV=true app-test python manage.py'
+alias dctestrun-nodb='dctestpy test'
 alias dctestrun='dctestrun-nodb --keepdb'

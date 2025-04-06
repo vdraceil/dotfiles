@@ -21,7 +21,7 @@ alias b="bat"
 alias du="dust"
 alias dc="docker-compose"
 alias g="git"
-alias n="neofetch"
+alias neo="neofetch"
 alias nv="nvim"
 
 # linux specific
