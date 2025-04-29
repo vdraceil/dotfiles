@@ -41,6 +41,8 @@
     conflictstyle = zdiff3
 [diff]
     colorMoved = default
+[fetch]
+    prune = true
 [alias]
     a = add
     aa = add --all
@@ -91,4 +93,4 @@
     std = stash drop
     stl = stash list
     sts = stash show
-    sy = "!git checkout -q main && git pull && git branch --merged | grep -v main | xargs git branch -D"
+    sy = "!git checkout -q main && git pull && git branch -v | grep gone | cut -w -f2 | grep -v main | xargs git branch -D"
