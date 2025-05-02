@@ -13,6 +13,7 @@
 */nvim/undo/*
 */nvim/bundle/*
 */nvim/ctrlp/*
+*/nvim/lazy-lock.json
 **/_nvm_*
 *pycache*
 
