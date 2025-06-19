@@ -58,3 +58,5 @@ alias dctest='docker-compose -f docker-compose-test.yaml'
 alias dctestpy='dctest run -e TEST_ENV=true app-test python manage.py'
 alias dctestrun-nodb='dctestpy test'
 alias dctestrun='dctestrun-nodb --keepdb'
+
+alias ghprc='gh pr create -t "$(git branch --show-current | string split -f2 / | string upper): $(git show -s --format=%s)" -T pull_request_template.md'
