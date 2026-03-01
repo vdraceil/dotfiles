@@ -4,6 +4,7 @@
 
 # Exit if CrossOver is open to avoid crashing games or file corruption
 if pgrep -f "CrossOver" >/dev/null
+    echo "CrossOver is running. Exiting to avoid interruption."
     exit 0
 end
 
@@ -14,8 +15,11 @@ killall cfprefsd 2>/dev/null
 
 # Reset Bottle Reg Files
 set -l BOTTLES_PATH "$HOME/Library/Application Support/CrossOver/Bottles"
-for reg_file in "$BOTTLES_PATH"/**system.reg
+for reg_file in "$BOTTLES_PATH"/*/system.reg
     if test -f "$reg_file"
-        sed -i '' '/\[Software\\\\CodeWeavers\\\\CrossOver\\\\cxoffice\].*/,+5d' "$reg_file"
+        echo "Updating: $reg_file"
+        sed -i '' '/CodeWeavers.*cxoffice/ , +5d' "$reg_file"
     end
 end
+
+echo "Done!"
