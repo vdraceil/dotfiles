@@ -11,6 +11,7 @@ end
 # Reset System Plist & Cache
 defaults delete com.codeweavers.CrossOver FirstRunDate 2>/dev/null
 plutil -remove FirstRunDate ~/Library/Preferences/com.codeweavers.CrossOver.plist 2>/dev/null
+defaults delete -app CrossOver FirstRunDate 2>/dev/null
 killall cfprefsd 2>/dev/null
 
 # Reset Bottle Reg Files
