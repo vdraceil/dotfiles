@@ -2,6 +2,11 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
+wezterm.on('gui-startup', function(cmd)
+  local _, _, window = wezterm.mux.spawn_window(cmd or {})
+  window:gui_window():toggle_fullscreen()
+end)
+
 -- window
 config.window_padding = {
   left = 3,
