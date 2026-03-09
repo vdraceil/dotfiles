@@ -17,11 +17,6 @@ vim.keymap.set('v', '<right>', '<nop>')
 vim.keymap.set('v', '<up>', '<nop>')
 vim.keymap.set('v', '<down>', '<nop>')
 
--- navigation
--- popup
-vim.keymap.set('i', '<Tab>',   [[pumvisible() ? '<C-n>' : '<Tab>']],   { expr = true })
-vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? '<C-p>' : '<S-Tab>']], { expr = true })
-
 -- tabs
 vim.keymap.set('n', 'tr', ':tabprev<CR>', { desc = 'Move focus to previous tab' })
 vim.keymap.set('n', 'trr', ':tabfirst<CR>', { desc = 'Move focus to first tab' })

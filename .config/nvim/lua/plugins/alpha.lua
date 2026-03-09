@@ -2,10 +2,7 @@ local QUOTE_MAX_WIDTH = 65
 
 return {
   'goolord/alpha-nvim',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    'nvim-lua/plenary.nvim'
-  },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     local alpha = require('alpha')
     local dashboard = require('alpha.themes.dashboard')
@@ -99,11 +96,11 @@ return {
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
         local plugins_info = '⚡loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms'
 
-        local coloscheme_info = '🎨 ' .. colors.colorscheme.variant
+        local colorscheme_info = '🎨 ' .. colors.colorscheme.variant
 
         table.insert(dashboard.section.header.val, {
           type = 'text',
-          val = plugins_info .. '\t\t\t' .. version_info .. '\t\t\t' .. coloscheme_info,
+          val = plugins_info .. '\t\t\t' .. version_info .. '\t\t\t' .. colorscheme_info,
           opts = { hl = 'AlphaSubHeader', shrink_margin = false, position = 'center'},
         })
         pcall(vim.cmd.AlphaRedraw)

@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
   group = vim.api.nvim_create_augroup('NvimTreeClose', { clear = true }),
   pattern = 'NvimTree_*',
   callback = function()
-    local layout = vim.api.nvim_call_function('winlayout', {})
+    local layout = vim.fn.winlayout()
     if layout[1] == 'leaf'
     and vim.bo[vim.api.nvim_win_get_buf(layout[2])].filetype == 'NvimTree'
     and layout[3] == nil
