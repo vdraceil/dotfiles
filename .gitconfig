@@ -6,6 +6,7 @@
     autocrlf = input
     whitespace = fix,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
+    pager = delta
 [web]
     browser = firefox
 [branch]
@@ -29,20 +30,28 @@
     added = brightgreen bold
     changed = brightyellow bold
     untracked = magenta italic dim
-[core]
-    pager = delta
 [interactive]
     diffFilter = delta --color-only
 [delta]
     navigate = true
     line-numbers = true
     side-by-side = true
+[init]
+    defaultBranch = main
 [merge]
     conflictstyle = zdiff3
 [diff]
     colorMoved = default
+    algorithm = histogram
 [fetch]
     prune = true
+[rerere]
+    enabled = true
+[rebase]
+    autoStash = true
+    autoSquash = true
+[help]
+    autocorrect = prompt
 [alias]
     a = add
     aa = add --all
@@ -63,8 +72,7 @@
     cob = checkout -b
     d = diff
     dc = diff --cached
-    ds = diff --staged
-    f = fetch -p
+    f = fetch
     l = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative
     l5 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -5
     l10 = log --pretty=format:'%C(brightcyan)%h%Creset |%C(magenta)%d%Creset %s %C(brightgreen)(%cr) %C(italic black)%an%Creset' --abbrev-commit --date=relative -10
@@ -93,4 +101,4 @@
     std = stash drop
     stl = stash list
     sts = stash show
-    sy = "!git checkout -q main && git pull && git branch -v | grep gone | cut -w -f2 | grep -v main | xargs git branch -D"
+    sy = "!f() { db=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'); git checkout -q $db && git pull && git branch -v | grep gone | cut -w -f2 | grep -v $db | xargs git branch -D; }; f"

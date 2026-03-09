@@ -1,6 +1,7 @@
 add_newline = true
 
-scan_timeout = 10
+scan_timeout = 30
+command_timeout = 500
 
 palette = "custom"
 
@@ -11,6 +12,8 @@ error_symbol = "[->](bold bright-red)"
 [directory]
 style = "bold bright-purple"
 read_only = " 🔒"
+truncation_length = 4
+truncate_to_repo = true
 
 [hostname]
 ssh_only = true
@@ -26,6 +29,10 @@ style = "bright-green"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
+modified = "!${count}"
+staged = "+${count}"
+deleted = "✘${count}"
+renamed = "»${count}"
 style = "blue"
 
 [cmd_duration]
