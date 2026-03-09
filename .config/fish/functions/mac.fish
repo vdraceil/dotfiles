@@ -7,3 +7,6 @@ set -gx CPPFLAGS '-I/opt/homebrew/opt/openssl/include'
 
 # postgres
 fish_add_path -gP '/Applications/Postgres.app/Contents/Versions/latest/bin'
+
+# local
+fish_add_path -gP '/Users/vino/.local/bin'
