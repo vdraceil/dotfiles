@@ -76,7 +76,7 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 
 # others
-export TERMINAL=alacritty
+export TERMINAL=wezterm
 export EDITOR=nvim
 export XDG_USER_CONFIG_DIR="$HOME/.config"
 

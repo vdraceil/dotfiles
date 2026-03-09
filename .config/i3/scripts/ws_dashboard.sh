@@ -12,9 +12,9 @@ i3-msg -q "[workspace=\"$WS1\"] kill"
 i3-msg -q "workspace \"$WS1\"; append_layout $I3_WS_LAYOUT"
 
 # start applications to be absorbed into the placeholders
-(alacritty -t ranger -e ranger "$WS_DOWNLOADS_DIR" &)
-(BC_ENV_ARGS=<(echo "scale=2") alacritty -t bc -e bc &)
-(alacritty -t cal --hold -e sh -c "cal -n 2" &)
+(wezterm start --class ranger -- ranger "$WS_DOWNLOADS_DIR" &)
+(BC_ENV_ARGS=<(echo "scale=2") wezterm start --class bc -- bc &)
+(wezterm start --class cal -- sh -c "cal -n 2; read" &)
 
 # focus workspace and main window - ranger
 sleep 0.5

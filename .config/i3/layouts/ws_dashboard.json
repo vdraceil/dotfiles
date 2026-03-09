@@ -19,8 +19,7 @@
             "percent": 1,
             "swallows": [
                 {
-                    "class": "^Alacritty$",
-                    "title": "^ranger$"
+                    "class": "^ranger$"
                 }
             ],
             "type": "con"
@@ -56,8 +55,7 @@
                     "percent": 0.5,
                     "swallows": [
                         {
-                            "class": "^Alacritty$",
-                            "title": "^cal$"
+                            "class": "^cal$"
                         }
                     ],
                     "type": "con"
@@ -76,8 +74,7 @@
                     "percent": 0.5,
                     "swallows": [
                         {
-                            "class": "^Alacritty$",
-                            "title": "^bc$"
+                            "class": "^bc$"
                         }
                     ],
                     "type": "con"
