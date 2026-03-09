@@ -1,6 +1,5 @@
 return {
   'neovim/nvim-lspconfig',
-  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
@@ -36,7 +35,7 @@ return {
       end,
     })
 
-    local servers = { 'lua_ls' }
+    local servers = { 'lua_ls', 'ruff' }
 
     require('mason-lspconfig').setup {
       ensure_installed = servers,
@@ -59,5 +58,26 @@ return {
     })
 
     vim.lsp.enable(servers)
+
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = '*.py',
+      callback = function(args)
+        local client = vim.lsp.get_clients({ bufnr = args.buf, name = 'ruff' })[1]
+        if not client then return end
+
+        local params = vim.lsp.util.make_range_params(0, client.offset_encoding) --[[@as table]]
+        params.context = { only = { 'source.organizeImports.ruff' } }
+        local result = client:request_sync('textDocument/codeAction', params, 3000)
+        if result and result.result then
+          for _, action in ipairs(result.result) do
+            if action.edit then
+              vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+            end
+          end
+        end
+
+        vim.lsp.buf.format({ name = 'ruff', async = false })
+      end,
+    })
   end
 }

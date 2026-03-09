@@ -12,6 +12,7 @@ vim.o.foldenable = true
 
 -- diagnostics
 vim.diagnostic.config({
+  virtual_text = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "󰅚 ",
