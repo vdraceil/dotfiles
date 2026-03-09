@@ -10,9 +10,33 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
+-- diagnostics
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅚 ",
+      [vim.diagnostic.severity.WARN] = "󰀪 ",
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+    texthl = {
+      [vim.diagnostic.severity.ERROR] = "Error",
+      [vim.diagnostic.severity.WARN] = "Warn",
+      [vim.diagnostic.severity.HINT] = "Hint",
+      [vim.diagnostic.severity.INFO] = "Info",
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.HINT] = "",
+      [vim.diagnostic.severity.INFO] = "",
+    },
+  },
+})
+
 -- install lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end

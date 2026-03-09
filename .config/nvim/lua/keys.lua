@@ -66,7 +66,7 @@ vim.keymap.set('n', '<leader>nr', ':NvimTreeRefresh<CR>', { desc = 'NvimTree Ref
 vim.keymap.set('n', '<leader>nc', ':NvimTreeCollapse<CR>', { desc = 'NvimTree Collapse' })
 
 -- plugin: gitsigns
-vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<CR>', { desc = 'Git Blame' })
+vim.keymap.set('n', '<leader>gB', ':Gitsigns blame<CR>', { desc = 'Git Blame' })
 
 -- plugin: diffview
 vim.keymap.set('n', '<leader>do', ':DiffviewOpen<CR>', { desc = 'DiffView Open' })
