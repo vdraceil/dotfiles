@@ -1,4 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR --export AWS_PROFILE:vino
-SETUVAR __fish_initialized:4300

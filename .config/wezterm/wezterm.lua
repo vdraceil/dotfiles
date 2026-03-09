@@ -17,9 +17,7 @@ config.visual_bell = {
 }
 
 -- tab bar
-config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 50
-config.tab_bar_at_bottom = false
 config.switch_to_last_active_tab_when_closing_tab = true
 config.use_fancy_tab_bar = false
 
@@ -73,6 +71,7 @@ config.font_size = 13
 config.keys = require('keys')
 
 -- launcher
+config.send_composed_key_when_left_alt_is_pressed = true
 config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 -- others
@@ -80,10 +79,9 @@ config.front_end = 'WebGpu'
 config.quit_when_all_windows_are_closed = true
 config.scrollback_lines = 10000
 config.show_update_window = false
-config.warn_about_missing_glyphs = true
 
 config.quick_select_patterns = {
-  '#[0-9a-z]',  -- hashtags
+  '#[0-9a-zA-Z]+',  -- hashtags
   '(?<=\\b)~?/\\S+',  -- file paths
   '(?:http|ftp)s?://\\S+',  -- urls
   '(?<=\')[^\']+(?=\')',  -- single quoted strings

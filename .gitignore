@@ -14,6 +14,7 @@
 */nvim/bundle/*
 */nvim/ctrlp/*
 */nvim/lazy-lock.json
+*/fish/fish_variables
 **/_nvm_*
 *pycache*
 

@@ -6,7 +6,6 @@ alias rgc='rg -g "$RG_EXCLUDE_TESTS"'
 
 # ls & tree
 alias ls="eza --icons --group-directories-first"
-alias ll="eza --no-user -l"
 alias ll="eza -l -a"
 alias lD="eza -l -D"
 alias lf="eza -l -f"

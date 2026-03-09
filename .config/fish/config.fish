@@ -19,5 +19,4 @@ set_lscolors
 
 # others
 source ~/.config/fish/functions/aliases.fish
-source ~/.config/fish/functions/env.fish
 source ~/.config/fish/functions/work-grata.fish
