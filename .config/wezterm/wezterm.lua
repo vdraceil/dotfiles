@@ -67,7 +67,7 @@ config.font_rules = {
     font = wezterm.font { family = font_italics, italic = true }
   }
 }
-config.font_size = 14
+config.font_size = 13
 
 -- keys
 config.keys = require('keys')
