@@ -3,7 +3,6 @@ return {
   main = 'ibl',
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
-    enabled = true,
     indent = {
       char = '│',
       smart_indent_cap = true,

@@ -59,7 +59,7 @@ return {
     }
     local quote_lines = quotes.break_text(quotes.get_random_quote(), QUOTE_MAX_WIDTH)
     for _, line in ipairs(quote_lines) do
-      table.insert(dashboard.section.footer.val, {
+      table.insert(dashboard.section.footer.val, { ---@diagnostic disable-line: param-type-mismatch
         type = 'text',
         val = line,
         opts = { hl = 'AlphaFooter', shrink_margin = false, position = 'center' },
@@ -68,7 +68,7 @@ return {
 
     -- center vertical align
     local margin_top_percent = 0.2
-    local header_padding = vim.fn.max({2, vim.fn.floor(vim.fn.winheight(0) * margin_top_percent)})
+    local header_padding = math.max(2, math.floor(vim.fn.winheight(0) * margin_top_percent))
 
     dashboard.config.layout = {
       { type = 'padding', val = header_padding },
@@ -81,8 +81,10 @@ return {
 
     alpha.setup(dashboard.config)
 
-    -- disable fold
-    vim.cmd('autocmd FileType alpha setlocal nofoldenable')
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'alpha',
+      callback = function() vim.opt_local.foldenable = false end,
+    })
 
     -- append stats & version to header
     vim.api.nvim_create_autocmd('User', {

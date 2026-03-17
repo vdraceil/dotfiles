@@ -2,7 +2,6 @@ return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    require('nvim-treesitter.install').prefer_git = true
     require('nvim-treesitter.configs').setup({
       ensure_installed = {
         'bash',
@@ -31,7 +30,6 @@ return {
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
-      additional_vim_regex_highlighting = false,
     })
   end,
 }

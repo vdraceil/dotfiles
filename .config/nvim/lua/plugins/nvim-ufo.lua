@@ -36,7 +36,7 @@ return {
   keys = {
     { 'zR', function() require('ufo').openAllFolds() end, { desc = 'Open All Folds (Reveal)' } },
     { 'zM', function() require('ufo').closeAllFolds() end, { desc = 'Close All Folds (Minimize)' } },
-    { 'zK',
+    { 'zp',
       function()
         local winid = require('ufo').peekFoldedLinesUnderCursor()
         if not winid then
@@ -51,12 +51,8 @@ return {
       -- display num of lines folded hint
       fold_virt_text_handler = custom_virt_text_handler,
 
-      close_fold_kinds_for_ft = {
-        default = {'imports', 'comment'},
-      },
-
       provider_selector = function(bufnr, filetype, buftype)
-        return {'lsp', 'indent'}
+        return {'treesitter', 'indent'}
       end
     })
   end

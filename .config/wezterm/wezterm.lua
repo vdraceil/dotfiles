@@ -15,11 +15,14 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.audible_bell = 'Disabled'
 config.visual_bell = {
   fade_in_duration_ms = 75,
   fade_out_duration_ms = 75,
   target = 'CursorColor',
 }
+config.window_decorations = 'RESIZE'
+config.native_macos_fullscreen_mode = true
 
 -- tab bar
 config.tab_max_width = 50
@@ -33,7 +36,7 @@ wezterm.on('update-status', function(window)
     { Foreground = { Color = color_scheme.brights[1] } },
     { Attribute = { Italic = true } },
     { Text = ' ws: ' .. window:active_workspace() .. ' ' },
-    { Background = { Color = '#000000' } },
+    { Background = { Color = color_scheme.background } },
     { Foreground = { Color = color_scheme.ansi[2] } },
     { Text = ' ' .. wezterm.strftime('%a, %-d %b %H:%M') .. ' ' },
     { Attribute = { Italic = false } },
@@ -71,6 +74,10 @@ config.font_rules = {
   }
 }
 config.font_size = 13
+config.inactive_pane_hsb = {
+  saturation = 0.8,
+  brightness = 0.6,
+}
 
 -- keys
 config.keys = require('keys')

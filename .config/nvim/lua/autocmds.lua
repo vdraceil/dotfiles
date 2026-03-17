@@ -11,9 +11,13 @@ vim.api.nvim_create_autocmd('VimEnter', {
   group = vim.api.nvim_create_augroup('NvimTreeOpen', { clear = true }),
   callback = function(data)
     local is_real_file = vim.fn.filereadable(data.file) == 1
+    local is_directory = vim.fn.isdirectory(data.file) == 1
     local is_no_name = data.file == '' and vim.bo[data.buf].buftype == ''
 
-    if is_real_file or is_no_name then
+    if is_directory then
+      vim.cmd.cd(data.file)
+      require('nvim-tree.api').tree.open()
+    elseif is_real_file or is_no_name then
       require('nvim-tree.api').tree.toggle({ focus = false, find_file = true })
     end
   end
@@ -26,8 +30,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
     local layout = vim.fn.winlayout()
     if layout[1] == 'leaf'
-    and vim.bo[vim.api.nvim_win_get_buf(layout[2])].filetype == 'NvimTree'
-    and layout[3] == nil
+    and vim.bo[vim.api.nvim_win_get_buf(layout[2] --[[@as integer]])].filetype == 'NvimTree'
     then
       vim.cmd('confirm quit')
     end

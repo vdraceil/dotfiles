@@ -15,12 +15,12 @@ return {
   },
   -- split panes
   {
-    key = '/',
-    mods = 'CTRL',
+    key = '|',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }  -- left & right panes
   },
   {
-    key = '-',
+    key = '=',
     mods = 'CTRL',
     action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }  -- top & bottom panes
   },

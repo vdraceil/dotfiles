@@ -1,3 +1,16 @@
+local diagnostic_icons = { '󰅚 ', '󰀪 ', '󰌶 ', ' ' }
+
+local function diagnostic_message()
+  local diags = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
+  if #diags == 0 then return '' end
+  table.sort(diags, function(a, b) return a.severity < b.severity end)
+  local d = diags[1]
+  local icon = diagnostic_icons[d.severity] or ''
+  local msg = d.message:gsub('\n', ' ')
+  if #msg > 60 then msg = msg:sub(1, 57) .. '...' end
+  return icon .. msg
+end
+
 local function file_status_icon()
   if vim.bo.modified then
     return '●'
@@ -60,9 +73,13 @@ return {
           color = function()
              return { fg = vim.bo.readonly and '#F4005F' or '#FFAC00' }
           end
-        }
+        },
       },
       lualine_x = {
+        {
+          diagnostic_message,
+          color = { fg = '#6E706B', gui = 'italic' }
+        },
          {
            'filetype',
            color = { gui = 'italic' }

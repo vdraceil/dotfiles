@@ -23,6 +23,9 @@ return {
         end, '[T]oggle [I]nlay hint')
         nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+        nmap('<leader>cf', function()
+          vim.lsp.buf.code_action({ context = { only = { 'source.fixAll' }, diagnostics = {} }, apply = true })
+        end, '[C]ode [F]ix all')
         nmap('gd', function() require('fzf-lua').lsp_definitions() end, '[G]oto [D]efinition')
         nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
         nmap('gr', function() require('fzf-lua').lsp_references() end, '[G]oto [R]eferences')
@@ -66,7 +69,7 @@ return {
         if not client then return end
 
         local params = vim.lsp.util.make_range_params(0, client.offset_encoding) --[[@as table]]
-        params.context = { only = { 'source.organizeImports.ruff' } }
+        params.context = { only = { 'source.organizeImports.ruff' }, diagnostics = {} }
         local result = client:request_sync('textDocument/codeAction', params, 3000)
         if result and result.result then
           for _, action in ipairs(result.result) do
