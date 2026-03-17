@@ -310,40 +310,35 @@ local comma = {
     [[╚═╝        ]],
 }
 
-local combine = function(table1, table2, seperate)
-  -- handle base cases
-  if table1 == nil or table1 == '' then
+local combine = function(table1, table2, separate)
+  if table1 == nil then
     return table2
-  elseif table2 == nil or table2 == '' then
+  elseif table2 == nil then
     return table1
   end
 
-  -- combine tables
   local result = {}
   for i = 1, 6 do
-    result[i] = table1[i] .. (seperate and '       ' or '') .. table2 [i]
+    result[i] = table1[i] .. (separate and '       ' or '') .. table2[i]
   end
   return result
 end
 
 local function num_ascii_art(number)
-  -- handle base cases
   if number == nil or number < 0 then
-    error('bad number: ' .. number)
+    error('bad number: ' .. tostring(number))
   elseif number < 10 then
     return numbers[number+1]
   end
 
-  -- split number and recursively combine ascii repr
   local last_digit = number % 10
   local remaining_number = math.floor(number / 10)
   return combine(num_ascii_art(remaining_number), num_ascii_art(last_digit))
 end
 
 local function str_ascii_art(str)
-  -- handle base cases
   if str == nil then
-    error('bad string: ' .. str)
+    error('bad string: nil')
   elseif string.len(str) == 1 then
     if str == ' ' then
       return space
@@ -357,7 +352,6 @@ local function str_ascii_art(str)
     end
   end
 
-  -- split chars and recursively combine ascii repr
   str = string.upper(str)
   local last_char = string.sub(str, -1)
   local remaining_str = string.sub(str, 0, -2)

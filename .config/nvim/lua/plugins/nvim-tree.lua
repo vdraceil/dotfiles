@@ -7,10 +7,11 @@ return {
     require('nvim-tree').setup({
       git = {
         enable = true,
-        ignore = true,
+      },
+      update_focused_file = {
+        enable = true,
       },
       filters = {
-        dotfiles = false,
         custom = { '^.git$', '.github', '.vscode', '^env$', 'node_modules', '__pycache__' },
       },
       renderer = {

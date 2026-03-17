@@ -89,7 +89,6 @@ return {
         {
           'searchcount',
           maxcount = 999,
-          timeout = 1000,
           separator = '',
           color = { fg = '#0076DE', gui = 'bold' }
         },
@@ -125,7 +124,7 @@ return {
           show_modified_status = false,
           tabs_color = {
             active = { gui = 'none' },
-            inactive = { fg = '#6E706B', bg = '#000000', gui = 'italic' }
+            inactive = { fg = '#6E706B', gui = 'italic' }
           },
           fmt = function(name, context)
             -- show modified status in tab name

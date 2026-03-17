@@ -5,17 +5,15 @@ return {
   opts = {
     indent = {
       char = '│',
-      smart_indent_cap = true,
     },
     scope = {
       enabled = true,
       show_start = false,
       show_end = false,
-      injected_languages = true,
       highlight = 'CurrentScope'
     },
     exclude = {
-      filetypes = { 'help', 'lazy', 'nvim-tree', 'alpha', 'lspinfo' },
+      filetypes = { 'help', 'lazy', 'NvimTree', 'alpha', 'lspinfo', 'mason' },
       buftypes = { 'terminal', 'nofile', 'quickfix' }
     },
   },

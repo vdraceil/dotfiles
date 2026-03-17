@@ -212,7 +212,7 @@ local function break_text(text, width)
   if text == nil or width == nil or width <= 0 then
     error("bad args")
   elseif #text <= width then
-      return { text }
+    return { text }
   end
 
   -- break text into lines
@@ -236,8 +236,9 @@ local function break_text(text, width)
   return lines
 end
 
+math.randomseed(os.time())
+
 local function get_random_quote()
-  math.randomseed(os.time())
   return quotes[math.random(#quotes)]
 end
 

@@ -9,10 +9,26 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
+    init = function()
       vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#6E706B', italic = true })
-      require('gitsigns').setup()
-    end
+    end,
+    opts = {
+      on_attach = function(bufnr)
+        local gs = require('gitsigns')
+        local map = function(mode, l, r, desc)
+          vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+        end
+
+        map('n', ']h', gs.next_hunk, 'Next hunk')
+        map('n', '[h', gs.prev_hunk, 'Prev hunk')
+        map('n', '<leader>ga', gs.stage_hunk, 'Git stage (add) hunk')
+        map('n', '<leader>gr', gs.reset_hunk, 'Git reset hunk')
+        map('n', '<leader>gu', gs.undo_stage_hunk, 'Git undo stage hunk')
+        map('n', '<leader>gp', gs.preview_hunk, 'Git preview hunk')
+        map('n', '<leader>gd', gs.diffthis, 'Git diff this')
+        map('n', '<leader>tb', gs.toggle_current_line_blame, 'Toggle line blame')
+      end,
+    },
   },
   { 'sindrets/diffview.nvim', cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewFileHistory' } },
 
@@ -25,9 +41,11 @@ return {
 
   -- pairs
   {
-      'windwp/nvim-autopairs',
-      event = 'InsertEnter',
-      config = true,
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {
+      check_ts = true,
+    },
   },
 
   -- surround
@@ -38,14 +56,13 @@ return {
     opts = {},
   },
 
-  -- comment
+  -- bracket navigation
   {
     'echasnovski/mini.nvim',
     version = '*',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('mini.bracketed').setup()
-      require('mini.comment').setup()
     end,
   }
 }

@@ -30,12 +30,11 @@ return {
   'kevinhwang91/nvim-ufo',
   dependencies = {
     'kevinhwang91/promise-async',
-    'neovim/nvim-lspconfig',
   },
   event = 'BufRead',
   keys = {
-    { 'zR', function() require('ufo').openAllFolds() end, { desc = 'Open All Folds (Reveal)' } },
-    { 'zM', function() require('ufo').closeAllFolds() end, { desc = 'Close All Folds (Minimize)' } },
+    { 'zR', function() require('ufo').openAllFolds() end, desc = 'Open All Folds (Reveal)' },
+    { 'zM', function() require('ufo').closeAllFolds() end, desc = 'Close All Folds (Minimize)' },
     { 'zp',
       function()
         local winid = require('ufo').peekFoldedLinesUnderCursor()
@@ -43,7 +42,7 @@ return {
           vim.lsp.buf.hover()
         end
       end,
-      { desc = 'Peek Fold Under Cursor' }
+      desc = 'Peek Fold Under Cursor'
     }
   },
   config = function()
