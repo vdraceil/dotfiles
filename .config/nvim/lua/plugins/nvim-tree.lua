@@ -5,6 +5,9 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     require('nvim-tree').setup({
+      view = {
+        width = 35,
+      },
       git = {
         enable = true,
       },
@@ -16,6 +19,7 @@ return {
       },
       renderer = {
         icons = {
+          padding = '  ',
           glyphs = {
             git = {
               unstaged = '●',
