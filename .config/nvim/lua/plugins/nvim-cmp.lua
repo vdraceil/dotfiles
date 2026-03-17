@@ -7,10 +7,11 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'rafamadriz/friendly-snippets',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-cmdline',
     'onsails/lspkind.nvim',
     'windwp/nvim-autopairs',
   },
-  event = 'InsertEnter',
+  event = { 'InsertEnter', 'CmdlineEnter' },
   config = function()
     local cmp = require 'cmp'
     local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
@@ -99,5 +100,18 @@ return {
       'confirm_done',
       cmp_autopairs.on_confirm_done()
     )
+
+    cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = { { name = 'buffer' } },
+    })
+
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources(
+        { { name = 'path' } },
+        { { name = 'cmdline' } }
+      ),
+    })
   end
 }
