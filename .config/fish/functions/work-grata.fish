@@ -30,7 +30,7 @@ function pod-connect
   echo "CMD: $cmd"
   echo
 
-  eval "kubectl exec -it $pod -n search -- $cmd"
+  kubectl exec -it $pod -n search -- $cmd
 end
 
 function pod-staging

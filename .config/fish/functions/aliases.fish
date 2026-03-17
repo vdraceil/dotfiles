@@ -17,15 +17,8 @@ alias t="tree -L"
 
 # other shorthands
 alias b="bat"
-alias du="dust"
 alias dc="docker-compose"
 alias g="git"
 alias neo="neofetch"
 alias nv="nvim"
 
-# linux specific
-if test (uname) != 'Darwin'
-    alias ps="procs --tree"
-    alias psc="procs --sortd cpu"
-    alias wm="sudo wifi-menu"
-end
