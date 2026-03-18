@@ -15,10 +15,19 @@ set "TREE_EXCLUDE" "node_modules|__pycache__|.pytest_cache|env|build|_build|dist
 alias tree='eza --group-directories-first --no-user --tree -I "$TREE_EXCLUDE"'
 alias t="tree -L"
 
-# other shorthands
-alias b="bat"
-alias dc="docker-compose"
-alias g="git"
-alias neo="neofetch"
-alias nv="nvim"
+# shorthands (abbr expands inline -> cleaner, searchable history)
+abbr -a b bat
+abbr -a dc docker-compose
+abbr -a g git
+abbr -a neo neofetch
+abbr -a nv nvim
+
+# navigation
+abbr -a .. "cd .."
+abbr -a ... "cd ../.."
+abbr -a .... "cd ../../.."
+abbr -a mkd "mkdir -p"
+
+# safety
+alias rm="trash"
 
