@@ -26,6 +26,43 @@ On Linux, use `--sudo` to set up systemd services:
 
 After installing, open `nvim` -- lazy.nvim will auto-install all plugins on first launch.
 
+## Dependencies
+
+### macOS (Homebrew)
+
+```sh
+# core
+brew install fish neovim starship zoxide eza bat ripgrep fzf fd git-delta fortune trash neofetch
+
+# wezterm
+brew install --cask wezterm
+
+# fisher + fzf.fish (run inside fish shell)
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install PatrickF1/fzf.fish
+```
+
+### Linux (pacman)
+
+```sh
+# core
+sudo pacman -S fish neovim starship zoxide eza bat ripgrep fzf fd git-delta fortune-mod neofetch
+
+# wezterm
+sudo pacman -S wezterm
+
+# desktop (i3 + utilities)
+sudo pacman -S i3-wm polybar rofi dunst feh xorg-xbacklight xorg-xrdb xorg-xset \
+  alsa-utils imagemagick ffmpeg udiskie ranger mpv socat jq acpi libnotify bc rxvt-unicode
+
+# AUR (requires yay or paru)
+yay -S betterlockscreen
+
+# fisher + fzf.fish (run inside fish shell)
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install PatrickF1/fzf.fish
+```
+
 ## What gets set up
 
 ### Common (macOS + Linux)

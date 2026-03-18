@@ -20,6 +20,11 @@ set -gx PAGER less
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx MANROPTAG man
 
+set -g fzf_diff_highlighter delta --paging=never --width=\$FZF_PREVIEW_COLUMNS
+set -g fzf_git_status_opts --preview-window=right:70%
+set -g fzf_git_log_opts --preview-window=right:70%
+set -g fzf_directory_opts --preview-window=right:70%
+
 # shell greeting
 set -l center_greeting "fortune -s | fmt -c -w (tput cols)"
 alias fish_greeting="echo -n (set_color -i brwhite);$center_greeting;echo -n (set_color normal)"
