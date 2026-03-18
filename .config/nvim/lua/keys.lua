@@ -18,7 +18,7 @@ vim.keymap.set('n', 'tm', ':tabm', { desc = 'Move current tab' })
 
 -- splits
 vim.keymap.set('n', '<leader>=', ':split<CR>', { silent = true, desc = 'Horizontal split' })
-vim.keymap.set('n', '<leader>|', ':vsplit<CR>', { silent = true, desc = 'Vertical split' })
+vim.keymap.set('n', '<leader>\\', ':vsplit<CR>', { silent = true, desc = 'Vertical split' })
 vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Move focus to the left split' })
 vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Move focus to the right split' })
 vim.keymap.set('n', '<leader>j', '<C-w>j', { desc = 'Move focus to the lower split' })

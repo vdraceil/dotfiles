@@ -10,13 +10,13 @@ return {
   -- close pane
   {
     key = 'w',
-    mods = 'CTRL|SHIFT',
+    mods = 'CTRL|ALT',
     action = wezterm.action.CloseCurrentPane { confirm = true }
   },
   -- split panes
   {
-    key = '|',
-    mods = 'CTRL|SHIFT',
+    key = '\\',
+    mods = 'CTRL',
     action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }  -- left & right panes
   },
   {
@@ -83,8 +83,8 @@ return {
   },
   -- clear screen (as CTRL+L is already assigned above)
   {
-    key = 'l',
-    mods = 'CTRL|ALT',
+    key = 'Backspace',
+    mods = 'CMD',
     action = wezterm.action.Multiple {
       wezterm.action.ClearScrollback 'ScrollbackAndViewport',
       wezterm.action.SendKey { key = 'l', mods = 'CTRL' },
