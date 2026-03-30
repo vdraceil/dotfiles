@@ -49,6 +49,14 @@ return {
       capabilities = require('cmp_nvim_lsp').default_capabilities(),
     })
 
+    vim.lsp.config('ruff', {
+      init_options = {
+        settings = {
+          lineLength = 120,
+        },
+      },
+    })
+
     vim.lsp.config('lua_ls', {
       settings = {
         Lua = {

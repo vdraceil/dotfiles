@@ -123,8 +123,8 @@ return {
           separator = '',
           show_modified_status = false,
           tabs_color = {
-            active = { gui = 'none' },
-            inactive = { fg = '#6E706B', gui = 'italic' }
+            active = 'lualine_a_normal',
+            inactive = 'lualine_b_inactive',
           },
           fmt = function(name, context)
             -- show modified status in tab name
