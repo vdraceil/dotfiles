@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # Have this script run every hour to catch a window where no games are being played and delete the trial date
-# Cron Job: 0 * * * * /usr/local/bin/fish /Users/vino/Code/dotfiles/scripts/reset_crossover_trial_mac.fish
+# Cron Job: 0 * * * * /opt/homebrew/bin/fish /Users/vino/Personal/dotfiles/scripts/reset_crossover_trial_mac.fish
 
 # Exit if CrossOver is open to avoid crashing games or file corruption
 if pgrep -f "CrossOver" >/dev/null
