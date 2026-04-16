@@ -36,6 +36,13 @@ end
 function install-mac
   echo '== macOS detected =='
   install-common $argv
+
+  echo '== Installing Homebrew packages =='
+  brew bundle --file="$PWD/Brewfile"
+
+  echo '== Setting up Homebrew autoupdate =='
+  # 604800 seconds = 1 week
+  brew autoupdate start --upgrade --cleanup 604800
 end
 
 function install-linux
