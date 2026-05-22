@@ -29,14 +29,6 @@ set -g fzf_directory_opts --preview-window=right:70%
 set -l center_greeting "fortune -s | fmt -c -w (tput cols)"
 alias fish_greeting="echo -n (set_color -i brwhite);$center_greeting;echo -n (set_color normal)"
 
-# notify on long-running commands (>10s)
-function __done_notification --on-event fish_postexec
-    if test $CMD_DURATION -gt 10000
-        set -l secs (math "$CMD_DURATION / 1000")
-        osascript -e "display notification \"Took {$secs}s\" with title \"Command Done\" subtitle \"$argv[1]\""
-    end
-end
-
 # others
 source ~/.config/fish/functions/aliases.fish
 source ~/.config/fish/functions/work-grata.fish
