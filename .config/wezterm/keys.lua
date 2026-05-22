@@ -95,14 +95,14 @@ return {
     key = '2',
     mods = 'CMD',
     action = wezterm.action_callback(function(_, pane)
-      pane:split { direction = 'Right', size = 0.3 }
+      pane:split { direction = 'Right', size = 0.4 }
     end),
   },
   {
     key = '3',
     mods = 'CMD',
     action = wezterm.action_callback(function(_, pane)
-      local right = pane:split { direction = 'Right', size = 0.3 }
+      local right = pane:split { direction = 'Right', size = 0.4 }
       right:split { direction = 'Bottom', size = 0.5 }
     end),
   },
