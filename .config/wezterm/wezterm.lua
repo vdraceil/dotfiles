@@ -48,8 +48,8 @@ local weekday = os.date('%a')
 local color_scheme, font, font_italics
 
 if weekday == 'Sat' or weekday == 'Sun' then
-  color_scheme = 'Everforest Light (Gogh)'  -- light theme on weekends
-  font = 'JetbrainsMono Nerd Font'
+  color_scheme = 'Gruvbox (Gogh)'  -- light theme on weekends
+  font = 'Hack Nerd Font Mono'
   font_italics = 'Cascadia Code'
 else
   color_scheme = 'Monokai (terminal.sexy)'  -- dark theme on weekdays
