@@ -1,7 +1,10 @@
 function pod-connect
   argparse 'c/context=' 'a/app=' 'p/podnum=' 's/shell' 'clean' -- $argv
 
-  kubectl config use-context $_flag_context > /dev/null
+  if not kubectl config use-context $_flag_context > /dev/null 2>&1
+    echo "ERROR: failed to switch to context '$_flag_context'" >&2
+    return 1
+  end
   echo "CONTEXT: $_flag_context"
 
   set -q _flag_app; or set -l _flag_app 'grata-search'
@@ -10,21 +13,25 @@ function pod-connect
   set -l pods (kubectl get pods -n search --field-selector=status.phase=Running --no-headers -o custom-columns=":metadata.name" --selector=app=$_flag_app)
   set -l total_pods (count $pods)
 
-  set -q _flag_podnum; or set -l _flag_podnum $total_pods
+  if test $total_pods -eq 0
+    echo "ERROR: no running pods found for app '$_flag_app'" >&2
+    return 1
+  end
+
+  set -q _flag_podnum; or set -l _flag_podnum 1
   set _flag_podnum (math "min($_flag_podnum, $total_pods)")
 
   set -l pod $pods[$_flag_podnum]
   echo "POD#$_flag_podnum/$total_pods: $pod"
 
-  set -l cmd '/bin/bash'
+  set -l cmd /bin/bash
   if set -q _flag_clean
-    set cmd 'pkill -9 -f manage.py'
+    set cmd pkill -9 -f manage.py
   else if set -q _flag_shell
     if [ $_flag_app = 'grata-search' ]
-      set cmd 'python manage.py shell'
-    else if string match -r 'crawl' $_flag_app
-    else
-      set cmd "python"
+      set cmd python manage.py shell
+    else if not string match -rq 'crawl' $_flag_app
+      set cmd python
     end
   end
   echo "CMD: $cmd"
@@ -34,15 +41,19 @@ function pod-connect
 end
 
 function pod-staging
-  pod-connect --context 'grata-staging.grata.com' $argv
+  pod-connect --context 'staging-use1-eks-general' $argv
 end
 
 function pod-beta
-  pod-connect --context 'grata-beta.grata.com' $argv
+  pod-connect --context 'beta-use1-eks-general' $argv
 end
 
 function pod-prod
-  pod-connect --context 'grata-prod.grata.com' $argv
+  pod-connect --context 'prod-use1-eks-general' $argv
+end
+
+function pod-prod-eu
+  pod-connect --context 'prod-euc1-eks-general' $argv
 end
 
 function pod-crawl

@@ -19,6 +19,12 @@ set -gx VISUAL nvim
 set -gx PAGER less
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx MANROPTAG man
+switch (date +%a)
+  case Sat Sun
+    set -gx BAT_THEME "Catppuccin Latte"
+  case '*'
+    set -gx BAT_THEME "Monokai Extended"
+end
 
 set -g fzf_diff_highlighter delta --paging=never --width=\$FZF_PREVIEW_COLUMNS
 set -g fzf_git_status_opts --preview-window=right:70%

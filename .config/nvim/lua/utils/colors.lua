@@ -9,7 +9,7 @@ local DAY_COLORSCHEME_MAP = {
 }
 
 local WEEKDAY_ALPHA = { AlphaHeader = '#F4005F', AlphaButton = '#FFAC00', AlphaShortcut = '#0076DE' }
-local WEEKEND_ALPHA = { AlphaHeader = '#F7F7F7', AlphaButton = '#F4005F', AlphaShortcut = '#4DFFFF' }
+local WEEKEND_ALPHA = { AlphaHeader = '#0076DE', AlphaButton = '#F4005F', AlphaShortcut = '#4DFFFF' }
 
 local DAY_ALPHA_COLORS_MAP = {
   Sunday = WEEKEND_ALPHA,
