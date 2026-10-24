@@ -10,3 +10,4 @@ fish_add_path -gP '/Applications/Postgres.app/Contents/Versions/latest/bin'
 
 # local
 fish_add_path -gP '/Users/vino/.local/bin'
+fish_add_path -gP '/Users/vino/Code/ai-system/bin'
