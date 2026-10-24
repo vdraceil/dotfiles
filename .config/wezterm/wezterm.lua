@@ -45,16 +45,14 @@ end)
 
 -- visual
 local weekday = os.date('%a')
-local color_scheme, font, font_italics
+local font = 'FiraCode Nerd Font'
+local font_italics = 'FantasqueSansM Nerd Font'
 
+local color_scheme
 if weekday == 'Sat' or weekday == 'Sun' then
-  color_scheme = 'Gruvbox (Gogh)'  -- light theme on weekends
-  font = 'Hack Nerd Font Mono'
-  font_italics = 'Cascadia Code'
+  color_scheme = 'Tokyo Night (Gogh)'
 else
-  color_scheme = 'Monokai (terminal.sexy)'  -- dark theme on weekdays
-  font = 'FiraCode Nerd Font'
-  font_italics = 'FantasqueSansM Nerd Font'
+  color_scheme = 'Monokai (terminal.sexy)'
 end
 
 config.allow_square_glyphs_to_overflow_width = 'Always'

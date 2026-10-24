@@ -34,3 +34,5 @@ vim.opt.timeoutlen = 500
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true  -- case-insensitive searching unless \C or one or more capital letters in the search term
+
+vim.opt.background = 'dark' -- always prefer dark variant of the current theme
